@@ -5,26 +5,26 @@
   <!-- Navbar content -->
   <div class="relative z-10 mx-auto flex items-center justify-between px-4 py-3">
     <!-- Mobile: Hamburger -->
-    <button class="md:hidden text-white text-2xl" (click)="toggleMobileMenu()">
+    <button class="lg:hidden text-white text-2xl" (click)="toggleMobileMenu()">
       <i class="fas" [ngClass]="mobileMenuOpen ? 'fa-times' : 'fa-bars'"></i>
     </button>
 
     <!-- Logo (always left) -->
     <a routerLink="/" class="flex items-center">
-      <img src="assets/logo.png" alt="Aevitas Foto Logo" class="h-16 w-auto hidden md:block" />
-      <img src="assets/logo-mobile.png" alt="Aevitas Foto Logo" class="h-12 w-auto md:hidden" />
+      <img src="assets/logo.png" alt="Aevitas Foto Logo" class="h-16 w-auto hidden lg:block" />
+      <img src="assets/logo-mobile.png" alt="Aevitas Foto Logo" class="h-12 w-auto lg:hidden" />
     </a>
 
     <!-- Desktop Links -->
-    <ul class="hidden md:flex space-x-6 absolute left-1/2 transform -translate-x-1/2">
+    <ul class="hidden lg:flex space-x-6 absolute left-1/2 transform -translate-x-1/2">
       <li><a routerLink="/about" class="font-baloo text-xl text-white px-2 custom-underline">About</a></li>
       <li><a routerLink="/gallery" class="font-baloo text-xl text-white px-2 custom-underline">Gallery</a></li>
-      <li><a routerLink="/bookings" class="font-baloo text-xl text-white px-2 custom-underline">Contact</a></li>
+      <li><a routerLink="/bookings" class="font-baloo text-xl text-white px-2 custom-underline">Bookings</a></li>
       <li><a routerLink="/contact" class="font-baloo text-xl text-white px-2 custom-underline">Contact</a></li>
     </ul>
 
     <!-- Socials -->
-    <div class="hidden md:flex space-x-4 pr-4">
+    <div class="hidden lg:flex space-x-4 pr-4">
       <a href="https://www.instagram.com/aevitasfoto" target="_blank" class="text-white hover:text-pink-400">
         <i class="fab fa-instagram"></i>
       </a>
@@ -35,7 +35,7 @@
   </div>
 
   <!-- Mobile menu -->
-  <div *ngIf="mobileMenuOpen" class="md:hidden bg-black bg-opacity-70">
+  <div *ngIf="mobileMenuOpen" class="lg:hidden bg-black bg-opacity-70">
     <ul class="flex flex-col items-center py-4 space-y-4 text-white">
       <li><a routerLink="/" (click)="toggleMobileMenu()">Home</a></li>
       <li><a routerLink="/about" (click)="toggleMobileMenu()">About</a></li>
