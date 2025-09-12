@@ -1,1 +1,25 @@
-<p>home works!</p>
+<div class="relative w-full h-screen overflow-hidden">
+  <!-- Background image -->
+  <img
+    src="assets/image.png"
+    alt="Background Hero Image"
+    class="absolute inset-0 w-full h-full object-cover"
+  />
+
+  <!-- Navbar overlay on top of image -->
+  <app-navbar
+    [isDimmed]="true"
+    class="absolute top-0 left-0 w-full z-10"
+  ></app-navbar>
+
+  <!-- Content on top -->
+  <div class="relative z-0 flex flex-col items-center justify-center h-full text-center text-white px-4">
+    <h1 class="text-4xl md:text-6xl font-bold">Aevitas Foto</h1>
+    <p class="mt-4 md:mt-6 text-lg md:text-2xl">Capturing your precious moments</p>
+  </div>
+</div>
+
+<!-- Page content below hero -->
+<div class="max-w-7xl mx-auto px-4 py-12">
+  <p class="text-gray-800">Home works!</p>
+</div>
