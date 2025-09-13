@@ -1,16 +1,16 @@
 .custom-underline {
   position: relative;
   text-decoration: none;
-  display: inline-block; /* crucial: shrink to text width */
+  display: inline-block;
 
   &::after {
     content: '';
     position: absolute;
     left: 0;
-    bottom: -2px;      /* adjust spacing */
-    width: 100%;       /* now matches only text width */
+    bottom: -2px;
+    width: 100%;
     height: 2px;
-    background: #fff;
+    background: var(--color-offwhite); /* ← use your custom color */
     opacity: 0;
     transition: opacity 0.2s;
   }
