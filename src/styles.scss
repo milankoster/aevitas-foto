@@ -3,14 +3,19 @@
 
 @theme {
   --color-white-smoke: #f2f2f2;     // Main Text
-  --color-isabelline: #F8F5F1;      // Primary Background
-  --color-linen: #EDE4DD;           // Secondary Background
+  --color-linen: #F1E9E2;           // Primary Background
+  --color-isabelline: #F4EDE7;      // Secondary Background
 
   --color-outer-space: #303F3C;     // Footer Background
   --color-feldgrau: #47624F;        // Primary Section Background
   --color-timberwolf: #DAD7D3;      // Secondary Section Background
 
-  --spacing-8xl: 84rem;
+  --color-charcoal: #3B3D43;        // Primary Text
+
+  --spacing-8xl: 82rem;
 
 }
 
+body {
+  background: var(--color-linen);
+}
