@@ -1,13 +1,14 @@
 import { Component, Input } from '@angular/core';
-import {NgClass, NgIf} from '@angular/common';
-import {RouterLink} from '@angular/router';
+import { NgClass, NgIf } from '@angular/common';
+import { RouterLink } from '@angular/router';
+import {MobileMenuComponent} from './mobile-menu/mobile-menu.component';
 
 @Component({
   selector: 'app-navbar',
   standalone: true,
-  imports: [NgClass, RouterLink, NgIf],
+  imports: [NgClass, NgIf, RouterLink, MobileMenuComponent],
   templateUrl: './navbar.component.html',
-  styleUrl: './navbar.component.scss',
+  styleUrls: ['./navbar.component.scss'],
 })
 export class NavbarComponent {
   @Input() isDimmed = false;
@@ -15,5 +16,9 @@ export class NavbarComponent {
 
   toggleMobileMenu() {
     this.mobileMenuOpen = !this.mobileMenuOpen;
+  }
+
+  closeMobileMenu() {
+    this.mobileMenuOpen = false;
   }
 }

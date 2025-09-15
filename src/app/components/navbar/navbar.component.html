@@ -2,7 +2,6 @@
   <!-- Dimmed background layer -->
   <div *ngIf="isDimmed" class="hidden lg:block absolute inset-0 bg-black opacity-60 z-0"></div>
 
-  <!-- Navbar content -->
   <div class="relative z-10 mx-auto flex items-center justify-between px-4 py-3">
     <!-- Mobile: Hamburger -->
     <button class="lg:hidden text-white-smoke text-2xl" (click)="toggleMobileMenu()">
@@ -11,24 +10,16 @@
 
     <!-- Logo -->
     <a routerLink="/" class="flex items-center text-red">
-      <img src="../../../assets/logo/aevitas-logo.png" alt="Aevitas Foto Logo" class="h-16 w-auto hidden lg:block" />
-      <img src="../../../assets/logo/aevitas-logo-mobile.png" alt="Aevitas Foto Logo" class="h-12 w-auto lg:hidden" />
+      <img src="assets/logo/aevitas-logo.png" alt="Aevitas Foto Logo" class="h-16 w-auto hidden lg:block" />
+      <img src="assets/logo/aevitas-logo-mobile.png" alt="Aevitas Foto Logo" class="h-12 w-auto lg:hidden" />
     </a>
 
     <!-- Desktop Links -->
     <ul class="hidden lg:flex space-x-4 absolute left-1/2 transform -translate-x-1/2">
-      <li class="px-2">
-        <a routerLink="/about" class="font-baloo text-xl text-white-smoke custom-underline">About</a>
-      </li>
-      <li class="px-2">
-        <a routerLink="/gallery" class="font-baloo text-xl text-white-smoke custom-underline">Gallery</a>
-      </li>
-      <li class="px-2">
-        <a routerLink="/bookings" class="font-baloo text-xl text-white-smoke custom-underline">Bookings</a>
-      </li>
-      <li class="px-2">
-        <a routerLink="/contact" class="font-baloo text-xl text-white-smoke custom-underline">Contact</a>
-      </li>
+      <li class="px-2"><a routerLink="/about" class="font-baloo text-xl text-white-smoke custom-underline">About</a></li>
+      <li class="px-2"><a routerLink="/gallery" class="font-baloo text-xl text-white-smoke custom-underline">Gallery</a></li>
+      <li class="px-2"><a routerLink="/bookings" class="font-baloo text-xl text-white-smoke custom-underline">Bookings</a></li>
+      <li class="px-2"><a routerLink="/contact" class="font-baloo text-xl text-white-smoke custom-underline">Contact</a></li>
     </ul>
 
     <!-- Socials -->
@@ -42,13 +33,6 @@
     </div>
   </div>
 
-  <!-- Mobile menu -->
-  <div *ngIf="mobileMenuOpen" class="lg:hidden bg-black bg-opacity-70">
-    <ul class="flex flex-col items-center py-4 space-y-4 text-white-smoke">
-      <li><a routerLink="/" (click)="toggleMobileMenu()">Home</a></li>
-      <li><a routerLink="/about" (click)="toggleMobileMenu()">About</a></li>
-      <li><a routerLink="/contact" (click)="toggleMobileMenu()">Contact</a></li>
-      <li><a routerLink="/gallery" (click)="toggleMobileMenu()">Gallery</a></li>
-    </ul>
-  </div>
+  <!-- Mobile Menu Component -->
+  <app-mobile-menu [open]="mobileMenuOpen" (close)="closeMobileMenu()"></app-mobile-menu>
 </nav>
