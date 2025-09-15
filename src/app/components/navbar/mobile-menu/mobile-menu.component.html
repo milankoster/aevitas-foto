@@ -1,29 +1,10 @@
-<!-- Sliding full-screen menu -->
+<!-- Sliding full-screen menu under the navbar -->
 <div
-  class="fixed inset-0 bg-outer-space text-white-smoke z-50 transform lg:hidden px-4 py-3"
+  class="fixed inset-0 bg-outer-space text-white-smoke lg:hidden transform transition-transform duration-300 ease-in-out"
   [class.translate-x-0]="open"
   [class.-translate-x-full]="!open"
-  [class.transition-transform]="open"
-  [class.duration-300]="open"
-  [class.ease-in-out]="open"
+  style="z-index: 10;"
 >
-  <!-- Top bar: close button left, logo right -->
-  <div class="flex justify-between items-center">
-    <button
-      class="text-3xl"
-      aria-label="Close menu"
-      (click)="onClose()"
-    >
-      <i class="fas fa-times"></i>
-    </button>
-
-    <img
-      src="assets/logo/aevitas-logo-mobile.png"
-      alt="Logo"
-      class="h-12 w-auto"
-    />
-  </div>
-
   <!-- Menu links -->
   <div class="flex flex-col items-center justify-center space-y-6 h-full text-xl font-baloo">
     <a routerLink="/" (click)="onClose()">Home</a>
