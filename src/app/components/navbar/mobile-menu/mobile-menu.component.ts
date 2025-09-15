@@ -1,11 +1,10 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { NgClass, NgIf } from '@angular/common';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-mobile-menu',
   standalone: true,
-  imports: [NgIf, NgClass, RouterLink],
+  imports: [RouterLink],
   templateUrl: './mobile-menu.component.html',
   styleUrls: ['./mobile-menu.component.scss']
 })
