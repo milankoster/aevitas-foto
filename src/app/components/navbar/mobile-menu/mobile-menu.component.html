@@ -1,6 +1,6 @@
 <!-- Sliding full-screen menu -->
 <div
-  class="fixed inset-0 bg-outer-space text-white-smoke z-50 transform lg:hidden"
+  class="fixed inset-0 bg-outer-space text-white-smoke z-50 transform lg:hidden px-4 py-3"
   [class.translate-x-0]="open"
   [class.-translate-x-full]="!open"
   [class.transition-transform]="open"
@@ -8,7 +8,7 @@
   [class.ease-in-out]="open"
 >
   <!-- Top bar: close button left, logo right -->
-  <div class="flex justify-between items-center p-4">
+  <div class="flex justify-between items-center">
     <button
       class="text-3xl"
       aria-label="Close menu"
