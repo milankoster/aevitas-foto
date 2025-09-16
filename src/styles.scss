@@ -1,5 +1,6 @@
 @use "tailwindcss";
 @use '@fortawesome/fontawesome-free/css/all.min.css';
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;700&display=swap');
 
 @theme {
   --color-white-smoke: #f2f2f2;     // Main Text
@@ -13,7 +14,7 @@
   --color-charcoal: #3B3D43;        // Primary Text
 
   --spacing-8xl: 82rem;
-
+  --font-baloo: "Baloo 2", cursive;
 }
 
 html {

@@ -5,11 +5,22 @@
   style="z-index: 10;"
 >
   <!-- Menu links -->
-  <div class="flex flex-col items-center justify-center space-y-6 h-full text-xl font-baloo">
+  <div class="flex flex-col items-center justify-center space-y-4  h-full text-3xl font-baloo">
     <a routerLink="/" (click)="onClose()">Home</a>
     <a routerLink="/about" (click)="onClose()">About</a>
     <a routerLink="/gallery" (click)="onClose()">Gallery</a>
     <a routerLink="/bookings" (click)="onClose()">Bookings</a>
     <a routerLink="/contact" (click)="onClose()">Contact</a>
+  </div>
+
+
+  <!-- Add this at the end of your mobile-menu.component.html -->
+  <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-6 text-xl">
+    <a href="https://www.instagram.com/aevitasfoto" target="_blank" class="hover:text-pink-400">
+      <i class="fab fa-instagram"></i>
+    </a>
+    <a href="mailto:aevitasfoto@gmail.com" class="hover:text-blue-400">
+      <i class="fas fa-envelope"></i>
+    </a>
   </div>
 </div>
