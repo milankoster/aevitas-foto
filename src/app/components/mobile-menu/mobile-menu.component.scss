@@ -5,7 +5,7 @@
   left: 50%;
   width: 120vmin; /* scales with screen size */
   height: 120vmin;
-  background: url("/assets/pawprint.png") no-repeat center/contain;
+  background: url("/src/assets/pawprint.png") no-repeat center/contain;
   opacity: 0.055;
   transform: translate(-50%, -50%) rotate(30deg);
   pointer-events: none;

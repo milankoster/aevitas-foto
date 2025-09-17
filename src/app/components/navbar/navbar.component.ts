@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { NgIf } from '@angular/common';
 import { RouterLink } from '@angular/router';
-import {MobileMenuComponent} from './mobile-menu/mobile-menu.component';
+import {MobileMenuComponent} from '../mobile-menu/mobile-menu.component';
 
 @Component({
   selector: 'app-navbar',
