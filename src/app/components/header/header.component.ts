@@ -1,20 +1,21 @@
-import { Component, Input } from '@angular/core';
-import { NgIf } from '@angular/common';
+import { ChangeDetectionStrategy, Component, input } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import {MobileMenuComponent} from '../mobile-menu/mobile-menu.component';
+import { MobileMenuComponent } from '../mobile-menu/mobile-menu.component';
+import { NgOptimizedImage } from '@angular/common';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [NgIf, RouterLink, MobileMenuComponent],
+  imports: [RouterLink, MobileMenuComponent, NgOptimizedImage],
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HeaderComponent {
-  @Input() isDimmed = false;
+  readonly isDimmed = input(false);
   mobileMenuOpen = false;
 
-  toggleMobileMenu() {
+  toggleMobileMenu(): void {
     this.mobileMenuOpen = !this.mobileMenuOpen;
 
     if (this.mobileMenuOpen) {
@@ -24,7 +25,7 @@ export class HeaderComponent {
     }
   }
 
-  closeMobileMenu() {
+  closeMobileMenu(): void {
     this.mobileMenuOpen = false;
     document.body.classList.remove('overflow-hidden');
   }

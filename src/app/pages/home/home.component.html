@@ -1,16 +1,16 @@
 <div class="relative w-full h-screen overflow-hidden scroll-smooth">
   <!-- Background image -->
   <img
-    src="assets/huskies-running-dimmed.png"
     alt="Background Hero Image"
     class="absolute inset-0 w-full h-full object-cover"
+    src="assets/huskies-running-dimmed.png"
   />
 
   <!-- Navbar overlay on top of image -->
   <app-header
-    [isDimmed]="true"
     class="absolute top-0 left-0 w-full z-10"
-  ></app-header>
+    [isDimmed]="true"
+  />
 
   <!-- Bottom-aligned text content -->
   <div class="relative z-0 flex flex-col items-center justify-end h-full text-center text-white px-4 pb-16">
@@ -19,9 +19,9 @@
 
     <!-- Chevron at the very bottom, centered -->
     <a
-      href="#intro"
-      class="mt-12 text-white text-4xl animate-[bounce_1.5s_ease-in-out_infinite]"
       aria-label="Scroll to about section"
+      class="mt-12 text-white text-4xl animate-[bounce_1.5s_ease-in-out_infinite]"
+      href="#intro"
     >
       <i class="fas fa-chevron-down"></i>
     </a>
@@ -30,8 +30,8 @@
 
 <!-- Intro section -->
 <section
-  id="intro"
   class="max-w-8xl mx-auto px-6 md:px-8 py-8 md:py-16 flex flex-col md:flex-row items-center gap-10"
+  id="intro"
 >
   <!-- Text Content -->
   <div class="flex-1 text-left">
@@ -53,12 +53,12 @@
   <!-- Image -->
   <div class="md:w-1/2 flex justify-end">
     <img
-      src="assets/golden-puppies.png"
       alt="Pet photography session in Falkenberg"
       class="w-full max-w-md rounded shadow-lg object-cover"
+      src="assets/golden-puppies.png"
     />
   </div>
 </section>
 
 <!-- 🖼 Mini Gallery Section -->
-<app-mini-gallery></app-mini-gallery>
+<app-mini-gallery />

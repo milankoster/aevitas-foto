@@ -1,4 +1,4 @@
-import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { ChangeDetectionStrategy, Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 @Component({
   selector: 'app-mini-gallery',
@@ -6,8 +6,6 @@ import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
   templateUrl: './mini-gallery.component.html',
   styleUrl: './mini-gallery.component.scss',
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
-  imports: [
-
-  ]
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class MiniGalleryComponent {}

@@ -1,40 +1,52 @@
 <nav class="relative w-full z-50">
   <!-- Dimmed background layer -->
-  <div *ngIf="isDimmed" class="hidden lg:block absolute inset-0 bg-black opacity-60 z-0"></div>
+  @if (isDimmed()) {
+    <div class="hidden lg:block absolute inset-0 bg-black opacity-60 z-0"></div>
+  }
 
   <div class="relative z-50 mx-auto flex items-center justify-between px-4 py-3">
     <!-- Mobile: Hamburger -->
-    <button class="hamburger relative w-8 h-8 lg:hidden" (click)="toggleMobileMenu()">
+    <button class="hamburger relative w-8 h-8 lg:hidden" type="button" (click)="toggleMobileMenu()">
       <span class="bar top" [class.open]="mobileMenuOpen"></span>
       <span class="bar middle" [class.open]="mobileMenuOpen"></span>
       <span class="bar bottom" [class.open]="mobileMenuOpen"></span>
     </button>
 
     <!-- Logo -->
-    <a routerLink="/" class="flex items-center text-red z-50">
-      <img src="assets/logo/aevitas-logo.png" alt="Aevitas Foto Logo" class="h-16 w-auto hidden lg:block" />
-      <img src="assets/logo/aevitas-logo-mobile.png" alt="Aevitas Foto Logo" class="h-12 md:h-16 w-auto lg:hidden"/>
+    <a class="flex items-center text-red z-50" routerLink="/">
+      <img alt="Aevitas Foto Logo" class="h-16 w-auto hidden lg:block" height="475"
+           ngSrc="assets/logo/aevitas-logo.png" width="1864"/>
+      <img alt="Aevitas Foto Logo" class="h-12 md:h-16 w-auto lg:hidden" height="828"
+           ngSrc="assets/logo/aevitas-logo-mobile.png" width="1440"/>
     </a>
 
     <!-- Desktop Links -->
     <ul class="hidden lg:flex space-x-4 absolute left-1/2 transform -translate-x-1/2">
-      <li class="px-2"><a routerLink="/about" class="font-baloo text-xl text-white-smoke custom-underline">About</a></li>
-      <li class="px-2"><a routerLink="/gallery" class="font-baloo text-xl text-white-smoke custom-underline">Gallery</a></li>
-      <li class="px-2"><a routerLink="/bookings" class="font-baloo text-xl text-white-smoke custom-underline">Bookings</a></li>
-      <li class="px-2"><a routerLink="/contact" class="font-baloo text-xl text-white-smoke custom-underline">Contact</a></li>
+      <li class="px-2">
+        <a class="font-baloo text-xl text-white-smoke custom-underline" routerLink="/about">About</a>
+      </li>
+      <li class="px-2">
+        <a class="font-baloo text-xl text-white-smoke custom-underline" routerLink="/gallery">Gallery</a>
+      </li>
+      <li class="px-2">
+        <a class="font-baloo text-xl text-white-smoke custom-underline" routerLink="/bookings">Bookings</a>
+      </li>
+      <li class="px-2">
+        <a class="font-baloo text-xl text-white-smoke custom-underline" routerLink="/contact">Contact</a>
+      </li>
     </ul>
 
     <!-- Socials -->
     <div class="hidden lg:flex space-x-4 pr-4">
-      <a href="https://www.instagram.com/aevitasfoto" target="_blank" class="text-white-smoke hover:text-pink-400">
+      <a class="text-white-smoke hover:text-pink-400" href="https://www.instagram.com/aevitasfoto" target="_blank">
         <i class="fab fa-instagram"></i>
       </a>
-      <a href="mailto:aevitasfoto@gmail.com" class="text-white-smoke hover:text-blue-400">
+      <a class="text-white-smoke hover:text-blue-400" href="mailto:aevitasfoto@gmail.com">
         <i class="fas fa-envelope"></i>
       </a>
     </div>
   </div>
 
   <!-- Mobile Menu Component -->
-  <mobile-menu [open]="mobileMenuOpen" (close)="closeMobileMenu()"></mobile-menu>
+  <app-mobile-menu [open]="mobileMenuOpen" (close)="closeMobileMenu()"/>
 </nav>
