@@ -2,16 +2,21 @@
   class="fixed inset-0 transform -translate-x-full transition-transform duration-250 ease-in-out
          bg-outer-space text-white-smoke lg:hidden pawprint-bg"
   style="z-index: 10;"
-  [class.delay-150]="open"
-  [class.translate-x-0]="open"
+  [class.delay-150]="open()"
+  [class.translate-x-0]="open()"
 >
   <!-- Menu links -->
-  <div class="flex flex-col items-center justify-center h-full space-y-4 md:space-y-8 text-4xl md:text-5xl font-baloo text-white">
+  <div
+    class="flex flex-col items-center justify-center h-full space-y-4 md:space-y-8 text-4xl md:text-5xl font-baloo text-white">
     <a routerLink="/" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }" (click)="onClose()">Home</a>
-    <a routerLink="/about" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }" (click)="onClose()">About</a>
-    <a routerLink="/gallery" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }" (click)="onClose()">Gallery</a>
-    <a routerLink="/bookings" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }" (click)="onClose()">Bookings</a>
-    <a routerLink="/contact" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }" (click)="onClose()">Contact</a>
+    <a routerLink="/about" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }"
+       (click)="onClose()">About</a>
+    <a routerLink="/gallery" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }"
+       (click)="onClose()">Gallery</a>
+    <a routerLink="/bookings" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }"
+       (click)="onClose()">Bookings</a>
+    <a routerLink="/contact" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }"
+       (click)="onClose()">Contact</a>
   </div>
 
   <!-- Social links -->
