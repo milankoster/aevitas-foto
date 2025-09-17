@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
-import { NavbarComponent } from '../../components/navbar/navbar.component';
+import { HeaderComponent } from '../../components/header/header.component';
 import {MiniGalleryComponent} from '../../components/mini-gallery/mini-gallery';
 
 @Component({
   selector: 'app-home',
-  imports: [NavbarComponent, MiniGalleryComponent],
+  imports: [HeaderComponent, MiniGalleryComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
   standalone: true

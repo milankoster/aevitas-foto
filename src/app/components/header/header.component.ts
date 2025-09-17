@@ -4,13 +4,13 @@ import { RouterLink } from '@angular/router';
 import {MobileMenuComponent} from '../mobile-menu/mobile-menu.component';
 
 @Component({
-  selector: 'app-navbar',
+  selector: 'app-header',
   standalone: true,
   imports: [NgIf, RouterLink, MobileMenuComponent],
-  templateUrl: './navbar.component.html',
-  styleUrls: ['./navbar.component.scss'],
+  templateUrl: './header.component.html',
+  styleUrls: ['./header.component.scss'],
 })
-export class NavbarComponent {
+export class HeaderComponent {
   @Input() isDimmed = false;
   mobileMenuOpen = false;
 
