@@ -1,11 +1,11 @@
 <div
-  class="fixed inset-0 bg-outer-space text-white-smoke lg:hidden transform -translate-x-full transition-transform duration-250 ease-in-out"
+  class="fixed inset-0 bg-outer-space text-white-smoke lg:hidden transform -translate-x-full transition-transform duration-250 ease-in-out pawprint-bg"
   [class.translate-x-0]="open"
   [class.delay-150]="open"
   style="z-index: 10;"
 >
   <!-- Menu links -->
-  <div class="flex flex-col items-center justify-center space-y-4  h-full text-3xl font-baloo">
+  <div class="flex flex-col items-center justify-center h-full space-y-4 md:space-y-8 text-4xl md:text-5xl font-baloo text-white">
     <a routerLink="/" (click)="onClose()">Home</a>
     <a routerLink="/about" (click)="onClose()">About</a>
     <a routerLink="/gallery" (click)="onClose()">Gallery</a>
