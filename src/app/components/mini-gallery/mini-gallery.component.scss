@@ -1,4 +1,21 @@
-swiper-container {
-  --swiper-navigation-color: #333;
-  --swiper-pagination-color: #333;
+.swiper-button-prev {
+  background: rgba(0, 0, 0, 0.4) !important; /* dark translucent background */
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  background-position: center;
+}
+
+.swiper-button-next {
+  background: rgba(0, 0, 0, 0.4) !important; /* dark translucent background */
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  background-position: center;
+}
+
+.swiper-button-next::after {
+  display: none;
+}
+
+.swiper-button-prev::after {
+  display: none;
 }

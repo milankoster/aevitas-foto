@@ -3,16 +3,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;700&display=swap');
 
 @theme {
-  --color-white-smoke: #f2f2f2;     // Main Text
   --color-linen: #F1E9E2;           // Primary Background
   --color-isabelline: #F4EDE7;      // Secondary Background
-
   --color-outer-space: #303F3C;     // Footer Background
   --color-feldgrau: #47624F;        // Primary Section Background
   --color-timberwolf: #DAD7D3;      // Secondary Section Background
-
-  --color-charcoal: #3B3D43;        // Primary Text
-
+  --color-whitesmoke: #F5F5F5;      // Primary Text
+  --color-charcoal: #3B3D43;        // Secondary Text
   --spacing-8xl: 82rem;
   --font-baloo: "Baloo 2", cursive;
 }
