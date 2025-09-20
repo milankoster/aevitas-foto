@@ -13,7 +13,7 @@
   flex: 0 0 auto;
   min-width: 300px; /* minimum enforced */
   aspect-ratio: 1 / 1; /* keep square shape */
-  max-width: 400px; /* optional upper bound */
+  max-width: 405px; /* optional upper bound */
 }
 
 /* Images fill the square */
