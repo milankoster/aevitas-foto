@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { HeaderComponent } from '../../components/header/header.component';
-import { MiniGalleryComponent } from '../../components/mini-gallery/mini-gallery';
+import { MiniGalleryComponent } from '../../components/mini-gallery/mini-gallery.component';
 
 @Component({
   selector: 'app-home',

@@ -1,36 +1,31 @@
 <div class="max-w-8xl mx-auto px-6 md:px-8 my-12">
-  <!--suppress HtmlUnknownAttribute -->
-  <swiper-container
-    loop="false"
-    navigation="true"
-    pagination="true"
-    slides-per-view="3"
-    space-between="16"
-    style="width: 100%; height: 400px;"
-  >
-    <swiper-slide>
-      <img alt="photo1" class="w-full h-full object-cover" src="assets/dog-autumn.png"/>
-    </swiper-slide>
-    <swiper-slide>
-      <img alt="photo1" class="w-full h-full object-cover" src="assets/golden-puppies.png"/>
-    </swiper-slide>
-    <swiper-slide>
-      <img alt="photo1" class="w-full h-full object-cover" src="assets/dog-autumn.png"/>
-    </swiper-slide>
-    <swiper-slide>
-      <img alt="photo1" class="w-full h-full object-cover" src="assets/golden-puppies.png"/>
-    </swiper-slide>
-    <swiper-slide>
-      <img alt="photo1" class="w-full h-full object-cover" src="assets/dog-autumn.png"/>
-    </swiper-slide>
-    <swiper-slide>
-      <img alt="photo1" class="w-full h-full object-cover" src="assets/golden-puppies.png"/>
-    </swiper-slide>
-    <swiper-slide>
-      <img alt="photo1" class="w-full h-full object-cover" src="assets/dog-autumn.png"/>
-    </swiper-slide>
-    <swiper-slide>
-      <img alt="photo1" class="w-full h-full object-cover" src="assets/golden-puppies.png"/>
-    </swiper-slide>
-  </swiper-container>
+  <div class="swiper mySwiper w-full h-[400px]">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        <img alt="Dog in autumn leaves" class="slide-img" src="assets/dog-autumn.png"/>
+      </div>
+      <div class="swiper-slide">
+        <img alt="Golden puppies" class="slide-img" src="assets/golden-puppies.png"/>
+      </div>
+      <div class="swiper-slide">
+        <img alt="Huskies running" class="slide-img" src="assets/huskies-running-dimmed.png"/>
+      </div>
+      <div class="swiper-slide">
+        <img alt="Dog in autumn leaves" class="slide-img" src="assets/dog-autumn.png"/>
+      </div>
+      <div class="swiper-slide">
+        <img alt="Huskies running" class="slide-img" src="assets/huskies-running-dimmed.png"/>
+      </div>
+      <div class="swiper-slide">
+        <img alt="Dog in autumn leaves" class="slide-img" src="assets/dog-autumn.png"/>
+      </div>
+    </div>
+
+    <!-- Navigation -->
+    <div class="swiper-button-prev custom-nav"></div>
+    <div class="swiper-button-next custom-nav"></div>
+
+    <!-- Pagination -->
+    <div class="swiper-pagination"></div>
+  </div>
 </div>
