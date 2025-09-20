@@ -17,18 +17,15 @@ Swiper.use([Navigation, Pagination]);
 })
 export class MiniGalleryComponent implements AfterViewInit {
   ngAfterViewInit(): void {
-    new Swiper('.mySwiper', {
-      loop: false,
-      slidesPerView: 3,
+    new Swiper('.mini-gallery', {
+      slidesPerView: 'auto',
       spaceBetween: 16,
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-      },
-      pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
-      },
+      centeredSlides: false,
+      loop: false,
+      navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
+      pagination: { el: '.swiper-pagination', clickable: true },
+      observer: true,
+      observeParents: true,
     });
   }
 }

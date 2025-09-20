@@ -3,34 +3,27 @@
   --swiper-navigation-color: var(--color-bronze);
   --swiper-pagination-color: var(--color-bronze);
   --swiper-pagination-bullet-inactive-color: #ccc;
-  /*--swiper-navigation-size: 32px;*/
-  /*--swiper-pagination-color: var(--color-bronze);*/
 }
 
-.mySwiper {
-  width: 100%;
-  height: 400px;
-}
-
-/*.swiper {*/
-/*  width: 100%;*/
-/*  height: 100%;*/
-/*}*/
-
+/* Each slide behaves like a square box */
 .swiper-slide {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex: 0 0 auto;
+  min-width: 300px; /* minimum enforced */
+  aspect-ratio: 1 / 1; /* keep square shape */
+  max-width: 400px; /* optional upper bound */
 }
 
-.slide-img {
+/* Images fill the square */
+.slider-img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  border-radius: 0.75rem; /* optional rounding */
+  object-fit: cover; /* keeps proportions without stretching */
 }
 
-
+/* Navigation buttons */
 .custom-nav {
   color: white;
   background: rgba(0, 0, 0, 0.4);
@@ -45,8 +38,6 @@
   &:hover {
     background: var(--color-bronze);
   }
-
-  /* Make sure arrows are visible on top of images */
 
   &::after {
     font-size: 20px;
