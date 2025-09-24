@@ -21,8 +21,15 @@ export class MiniGalleryComponent implements AfterViewInit {
       spaceBetween: 16,
       centeredSlides: false,
       loop: false,
-      navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
-      pagination: { el: '.swiper-pagination', clickable: true },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+        disabledClass: 'swiper-button-disabled',
+      },
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
       observer: true,
       observeParents: true,
       watchOverflow: true,
