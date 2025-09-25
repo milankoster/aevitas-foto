@@ -1,5 +1,5 @@
 import { AfterViewInit, Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, NgOptimizedImage } from '@angular/common';
 import Swiper from 'swiper';
 import { Navigation, Pagination } from 'swiper/modules';
 import 'swiper/css';
@@ -11,7 +11,7 @@ Swiper.use([Navigation, Pagination]);
 @Component({
   selector: 'app-mini-gallery',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, NgOptimizedImage],
   templateUrl: './mini-gallery.component.html',
   styleUrls: ['./mini-gallery.component.css'],
 })
