@@ -1,36 +1,9 @@
 @use "tailwindcss";
 @use '@fortawesome/fontawesome-free/css/all.min.css';
-@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400..800&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+//@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400..800&display=swap');
+//@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+//@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
 
-// Backgrounds
-@theme{
-  --color-linen: #F1E9E2; // Primary Background
-  --color-isabelline: #F4EDE7; // Secondary Background
-  --color-outer-space: #303F3C; // Footer Background
-  --color-feldgrau: #47624F; // Primary Section Background
-  --color-timberwolf: #DAD7D3; // Secondary Section Background
-}
-
-// Text
-@theme {
-  --color-whitesmoke: #F5F5F5; // Primary Text
-  --color-charcoal: #3B3D43; // Secondary Text
-}
-
-// Buttons
-@theme {
-  --color-bronze: #9D7245; // Primary Button
-  --color-bronze-dark: #855E38; // Primary Button Hover
-}
-
-// Misc
-@theme {
-  --spacing-8xl: 82rem;
-}
-
-// Fonts
 :root {
   --font-baloo: "Baloo 2"; // Buttons, Logo, Links
   --font-playfair: "Playfair Display", serif; //
@@ -38,6 +11,39 @@
   --font-montserrat: "Montserrat", sans-serif; // Body Text
 }
 
+// Fonts
+@theme {
+  --font-baloo: "Baloo 2";                        // Buttons, Logo, Links
+  --font-playfair: "Playfair Display", serif;     //
+  --font-nunito: "Nunito", sans-serif;            //
+  --font-montserrat: "Montserrat", sans-serif;    // Body Text
+}
+
+// Backgrounds
+@theme{
+  --color-linen: #F1E9E2;                 // Primary Background
+  --color-isabelline: #F4EDE7;            // Secondary Background
+  --color-outer-space: #303F3C;           // Footer Background
+  --color-feldgrau: #47624F;              // Primary Section Background
+  --color-timberwolf: #DAD7D3;            // Secondary Section Background
+}
+
+// Text
+@theme {
+  --color-whitesmoke: #F5F5F5;            // Primary Text
+  --color-charcoal: #3B3D43;              // Secondary Text
+}
+
+// Buttons
+@theme {
+  --color-bronze: #9D7245;                // Primary Button
+  --color-bronze-dark: #855E38;           // Primary Button Hover
+}
+
+// Misc
+@theme {
+  --spacing-8xl: 82rem;
+}
 
 html {
   scroll-behavior: smooth;
