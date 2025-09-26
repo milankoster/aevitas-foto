@@ -5,10 +5,10 @@ import { MiniGalleryComponent } from '../../components/home/mini-gallery/mini-ga
 
 @Component({
   selector: 'app-home',
-  standalone: true,
   imports: [HeroComponent, IntroComponent, MiniGalleryComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
+  standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HomeComponent {}

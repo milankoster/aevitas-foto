@@ -7,10 +7,10 @@ Swiper.use([Navigation, Pagination]);
 
 @Component({
   selector: 'app-mini-gallery',
-  standalone: true,
   imports: [CommonModule, NgOptimizedImage],
   templateUrl: './mini-gallery.component.html',
   styleUrls: ['./mini-gallery.component.css'],
+  standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class MiniGalleryComponent implements AfterViewInit {
