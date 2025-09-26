@@ -16,11 +16,9 @@
     </a>
 
     <!-- Chevron at the very bottom, centered -->
-    <!-- TODO fix ref -->
-    <a
-      aria-label="Scroll to about section"
-      class="mt-12 text-white text-4xl animate-[bounce_1.5s_ease-in-out_infinite]"
-      href="#intro"
+    <a aria-label="Scroll to intro section"
+       class="mt-12 text-white text-4xl animate-[bounce_1.5s_ease-in-out_infinite]"
+       fragment="intro" [routerLink]="['/']"
     >
       <i class="fas fa-chevron-down"></i>
     </a>
