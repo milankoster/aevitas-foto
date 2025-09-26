@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { HeaderComponent } from '../../components/header/header.component';
-import { MiniGalleryComponent } from '../../components/mini-gallery/mini-gallery.component';
+import { HeaderComponent } from '../../components/navigation/header/header.component';
+import { MiniGalleryComponent } from '../../components/home/mini-gallery/mini-gallery.component';
 import { NgOptimizedImage } from '@angular/common';
 
 @Component({
