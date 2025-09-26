@@ -1,10 +1,7 @@
-import { AfterViewInit, Component } from '@angular/core';
+import { AfterViewInit, ChangeDetectionStrategy, Component } from '@angular/core';
 import { CommonModule, NgOptimizedImage } from '@angular/common';
-import Swiper from 'swiper';
 import { Navigation, Pagination } from 'swiper/modules';
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
+import Swiper from 'swiper';
 
 Swiper.use([Navigation, Pagination]);
 
@@ -14,6 +11,7 @@ Swiper.use([Navigation, Pagination]);
   imports: [CommonModule, NgOptimizedImage],
   templateUrl: './mini-gallery.component.html',
   styleUrls: ['./mini-gallery.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class MiniGalleryComponent implements AfterViewInit {
   ngAfterViewInit(): void {
