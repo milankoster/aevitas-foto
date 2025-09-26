@@ -5,33 +5,37 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
 
 // Backgrounds
-@theme {
-  --color-linen: #F1E9E2;           // Primary Background
-  --color-isabelline: #F4EDE7;      // Secondary Background
-  --color-outer-space: #303F3C;     // Footer Background
-  --color-feldgrau: #47624F;        // Primary Section Background
-  --color-timberwolf: #DAD7D3;      // Secondary Section Background
+@theme{
+  --color-linen: #F1E9E2; // Primary Background
+  --color-isabelline: #F4EDE7; // Secondary Background
+  --color-outer-space: #303F3C; // Footer Background
+  --color-feldgrau: #47624F; // Primary Section Background
+  --color-timberwolf: #DAD7D3; // Secondary Section Background
 }
 
 // Text
 @theme {
-  --color-whitesmoke: #F5F5F5;      // Primary Text
-  --color-charcoal: #3B3D43;        // Secondary Text
+  --color-whitesmoke: #F5F5F5; // Primary Text
+  --color-charcoal: #3B3D43; // Secondary Text
 }
 
 // Buttons
 @theme {
-  --color-bronze: #9D7245;          // Primary Button
-  --color-bronze-dark: #855E38;     // Primary Button Hover
+  --color-bronze: #9D7245; // Primary Button
+  --color-bronze-dark: #855E38; // Primary Button Hover
 }
 
 // Misc
 @theme {
   --spacing-8xl: 82rem;
-  --font-baloo: "Baloo 2";                            // Buttons, Logo, Links
-  --font-playfair: "Playfair Display", serif;         //
-  --font-nunito: "Nunito", sans-serif;                //
-  --font-montserrat: "Montserrat", sans-serif;        // Body Text
+}
+
+// Fonts
+:root {
+  --font-baloo: "Baloo 2"; // Buttons, Logo, Links
+  --font-playfair: "Playfair Display", serif; //
+  --font-nunito: "Nunito", sans-serif; //
+  --font-montserrat: "Montserrat", sans-serif; // Body Text
 }
 
 
@@ -53,4 +57,22 @@ body {
 .font-buttons {
   font-family: var(--font-nunito), serif;
   letter-spacing: 0.08rem !important;
+  border-radius: 0.75rem;
+  color: var(--color-whitesmoke);
+  background-color: var(--color-bronze);
+  display: inline-flex;
+  padding: 0.3rem 1.5rem;
+  font-size: 1rem;
+  box-shadow: 0 1px 10px 0 rgba(0, 0, 0, 0.15); // shadow-lg
+  transition: background-color 0.3s ease-in-out, box-shadow 0.3s;
+
+  &:hover,
+  &:focus {
+    background-color: var(--color-bronze-dark);
+  }
+
+  &:hover,
+  &:focus {
+    background-color: var(--color-bronze-dark);
+  }
 }
