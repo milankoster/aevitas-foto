@@ -42,3 +42,15 @@ html {
 body {
   background: var(--color-linen);
 }
+
+.font-header-links {
+  font-family: var(--font-nunito), serif;
+  letter-spacing: 0.08rem !important;
+  text-transform: uppercase !important;
+  font-weight: bold;
+}
+
+.font-buttons {
+  font-family: var(--font-nunito), serif;
+  letter-spacing: 0.08rem !important;
+}

@@ -1,11 +1,10 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { HeaderComponent } from '../../components/navigation/header/header.component';
 import { MiniGalleryComponent } from '../../components/home/mini-gallery/mini-gallery.component';
-import { NgOptimizedImage } from '@angular/common';
+import { HeroComponent } from '../../components/home/hero/hero.component';
 
 @Component({
   selector: 'app-home',
-  imports: [HeaderComponent, MiniGalleryComponent, NgOptimizedImage],
+  imports: [MiniGalleryComponent, HeroComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
   standalone: true,
