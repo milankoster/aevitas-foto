@@ -79,3 +79,8 @@ body {
     background-color: var(--color-bronze-dark);
   }
 }
+
+.swiper-pagination-bullet {
+  border: 1px solid var(--color-charcoal);
+  box-sizing: content-box;
+}
