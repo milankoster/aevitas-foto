@@ -2,10 +2,11 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { HeroComponent } from '../../components/home/hero/hero.component';
 import { IntroComponent } from '../../components/home/intro/intro.component';
 import { MiniGalleryComponent } from '../../components/home/mini-gallery/mini-gallery.component';
+import { MiniStoryComponent } from '../../components/home/mini-story/mini-story.component';
 
 @Component({
   selector: 'app-home',
-  imports: [HeroComponent, IntroComponent, MiniGalleryComponent],
+  imports: [HeroComponent, IntroComponent, MiniGalleryComponent, MiniStoryComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
   standalone: true,

@@ -1,0 +1,34 @@
+<section class="relative w-full overflow-hidden">
+  <!-- Background image for desktop -->
+  <img
+    alt="Banner background"
+    class="hidden md:block absolute inset-0 w-full h-full object-cover"
+    src="assets/home/mini-story/mini-story-desktop.jpg"
+  />
+
+  <!-- Background image for mobile -->
+  <img
+    alt="Banner background"
+    class="block md:hidden absolute inset-0 w-full h-full object-cover"
+    src="assets/home/mini-story-mobile.jpg"
+  />
+
+  <!-- Overlay content -->
+  <div
+    class="relative flex flex-col items-center justify-center text-center text-white px-6 py-16 md:py-32 max-w-4xl mx-auto">
+    <p class="font-subheader mb-8">
+      I consider a photograph successful when it relays an emotion the second you view it — as if you’re absorbed
+      into the photograph and re-experience the moment.
+    </p>
+
+    <!-- Book a session button -->
+    <a
+      class="font-buttons bg-bronze px-6 py-3 mt-auto"
+      role="button"
+      routerLink="/contact"
+      tabindex="0"
+    >
+      Book a session
+    </a>
+  </div>
+</section>
