@@ -9,7 +9,7 @@ Swiper.use([Navigation, Pagination]);
   selector: 'app-mini-gallery',
   imports: [CommonModule, NgOptimizedImage],
   templateUrl: './mini-gallery.component.html',
-  styleUrls: ['./mini-gallery.component.css'],
+  styleUrls: ['./mini-gallery.component.scss'],
   standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
