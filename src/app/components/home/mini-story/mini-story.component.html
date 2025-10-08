@@ -1,34 +1,38 @@
-<section class="relative w-full overflow-hidden">
-  <!-- Background image for desktop -->
-  <img
-    alt="Banner background"
-    class="hidden md:block absolute inset-0 w-full h-full object-cover"
-    src="assets/home/mini-story/mini-story-desktop.jpg"
-  />
+<section class="mx-auto pt-8 md:pt-16 flex flex-col items-center">
+  <section class="relative w-full overflow-hidden h-[40h] md:h-[50vh]">
+    <!-- Background image for desktop -->
+    <img alt="Banner background" aria-hidden="true"
+         class="hidden md:block absolute inset-0 w-full h-full object-cover object-[center_45%]"
+         height="3780"
+         ngSrc="assets/home/mini-story/mini-story-desktop.jpg" width="5315"/>
 
-  <!-- Background image for mobile -->
-  <img
-    alt="Banner background"
-    class="block md:hidden absolute inset-0 w-full h-full object-cover"
-    src="assets/home/mini-story-mobile.jpg"
-  />
+    <!-- Background image for mobile -->
+    <img
+      alt="Banner background"
+      aria-hidden="true"
+      class="block md:hidden absolute inset-0 w-full h-full object-cover object-[center_40%]"
+      src="assets/home/mini-story-mobile.jpg"
+    />
 
-  <!-- Overlay content -->
-  <div
-    class="relative flex flex-col items-center justify-center text-center text-white px-6 py-16 md:py-32 max-w-4xl mx-auto">
-    <p class="font-subheader mb-8">
-      I consider a photograph successful when it relays an emotion the second you view it — as if you’re absorbed
-      into the photograph and re-experience the moment.
-    </p>
+    <!-- Dark overlay -->
+    <div class="absolute inset-0 bg-black opacity-40 pointer-events-none"></div>
 
-    <!-- Book a session button -->
-    <a
-      class="font-buttons bg-bronze px-6 py-3 mt-auto"
-      role="button"
-      routerLink="/contact"
-      tabindex="0"
-    >
-      Book a session
-    </a>
-  </div>
+    <!-- Overlay content -->
+    <div class="relative z-10 flex flex-col items-center justify-center text-center text-white px-6 h-full">
+      <p class="text-lg md:text-xl font-montserrat font-light mb-6 drop-shadow-lg max-w-3xl">
+        A successful photograph is one that doesn’t just show an image but makes you feel as though you are standing
+        within it again. A memory preserved for a lifetime.
+      </p>
+
+      <!-- Book a session button -->
+      <a
+        class="font-buttons bg-bronze px-6 py-3 rounded shadow-lg"
+        role="button"
+        routerLink="/contact"
+        tabindex="0"
+      >
+        Book a session
+      </a>
+    </div>
+  </section>
 </section>
