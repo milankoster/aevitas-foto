@@ -3,11 +3,11 @@ import { CommonModule, NgOptimizedImage } from '@angular/common';
 import { RouterLink } from '@angular/router';
 
 @Component({
-  selector: 'app-mini-story',
+  selector: 'app-banner',
   standalone: true,
   imports: [CommonModule, RouterLink, NgOptimizedImage],
-  templateUrl: './mini-story.component.html',
-  styleUrls: ['./mini-story.component.scss'],
+  templateUrl: './banner.component.html',
+  styleUrls: ['./banner.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class MiniStoryComponent {}
+export class BannerComponent {}
