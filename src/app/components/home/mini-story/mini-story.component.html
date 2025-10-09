@@ -19,20 +19,22 @@
 
     <!-- Overlay content -->
     <div class="relative z-10 flex flex-col items-center justify-center text-center text-white px-6 h-full">
-      <p class="text-lg md:text-xl font-montserrat font-light mb-6 drop-shadow-lg max-w-3xl">
-        A successful photograph is one that doesn’t just show an image but makes you feel as though you are standing
-        within it again. A memory preserved for a lifetime.
-      </p>
-
-      <!-- Book a session button -->
-      <a
-        class="font-buttons bg-bronze px-6 py-3 rounded shadow-lg"
-        role="button"
-        routerLink="/contact"
-        tabindex="0"
-      >
-        Book a session
-      </a>
+      <div class="relative flex flex-col items-center">
+        <p class="text-lg md:text-2xl font-montserrat font-light drop-shadow-lg max-w-5xl">
+          A successful photograph is one that doesn’t just show an image but makes you feel as though you are standing
+          within it again. A memory preserved for a lifetime.
+        </p>
+        <a
+          class="absolute top-full mt-8 font-buttons bg-bronze px-6 py-3 rounded shadow-lg"
+          role="button"
+          routerLink="/bookings"
+          tabindex="0"
+        >
+          Book a session
+        </a>
+      </div>
     </div>
+
+
   </section>
 </section>
