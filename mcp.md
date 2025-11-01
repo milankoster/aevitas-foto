@@ -38,9 +38,10 @@ Aevitas Foto Angular Project Guidelines
   - Backgrounds: transparent, `rgba(0,0,0,0.3)` for dimmed navbar, `var(--color-isabelline)` for sections, `var(--color-outer-space)` for footer
   - Accents: `text-pink-400`, `text-blue-400` for icon hovers
 - **Spacing & Layout:**
-  - Containers: `max-w-8xl mx-auto px-6 md:px-8`, vertical padding `py-8 md:py-16`
+  - pt-6 for section top padding
+  - Containers: `max-w-8xl mx-auto px-6 md:px-8 pt-6 md:pt-12 lg:pt-16 flex flex-col items-center`
   - Navbar/Footer: `px-4 py-3` (navbar), `py-7` (footer)
-  - Links: `px-2` for nav links, `space-x-4` for horizontal spacing
+- Links: `px-2` for nav links, `space-x-4` for horizontal spacing
 - **Buttons:**
   - Rounded, shadowed, uppercase, letter spacing, color and background from custom properties, e.g. `.font-buttons` and Tailwind `rounded shadow-lg px-6 py-3`
 - **Other:**
