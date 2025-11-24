@@ -1,10 +1,14 @@
 <section class="mx-auto pt-6 md:pt-12 lg:pt-16 flex flex-col items-center">
-  <section class="relative w-full overflow-hidden h-[40h] md:h-[50vh]">
+  <section class="relative w-full overflow-hidden md:h-80 lg:h-96">
     <!-- Background image for desktop -->
-    <img alt="Banner background" aria-hidden="true"
-         class="hidden md:block absolute inset-0 w-full h-full object-cover object-[center_45%]"
-         height="3780"
-         ngSrc="assets/home/banner/banner-desktop.jpg" width="5315"/>
+    <img
+      alt="Banner background"
+      aria-hidden="true"
+      class="hidden md:block absolute inset-0 w-full h-full object-cover object-[center_45%]"
+      height="3780"
+      ngSrc="assets/home/banner/banner-desktop.jpg"
+      width="5315"
+    />
 
     <!-- Background image for mobile -->
     <img
@@ -12,27 +16,34 @@
       aria-hidden="true"
       class="block md:hidden absolute inset-0 w-full h-full object-cover object-[center_40%]"
       height="3780"
-      ngSrc="assets/home/banner/banner-desktop.jpg" width="5315"/>
+      ngSrc="assets/home/banner/banner-desktop.jpg"
+      width="5315"
     />
 
     <!-- Dark overlay -->
     <div class="absolute inset-0 bg-black opacity-40 pointer-events-none"></div>
 
     <!-- Overlay content -->
-    <div class="relative z-10 flex flex-col items-center justify-center text-center text-white px-6 h-full">
-      <div class="relative flex flex-col items-center">
+    <div class="relative z-10 flex items-center justify-center text-center text-white px-6 h-full">
+
+      <!-- Centered text wrapper -->
+      <div class="relative">
+
         <p class="text-lg md:text-2xl font-montserrat font-light drop-shadow-lg max-w-5xl">
-          A successful photograph is one that doesn’t just show an image but makes you feel as though you are standing
-          within it again. A memory preserved for a lifetime.
+          A successful photograph is one that doesn’t just show an image but makes you feel
+          as though you are standing within it again. A memory preserved for a lifetime.
         </p>
+
+        <!-- Absolutely-positioned button that does NOT affect centering -->
         <a
-          class="absolute top-full mt-8 font-buttons bg-bronze px-6 py-3 rounded shadow-lg"
+          class="absolute left-1/2 -translate-x-1/2 top-full mt-4 font-buttons bg-bronze px-6 py-3 rounded shadow-lg"
           role="button"
           routerLink="/bookings"
           tabindex="0"
         >
           Book a session
         </a>
+
       </div>
     </div>
   </section>
