@@ -1,16 +1,18 @@
 Home page Feature
+  - image gallery styling
+  - Pawprint shows on home page instead of just mobile menu
+  - Sizing on xl screens
+  1). Testimonials section (TODO)
 
-2. Banner
-  - Mobile image
-3. Testimonials section (not made yet)
-
-Misc Features
+Priority Features
   - Improve page load order (performance)
   - Translations
-  - Not found page
 
-Bugs
-  - Pawprint shows on home page instead of just mobile menu
+
+
+Misc Features
+  - Not found page
+  - SEO
 
 
 
