@@ -1,6 +1,4 @@
 Home page Bugs
-
-  - Pawprint shows on home page instead of just mobile menu
   - Sizing on xl screens
 
 Home page Features
