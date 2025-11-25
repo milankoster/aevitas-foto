@@ -1,7 +1,9 @@
-Home page Feature
+Home page Bugs
   - image gallery styling
   - Pawprint shows on home page instead of just mobile menu
   - Sizing on xl screens
+
+Home page Features
   1). Testimonials section (TODO)
 
 Priority Features
