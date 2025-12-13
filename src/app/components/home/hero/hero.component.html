@@ -1,8 +1,13 @@
-<div class="relative w-full h-screen overflow-hidden scroll-smooth">
+<div class="relative w-full h-screen overflow-hidden scroll-smooth bg-neutral-900">
   <!-- Background image -->
-  <img alt="Background Hero Image" class="absolute inset-0 w-full h-full object-cover" fill
-       ngSrc="assets/home/hero-background.jpg"/>
-
+  <img
+    alt="Background Hero Image"
+    class="absolute inset-0 w-full h-full object-cover"
+    fill
+    ngSrc="assets/home/hero-background.jpg"
+    placeholder="blur"
+    priority
+  />
   <!-- Navbar overlay on top of image -->
   <app-header class="absolute top-0 left-0 w-full z-10" [isDimmed]="true"/>
 
