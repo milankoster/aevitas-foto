@@ -1,21 +1,17 @@
-Home page Bugs
+Home page
   - Sizing on xl screens
+  - Translations
 
-Home page Features
-  1). Testimonials section (TODO)
 
 Features
-  - Improve page load order (performance)
-    - Lazy load sections
-    - Image sizing
-  - Translations
+  - About Page
+    - Testimonials section -> About page
 
 
 
 Misc Features
   - Not found page
   - SEO
-
 
 
 
