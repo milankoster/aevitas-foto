@@ -8,23 +8,42 @@
   <!-- Menu links -->
   <div
     class="flex flex-col items-center justify-center h-full space-y-4 md:space-y-8 text-4xl md:text-5xl font-nunito text-white">
-    <a routerLink="/" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }" (click)="onClose()">Home</a>
+    <a routerLink="/" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }" (click)="onClose()">
+      {{ 'header.nav.home' | transloco }}
+    </a>
     <a routerLink="/about" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }"
-       (click)="onClose()">About</a>
+       (click)="onClose()">
+      {{ 'header.nav.about' | transloco }}
+    </a>
     <a routerLink="/gallery" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }"
-       (click)="onClose()">Gallery</a>
+       (click)="onClose()">
+      {{ 'header.nav.gallery' | transloco }}
+    </a>
     <a routerLink="/bookings" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }"
-       (click)="onClose()">Bookings</a>
+       (click)="onClose()">
+      {{ 'header.nav.bookings' | transloco }}
+    </a>
     <a routerLink="/contact" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }"
-       (click)="onClose()">Contact</a>
+       (click)="onClose()">
+      {{ 'header.nav.contact' | transloco }}
+    </a>
   </div>
 
   <!-- Social links -->
   <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-6 text-xl md:text-3xl">
-    <a class="hover:text-pink-400" href="https://www.instagram.com/aevitasfoto" target="_blank">
+    <a
+      class="hover:text-pink-400"
+      href="https://www.instagram.com/aevitasfoto"
+      target="_blank"
+      [attr.aria-label]="'header.social.instagram' | transloco"
+    >
       <i class="fab fa-instagram"></i>
     </a>
-    <a class="hover:text-blue-400" href="mailto:aevitasfoto@gmail.com">
+    <a
+      class="hover:text-blue-400"
+      href="mailto:aevitasfoto@gmail.com"
+      [attr.aria-label]="'header.social.email' | transloco"
+    >
       <i class="fas fa-envelope"></i>
     </a>
   </div>

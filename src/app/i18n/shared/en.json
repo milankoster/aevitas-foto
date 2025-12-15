@@ -1,0 +1,20 @@
+{
+  "header": {
+    "nav": {
+      "home": "Home",
+      "about": "About",
+      "gallery": "Gallery",
+      "bookings": "Bookings",
+      "contact": "Contact"
+    },
+    "logoAlt": "Aevitas Foto logo",
+    "social": {
+      "instagram": "Visit Aevitas Foto on Instagram",
+      "email": "Send an email to Aevitas Foto"
+    }
+  },
+  "footer": {
+    "copyright": "© Aevitas Foto. All rights reserved.",
+    "createdBy": "Website by Aevitas Foto"
+  }
+}

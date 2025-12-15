@@ -1,0 +1,31 @@
+{
+  "hero": {
+    "title": "Aevitas Foto",
+    "subtitle": "Capturing your precious moments for eternity",
+    "cta": "Get in touch",
+    "scrollAriaLabel": "Scroll to intro section",
+    "backgroundAlt": "Background image of four huskies running through a forest"
+  },
+  "intro": {
+    "heading": "Pet Photography Falkenberg",
+    "p1": "Capturing the unique personalities of your beloved pets is at the heart of what I do. I love photographing outdoors, where your pets' joyful energy comes alive against the magic of natural light.",
+    "p2": "For a more polished look, I can bring a small portable studio to your home. Perfect for timeless and elegant portraits in a relaxed environment.",
+    "p3": "Each session is tailored to you and your pet, ensuring a comfortable, fun experience and stunning high-resolution images that can be treasured for years to come.",
+    "cta": "Learn more",
+    "imageAlt": "Autumn portrait of Caeli and her dog Aske in a forest covered in orange leaves"
+  },
+  "miniGallery": {
+    "image1Alt": "Two brown and white border collies sitting on a dirt path in an autumn forest",
+    "image2Alt": "Gray maine coon peeking around a mossy tree",
+    "image3Alt": "Two beige labradoodles posing at a home studio in front of a gray wall with plants",
+    "image4Alt": "A brown and black poodle running along a path surrounded by nature",
+    "image5Alt": "Mixed terrier in front of a sheet of fall leaves",
+    "image6Alt": "Border collie in a field of orange and brown plants",
+    "image7Alt": "Black wolf-dog hiding between leaves and flowers"
+  },
+  "banner": {
+    "text": "A successful photograph doesn't just show an image, but lets you relive the moment. A memory preserved for a lifetime.",
+    "cta": "Book a session",
+    "imageAlt": "Photograph of 3 girls and their dogs sitting by a lake"
+  }
+}

@@ -1,7 +1,7 @@
 <section class="mx-auto pt-6 md:pt-12 lg:pt-16 flex flex-col items-center">
   <section class="relative w-full overflow-hidden h-80 lg:h-96">
     <img
-      alt="Banner background"
+      alt="{{ 'banner.imageAlt' | transloco }}"
       aria-hidden="true"
       class="hidden md:block absolute inset-0 w-full h-full object-cover object-[center_45%]"
       fill
@@ -14,8 +14,7 @@
     <div class="relative z-10 flex items-center justify-center text-center text-white px-6 h-full">
       <div class="relative">
         <p class="text-lg md:text-xl lg:text-2xl font-montserrat font-light drop-shadow-lg max-w-5xl">
-          A successful photograph doesn’t just show an image, but lets you relive the moment. A memory preserved for a
-          lifetime.
+          {{ 'banner.text' | transloco }}
         </p>
 
         <a
@@ -24,7 +23,7 @@
           routerLink="/about"
           tabindex="0"
         >
-          Book a session
+          {{ 'banner.cta' | transloco }}
         </a>
       </div>
     </div>

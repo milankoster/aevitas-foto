@@ -4,30 +4,32 @@
   <!-- Text Content -->
   <div class="flex-1 text-left">
     <h2 class="text-3xl md:text-4xl mb-4 text-charcoal font-playfair">
-      Pet Photography Falkenberg
+      {{ 'intro.heading' | transloco }}
     </h2>
     <p class="text-md text-charcoal font-montserrat font-light mb-4">
-      Capturing the unique personalities of your beloved pets is at the heart of what I do. I love photographing
-      outdoors, where your pets' joyful energy comes alive against the magic of natural light.
+      {{ 'intro.p1' | transloco }}
     </p>
     <p class="text-md text-charcoal font-montserrat font-light mb-4">
-      For a more polished look, I can bring a small portable studio to your home. Perfect for timeless and elegant
-      portraits in a relaxed environment.
+      {{ 'intro.p2' | transloco }}
     </p>
     <p class="text-md text-charcoal font-montserrat font-light ">
-      Each session is tailored to you and your pet, ensuring a comfortable, fun experience and stunning high-resolution
-      images that can be treasured for years to come.
+      {{ 'intro.p3' | transloco }}
     </p>
 
     <a class="mt-4 font-buttons" role="button" routerLink="/about" tabindex="0">
-      Learn more
+      {{ 'intro.cta' | transloco }}
     </a>
 
   </div>
 
   <!-- Image -->
   <div class="hidden md:flex md:w-1/2 justify-end">
-    <img alt="Caeli Intro Image" class="w-full max-w-sm md:max-w-md rounded-xl shadow-xl object-cover"
-         height="1350" ngSrc="assets/home/caeli-intro.jpg" width="1080"/>
+    <img
+      alt="{{ 'intro.imageAlt' | transloco }}"
+      class="w-full max-w-sm md:max-w-md rounded-xl shadow-xl object-cover"
+      height="1350"
+      ngSrc="assets/home/caeli-intro.jpg"
+      width="1080"
+    />
   </div>
 </section>

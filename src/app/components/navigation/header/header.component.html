@@ -14,34 +14,61 @@
 
     <!-- Logo -->
     <a class="flex items-center text-red z-50" routerLink="/">
-      <img alt="Aevitas Foto Logo" class="h-16 w-auto hidden lg:block" height="475"
-           ngSrc="assets/logo/aevitas-logo.png" width="1864"/>
-      <img alt="Aevitas Foto Logo" class="h-12 md:h-16 w-auto lg:hidden" height="828"
-           ngSrc="assets/logo/aevitas-logo-mobile.png" width="1440"/>
+      <img
+        alt="{{ 'header.logoAlt' | transloco }}"
+        class="h-16 w-auto hidden lg:block"
+        height="475"
+        ngSrc="assets/logo/aevitas-logo.png"
+        width="1864"
+      />
+      <img
+        alt="{{ 'header.logoAlt' | transloco }}"
+        class="h-12 md:h-16 w-auto lg:hidden"
+        height="828"
+        ngSrc="assets/logo/aevitas-logo-mobile.png"
+        width="1440"
+      />
     </a>
 
     <!-- Desktop Links -->
     <ul class="hidden lg:flex space-x-4 absolute left-1/2 transform -translate-x-1/2">
       <li class="px-2">
-        <a class="font-header-links text-md text-whitesmoke custom-underline" routerLink="/about">About</a>
+        <a class="font-header-links text-md text-whitesmoke custom-underline" routerLink="/about">
+          {{ 'header.nav.about' | transloco }}
+        </a>
       </li>
       <li class="px-2">
-        <a class="font-header-links text-md text-whitesmoke custom-underline" routerLink="/gallery">Gallery</a>
+        <a class="font-header-links text-md text-whitesmoke custom-underline" routerLink="/gallery">
+          {{ 'header.nav.gallery' | transloco }}
+        </a>
       </li>
       <li class="px-2">
-        <a class="font-header-links text-md text-whitesmoke custom-underline" routerLink="/bookings">Bookings</a>
+        <a class="font-header-links text-md text-whitesmoke custom-underline" routerLink="/bookings">
+          {{ 'header.nav.bookings' | transloco }}
+        </a>
       </li>
       <li class="px-2">
-        <a class="font-header-links text-md text-whitesmoke custom-underline" routerLink="/contact">Contact</a>
+        <a class="font-header-links text-md text-whitesmoke custom-underline" routerLink="/contact">
+          {{ 'header.nav.contact' | transloco }}
+        </a>
       </li>
     </ul>
 
     <!-- Socials -->
     <div class="hidden lg:flex space-x-4 pr-4">
-      <a class="text-whitesmoke hover:text-pink-400" href="https://www.instagram.com/aevitasfoto" target="_blank">
+      <a
+        class="text-whitesmoke hover:text-pink-400"
+        href="https://www.instagram.com/aevitasfoto"
+        target="_blank"
+        [attr.aria-label]="'header.social.instagram' | transloco"
+      >
         <i class="fab fa-instagram"></i>
       </a>
-      <a class="text-whitesmoke hover:text-blue-400" href="mailto:aevitasfoto@gmail.com">
+      <a
+        class="text-whitesmoke hover:text-blue-400"
+        href="mailto:aevitasfoto@gmail.com"
+        [attr.aria-label]="'header.social.email' | transloco"
+      >
         <i class="fas fa-envelope"></i>
       </a>
     </div>

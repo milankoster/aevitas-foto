@@ -1,29 +1,30 @@
-<div class="relative w-full h-screen overflow-hidden scroll-smooth bg-neutral-900">
+<div class="relative w-full h-screen overflow-hidden scroll-smooth">
   <!-- Background image -->
   <img
-    alt="Background Hero Image"
-    class="absolute inset-0 w-full h-full object-cover"
+    alt="{{ 'hero.backgroundAlt' | transloco }}"
+    class="hero-bg-image absolute inset-0 w-full h-full object-cover"
     fill
     ngSrc="assets/home/hero-background.jpg"
-    placeholder="blur"
-    priority
   />
+
   <!-- Navbar overlay on top of image -->
   <app-header class="absolute top-0 left-0 w-full z-10" [isDimmed]="true"/>
 
   <!-- Bottom-aligned text content -->
   <div class="relative z-0 flex flex-col items-center justify-end h-full text-center text-white px-4 pb-16">
-    <h1 class="text-4xl sm:text-6xl font-logo">Aevitas Foto</h1>
-    <p class="mb-2 mb:mt-2 text-lg md:text-2xl font-subheader">Capturing your precious moments for eternity</p>
+    <h1 class="text-4xl sm:text-6xl font-logo">{{ 'hero.title' | transloco }}</h1>
+    <p class="mb-2 mb:mt-2 text-lg md:text-2xl font-subheader">{{ 'hero.subtitle' | transloco }}</p>
 
     <a class="mt-6 font-buttons" role="button" routerLink="/contact" tabindex="0">
-      Get in touch
+      {{ 'hero.cta' | transloco }}
     </a>
 
     <!-- Chevron at the very bottom, centered -->
-    <a aria-label="Scroll to intro section"
-       class="mt-12 text-white text-4xl animate-[bounce_1.5s_ease-in-out_infinite]"
-       fragment="intro" [routerLink]="['/']"
+    <a
+      class="mt-12 text-white text-4xl animate-[bounce_1.5s_ease-in-out_infinite]"
+      fragment="intro"
+      [attr.aria-label]="'hero.scrollAriaLabel' | transloco"
+      [routerLink]="['/']"
     >
       <i class="fas fa-chevron-down"></i>
     </a>

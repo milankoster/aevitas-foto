@@ -2,12 +2,13 @@ import { AfterViewInit, ChangeDetectionStrategy, Component } from '@angular/core
 import { CommonModule, NgOptimizedImage } from '@angular/common';
 import { Navigation, Pagination } from 'swiper/modules';
 import Swiper from 'swiper';
+import { TranslocoModule } from '@jsverse/transloco';
 
 Swiper.use([Navigation, Pagination]);
 
 @Component({
   selector: 'app-mini-gallery',
-  imports: [CommonModule, NgOptimizedImage],
+  imports: [CommonModule, NgOptimizedImage, TranslocoModule],
   templateUrl: './mini-gallery.component.html',
   styleUrls: ['./mini-gallery.component.scss'],
   standalone: true,
