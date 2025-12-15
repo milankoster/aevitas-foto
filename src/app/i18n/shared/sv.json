@@ -1,0 +1,21 @@
+{
+  "header": {
+    "nav": {
+      "home": "Hem",
+      "about": "Om",
+      "gallery": "Galleri",
+      "bookings": "Bokningar",
+      "contact": "Kontakt"
+    },
+    "logoAlt": "Aevitas Foto-logotyp",
+    "social": {
+      "instagram": "Besök Aevitas Foto på Instagram",
+      "email": "Skicka e-post till Aevitas Foto"
+    }
+  },
+  "footer": {
+    "copyright": "© Aevitas Foto. Alla rättigheter förbehållna.",
+    "createdBy": "Webbplats av Aevitas Foto"
+  }
+}
+

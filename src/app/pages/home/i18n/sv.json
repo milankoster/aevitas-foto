@@ -1,0 +1,32 @@
+{
+  "hero": {
+    "title": "Aevitas Foto",
+    "subtitle": "Fångar dina värdefulla ögonblick för evigt",
+    "cta": "Kontakta mig",
+    "scrollAriaLabel": "Scrolla till introduktionssektionen",
+    "backgroundAlt": "Bakgrundsbild på fyra huskies som springer genom en skog"
+  },
+  "intro": {
+    "heading": "Hundfotograf i Falkenberg",
+    "p1": "Att fånga din fyrbenta väns unika personlighet är kärnan i det jag gör. Jag fotograferar helst utomhus, där hundarnas glädje och energi kommer fram i det naturliga ljuset.",
+    "p2": "För en mer stilren känsla kan jag ta med en portabel ministudio hem till er. Perfekt för tidlösa och eleganta porträtt i en lugn miljö.",
+    "p3": "Varje fotografering anpassas efter dig och din hund, så att ni får en avslappnad upplevelse och högupplösta bilder att bevara i många år framöver.",
+    "cta": "Läs mer",
+    "imageAlt": "Höstporträtt av Caeli och hennes hund Aske i en skog täckt av orange löv"
+  },
+  "miniGallery": {
+    "image1Alt": "Två brunvita border collies som sitter på en stig i en höstig skog",
+    "image2Alt": "Grå maine coon-katt som kikar runt en mossig trädstam",
+    "image3Alt": "Två beige labradoodlar som poserar i en hemmastudio framför en grå vägg med växter",
+    "image4Alt": "En brun och svart pudel som springer längs en stig omgiven av natur",
+    "image5Alt": "Liten terrier framför ett ark med höstlöv",
+    "image6Alt": "Border collie i en åker med orange och bruna växter",
+    "image7Alt": "Svart vargliknande hund som gömmer sig bland löv och blommor"
+  },
+  "banner": {
+    "text": "Ett lyckat fotografi visar inte bara en bild – det låter dig återuppleva känslan. Ett minne bevarat för livet.",
+    "cta": "Boka en fotografering",
+    "imageAlt": "Fotografi av tre tjejer och deras hundar som sitter vid en sjö"
+  }
+}
+
