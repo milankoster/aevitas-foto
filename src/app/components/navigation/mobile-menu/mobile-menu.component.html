@@ -30,21 +30,25 @@
   </div>
 
   <!-- Social links -->
-  <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-6 text-xl md:text-3xl">
-    <a
-      class="hover:text-pink-400"
-      href="https://www.instagram.com/aevitasfoto"
-      target="_blank"
-      [attr.aria-label]="'header.social.instagram' | transloco"
-    >
-      <i class="fab fa-instagram"></i>
-    </a>
-    <a
-      class="hover:text-blue-400"
-      href="mailto:aevitasfoto@gmail.com"
-      [attr.aria-label]="'header.social.email' | transloco"
-    >
-      <i class="fas fa-envelope"></i>
-    </a>
+  <div
+    class="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center space-y-3 text-xl md:text-3xl">
+    <app-language-toggle />
+    <div class="flex space-x-6">
+      <a
+        class="hover:text-pink-400"
+        href="https://www.instagram.com/aevitasfoto"
+        target="_blank"
+        [attr.aria-label]="'header.social.instagram' | transloco"
+      >
+        <i class="fab fa-instagram"></i>
+      </a>
+      <a
+        class="hover:text-blue-400"
+        href="mailto:aevitasfoto@gmail.com"
+        [attr.aria-label]="'header.social.email' | transloco"
+      >
+        <i class="fas fa-envelope"></i>
+      </a>
+    </div>
   </div>
 </div>

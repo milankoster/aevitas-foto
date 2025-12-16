@@ -3,11 +3,12 @@ import { RouterLink } from '@angular/router';
 import { MobileMenuComponent } from '../mobile-menu/mobile-menu.component';
 import { NgOptimizedImage } from '@angular/common';
 import { TranslocoModule } from '@jsverse/transloco';
+import { LanguageToggleComponent } from '../language-toggle/language-toggle.component';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [RouterLink, MobileMenuComponent, NgOptimizedImage, TranslocoModule],
+  imports: [RouterLink, MobileMenuComponent, NgOptimizedImage, TranslocoModule, LanguageToggleComponent],
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,

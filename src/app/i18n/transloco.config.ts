@@ -29,9 +29,9 @@ export function provideAppTransloco(): EnvironmentProviders[] {
   return provideTransloco({
     config: {
       availableLangs: ['en', 'sv'],
-      defaultLang: 'en',
-      fallbackLang: 'sv',
-      reRenderOnLangChange: false,
+      defaultLang: 'sv',
+      fallbackLang: 'en',
+      reRenderOnLangChange: true,
       prodMode: false,
     },
     loader: AppTranslocoLoader,

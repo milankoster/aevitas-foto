@@ -1,11 +1,12 @@
 import { ChangeDetectionStrategy, Component, EventEmitter, input, Output } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { TranslocoModule } from '@jsverse/transloco';
+import { LanguageToggleComponent } from '../language-toggle/language-toggle.component';
 
 @Component({
   selector: 'app-mobile-menu',
   standalone: true,
-  imports: [RouterLink, RouterLinkActive, TranslocoModule],
+  imports: [RouterLink, RouterLinkActive, TranslocoModule, LanguageToggleComponent],
   templateUrl: './mobile-menu.component.html',
   styleUrls: ['./mobile-menu.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
