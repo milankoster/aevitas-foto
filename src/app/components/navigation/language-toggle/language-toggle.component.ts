@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, HostListener, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, HostListener, inject, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TranslocoModule, TranslocoService } from '@jsverse/transloco';
 
@@ -18,7 +18,7 @@ export class LanguageToggleComponent implements OnInit {
   currentLang: SupportedLang = 'sv';
   isOpen = false;
 
-  constructor(private readonly transloco: TranslocoService) {}
+  private readonly transloco = inject(TranslocoService);
 
   ngOnInit(): void {
     const stored = (localStorage.getItem(STORAGE_KEY) as SupportedLang | null) ?? null;

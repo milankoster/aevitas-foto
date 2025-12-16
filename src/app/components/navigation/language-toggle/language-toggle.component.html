@@ -18,26 +18,26 @@
     </span>
   </button>
 
-  <div
-    *ngIf="isOpen"
-    class="absolute right-0 mt-1 w-24 bg-outer-space border border-white/40 rounded shadow-lg z-50"
-    data-lang-dropdown
-    role="listbox"
-  >
-    <button
-      class="w-full flex items-center space-x-1 px-2 py-1 text-left hover:bg-white/10 text-whitesmoke text-sm"
-      role="option"
-      type="button"
-      [attr.aria-selected]="false"
-      (click)="selectOther()"
+  @if (isOpen) {
+    <div
+      class="absolute right-0 mt-1 w-24 bg-outer-space border border-white/40 rounded shadow-lg z-50"
+      data-lang-dropdown
+      role="listbox"
     >
-      <span class="text-base">
-        {{ currentLang === 'sv' ? '🇬🇧' : '🇸🇪' }}
-      </span>
-      <span class="font-header-links tracking-wide">
-        {{ currentLang === 'sv' ? 'EN' : 'SV' }}
-      </span>
-    </button>
-  </div>
+      <button
+        class="w-full flex items-center space-x-1 px-2 py-1 text-left hover:bg-white/10 text-whitesmoke text-sm"
+        role="option"
+        type="button"
+        [attr.aria-selected]="false"
+        (click)="selectOther()"
+      >
+        <span class="text-base">
+          {{ currentLang === 'sv' ? '🇬🇧' : '🇸🇪' }}
+        </span>
+        <span class="font-header-links tracking-wide">
+          {{ currentLang === 'sv' ? 'EN' : 'SV' }}
+        </span>
+      </button>
+    </div>
+  }
 </div>
-
