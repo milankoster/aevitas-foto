@@ -8,10 +8,10 @@
     (click)="toggleOpen()"
   >
     <span class="text-base">
-      {{ currentLang === 'sv' ? '🇸🇪' : '🇬🇧' }}
+      {{ currentConfig.flag }}
     </span>
     <span class="font-header-links tracking-wide">
-      {{ currentLang === 'sv' ? 'SV' : 'EN' }}
+      {{ currentConfig.code }}
     </span>
     <span class="text-xs">
       <i class="fas" [ngClass]="{ 'fa-chevron-up': isOpen, 'fa-chevron-down': !isOpen }"></i>
@@ -24,20 +24,22 @@
       data-lang-dropdown
       role="listbox"
     >
-      <button
-        class="w-full flex items-center space-x-1 px-2 py-1 text-left hover:bg-white/10 text-whitesmoke text-sm"
-        role="option"
-        type="button"
-        [attr.aria-selected]="false"
-        (click)="selectOther()"
-      >
-        <span class="text-base">
-          {{ currentLang === 'sv' ? '🇬🇧' : '🇸🇪' }}
-        </span>
-        <span class="font-header-links tracking-wide">
-          {{ currentLang === 'sv' ? 'EN' : 'SV' }}
-        </span>
-      </button>
+      @for (lang of otherLangs; track lang) {
+        <button
+          class="w-full flex items-center space-x-1 px-2 py-1 text-left hover:bg-white/10 text-whitesmoke text-sm"
+          role="option"
+          type="button"
+          [attr.aria-selected]="false"
+          (click)="select(lang)"
+        >
+          <span class="text-base">
+            {{ LANGUAGE_CONFIG[lang].flag }}
+          </span>
+          <span class="font-header-links tracking-wide">
+            {{ LANGUAGE_CONFIG[lang].code }}
+          </span>
+        </button>
+      }
     </div>
   }
 </div>
