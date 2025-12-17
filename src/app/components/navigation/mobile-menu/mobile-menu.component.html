@@ -7,7 +7,7 @@
 >
   <!-- Menu links -->
   <div
-    class="flex flex-col items-center justify-center h-full space-y-4 md:space-y-8 text-4xl md:text-5xl font-nunito text-white">
+    class="relative z-10 flex flex-col items-center justify-center h-full space-y-4 md:space-y-8 text-4xl md:text-5xl font-nunito text-white">
     <a routerLink="/" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }" (click)="onClose()">
       {{ 'header.nav.home' | transloco }}
     </a>
@@ -27,12 +27,16 @@
        (click)="onClose()">
       {{ 'header.nav.contact' | transloco }}
     </a>
+
+    <!-- Language selector directly under nav links -->
+    <div class="pt-6 text-base md:text-lg">
+      <app-language-toggle/>
+    </div>
   </div>
 
-  <!-- Social links -->
+  <!-- Social links at the bottom -->
   <div
-    class="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center space-y-3 text-xl md:text-3xl">
-    <app-language-toggle />
+    class="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center space-y-3 text-xl md:text-3xl z-10">
     <div class="flex space-x-6">
       <a
         class="hover:text-pink-400"
