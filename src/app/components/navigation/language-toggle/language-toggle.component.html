@@ -1,16 +1,22 @@
-<div class="relative inline-block text-sm text-whitesmoke">
+<div class="relative inline-block text-sm text-whitesmoke mr-4">
   <button
     aria-haspopup="listbox"
-    class="flex items-center space-x-1 px-2 py-1 border border-white/40 rounded hover:bg-white/10 transition focus:outline-none focus:ring-1 focus:ring-white/60"
+    class="flex items-center space-x-2 px-2 py-1.5 border border-white/40 rounded hover:bg-white/10 transition focus:outline-none focus:ring-1 focus:ring-white/60"
     data-lang-toggle
     type="button"
     [attr.aria-expanded]="isOpen"
     (click)="toggleOpen()"
   >
-    <span class="text-base">
-      {{ currentConfig.flag }}
+    <span class="mr-2 flex items-center">
+      <img
+        class="h-4 w-6 object-cover rounded-xs"
+        height="40"
+        ngSrc="{{ currentConfig.icon }}"
+        width="60"
+        [alt]="currentConfig.label"
+      />
     </span>
-    <span class="font-header-links tracking-wide">
+    <span class="font-header-links tracking-wide mr-4">
       {{ currentConfig.code }}
     </span>
     <span class="text-xs">
@@ -20,25 +26,35 @@
 
   @if (isOpen) {
     <div
-      class="absolute right-0 mt-1 w-24 bg-outer-space border border-white/40 rounded shadow-lg z-50"
+      class="absolute right-0 mt-1 w-full bg-zinc-900 border border-white/40 rounded shadow-lg z-50"
       data-lang-dropdown
       role="listbox"
     >
       @for (lang of otherLangs; track lang) {
         <button
-          class="w-full flex items-center space-x-1 px-2 py-1 text-left hover:bg-white/10 text-whitesmoke text-sm"
+          class="w-full flex items-center space-x-2 px-2 py-1.5 text-left hover:bg-white/10 text-whitesmoke text-sm"
           role="option"
           type="button"
           [attr.aria-selected]="false"
           (click)="select(lang)"
         >
-          <span class="text-base">
-            {{ LANGUAGE_CONFIG[lang].flag }}
+          <span class="mr-2 flex items-center">
+            <img
+              class="h-4 w-6 object-cover rounded-xs"
+              height="40"
+              ngSrc="{{ LANGUAGE_CONFIG[lang].icon }}"
+              width="60"
+              [alt]="LANGUAGE_CONFIG[lang].label"
+            />
           </span>
           <span class="font-header-links tracking-wide">
             {{ LANGUAGE_CONFIG[lang].code }}
           </span>
         </button>
+
+        @if (lang !== otherLangs[otherLangs.length - 1]) {
+          <div class="h-px bg-white/30 mx-2"></div>
+        }
       }
     </div>
   }

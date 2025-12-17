@@ -1,11 +1,13 @@
 import { ChangeDetectionStrategy, Component, HostListener, inject, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, NgOptimizedImage } from '@angular/common';
 import { TranslocoModule, TranslocoService } from '@jsverse/transloco';
 
 const STORAGE_KEY = 'aevitas-lang';
+
+// Central language config to make it easier to add new languages later.
 const LANGUAGE_CONFIG = {
-  sv: { code: 'SV', label: 'Svenska', flag: '🇸🇪' },
-  en: { code: 'EN', label: 'English', flag: '🇬🇧' },
+  sv: { code: 'SV', label: 'Svenska', icon: 'assets/icons/flags/flag-sv.svg' },
+  en: { code: 'EN', label: 'English', icon: 'assets/icons/flags/flag-en.svg' },
 } as const;
 
 const SUPPORTED_LANGS = Object.keys(LANGUAGE_CONFIG) as (keyof typeof LANGUAGE_CONFIG)[];
@@ -14,7 +16,7 @@ type SupportedLang = (typeof SUPPORTED_LANGS)[number];
 @Component({
   selector: 'app-language-toggle',
   standalone: true,
-  imports: [CommonModule, TranslocoModule],
+  imports: [CommonModule, TranslocoModule, NgOptimizedImage],
   templateUrl: './language-toggle.component.html',
   styleUrls: ['./language-toggle.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
