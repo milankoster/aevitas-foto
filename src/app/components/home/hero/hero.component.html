@@ -12,8 +12,8 @@
 
   <!-- Bottom-aligned text content -->
   <div class="relative z-0 flex flex-col items-center justify-end h-full text-center text-white px-4 pb-16">
-    <h1 class="text-4xl sm:text-6xl font-logo">{{ 'hero.title' | transloco }}</h1>
-    <p class="mb-2 mb:mt-2 text-lg md:text-2xl font-subheader">{{ 'hero.subtitle' | transloco }}</p>
+    <h1 class="text-4xl sm:text-6xl 2xl:text-7xl font-logo">{{ 'hero.title' | transloco }}</h1>
+    <p class="mb-2 mb:mt-2 text-lg md:text-2xl 2xl:text-3xl font-subheader">{{ 'hero.subtitle' | transloco }}</p>
 
     <a class="mt-6 font-buttons" role="button" routerLink="/contact" tabindex="0">
       {{ 'hero.cta' | transloco }}
@@ -21,7 +21,7 @@
 
     <!-- Chevron at the very bottom, centered -->
     <a
-      class="mt-12 text-white text-4xl animate-[bounce_1.5s_ease-in-out_infinite]"
+      class="mt-12 text-white text-4xl 2xl:text-5xl animate-[bounce_1.5s_ease-in-out_infinite]"
       fragment="intro"
       [attr.aria-label]="'hero.scrollAriaLabel' | transloco"
       [routerLink]="['/']"
