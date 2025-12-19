@@ -35,7 +35,9 @@ export class MiniGalleryComponent implements AfterViewInit {
       breakpoints: {
         0: { slidesPerView: 1 },
         480: { slidesPerView: 2 },
-        1024: { slidesPerView: 3 },
+        800: { slidesPerView: 3 },
+        1800: { slidesPerView: 4 },
+        2560: { slidesPerView: 5 },
       },
     });
   }
