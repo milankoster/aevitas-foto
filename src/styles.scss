@@ -3,16 +3,16 @@
 
 :root {
   --font-baloo: "Baloo 2"; // Buttons, Logo, Links
-  --font-playfair: "Playfair Display", serif; //
-  --font-nunito: "Nunito", sans-serif; //
+  --font-playfair: "Playfair Display", serif; // Section Headings
+  --font-nunito: "Nunito", sans-serif; // Body Text, Nav Links, Language Codes
   --font-montserrat: "Montserrat", sans-serif; // Body Text
 }
 
 // Fonts
 @theme {
   --font-baloo: "Baloo 2";                        // Buttons, Logo, Links
-  --font-playfair: "Playfair Display", serif;     //
-  --font-nunito: "Nunito", sans-serif;            //
+  --font-playfair: "Playfair Display", serif;     // Section Headings
+  --font-nunito: "Nunito", sans-serif;            // Body Text, Nav Links, Language Codes
   --font-montserrat: "Montserrat", sans-serif;    // Body Text
 }
 
@@ -20,7 +20,7 @@
 @theme{
   --color-linen: #F1E9E2;                 // Primary Background
   --color-isabelline: #F4EDE7;            // Secondary Background
-  --color-outer-space: #303F3C;           // Footer Background
+  --color-outer-space: #303F3C;           // Footer Background & Mobile Menu
   --color-feldgrau: #47624F;              // Primary Section Background
   --color-timberwolf: #DAD7D3;            // Secondary Section Background
 }
@@ -37,9 +37,11 @@
   --color-bronze-dark: #855E38;           // Primary Button Hover
 }
 
-// Misc
+// Sizing
 @theme {
   --spacing-8xl: 82rem;
+  --spacing-9xl: 92rem;
+  --breakpoint-2xl: 110rem;
 }
 
 html {
@@ -69,9 +71,9 @@ body {
   box-shadow: 0 1px 10px 0 rgba(0, 0, 0, 0.15); // shadow-lg
   transition: background-color 0.3s ease-in-out, box-shadow 0.3s;
 
-  &:hover,
-  &:focus {
-    background-color: var(--color-bronze-dark);
+  @media (min-width: 2560px) {
+    padding: 0.5rem 2.5rem;
+    font-size: 1.25rem;
   }
 
   &:hover,
