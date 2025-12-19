@@ -1,7 +1,7 @@
 <div class="relative inline-block text-sm text-whitesmoke">
   <button
     aria-haspopup="listbox"
-    class="lang-toggle-button lang-active-button "
+    class="lang-toggle-button lang-active-button"
     data-lang-toggle
     type="button"
     [attr.aria-expanded]="isOpen"
@@ -26,7 +26,7 @@
 
   @if (isOpen) {
     <div
-      class="lang-dropdown"
+      class="absolute right-0 mt-1 w-full bg-outer-space border border-white/40 rounded shadow-lg z-50"
       data-lang-dropdown
       role="listbox"
     >
