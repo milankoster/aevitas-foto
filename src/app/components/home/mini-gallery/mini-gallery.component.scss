@@ -41,6 +41,11 @@
   justify-content: center;
   background-color: transparent;
   transition: all 0.2s;
+
+  @media (min-width: 1536px) {
+    width: 4rem;
+    height: 4rem;
+  }
 }
 
 .swiper-button-circle:hover {
