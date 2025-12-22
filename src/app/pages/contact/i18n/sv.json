@@ -1,0 +1,34 @@
+{
+  "contact": {
+    "title": "Kontakt",
+    "subtitle": "Kontakta oss för dina husdjursfotograferingsbehov"
+  },
+  "form": {
+    "firstName": "Förnamn",
+    "firstNamePlaceholder": "Ange ditt förnamn",
+    "lastName": "Efternamn",
+    "lastNamePlaceholder": "Ange ditt efternamn",
+    "email": "E-post",
+    "emailPlaceholder": "din.email@exempel.se",
+    "phone": "Telefon",
+    "phonePlaceholder": "+46 70 123 4567",
+    "optional": "valfritt",
+    "message": "Meddelande",
+    "messagePlaceholder": "Berätta om dina husdjursfotograferingsbehov...",
+    "submit": "Skicka",
+    "sending": "Skickar...",
+    "successMessage": "Tack! Ditt meddelande har skickats.",
+    "errorMessage": "Något gick fel. Försök igen senare.",
+    "errors": {
+      "required": "Detta fält är obligatoriskt",
+      "invalidEmail": "Ange en giltig e-postadress",
+      "invalidPhone": "Ange ett giltigt telefonnummer",
+      "tooShort": "Detta fält är för kort",
+      "tooLong": "Detta fält är för långt"
+    }
+  },
+  "contactDetails": {
+    "title": "Kontaktinformation"
+  }
+}
+
