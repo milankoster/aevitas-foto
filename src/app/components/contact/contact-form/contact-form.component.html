@@ -97,15 +97,31 @@
 
   <!-- Success Message -->
   @if (submitSuccess()) {
-    <div class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded-lg animate-fade-in">
-      <p class="font-montserrat">{{ 'form.successMessage' | transloco }}</p>
+    <div class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded-lg animate-fade-in relative">
+      <button
+        aria-label="Close success message"
+        class="absolute top-2 right-2 text-green-700 hover:text-green-900 text-xl leading-none"
+        type="button"
+        (click)="dismissSuccess()"
+      >
+        <i class="fas fa-times"></i>
+      </button>
+      <p class="font-montserrat pr-6">{{ 'form.successMessage' | transloco }}</p>
     </div>
   }
 
   <!-- Error Message -->
   @if (submitError()) {
-    <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded-lg animate-fade-in">
-      <p class="font-montserrat">{{ 'form.errorMessage' | transloco }}</p>
+    <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded-lg animate-fade-in relative">
+      <button
+        aria-label="Close error message"
+        class="absolute top-2 right-2 text-red-700 hover:text-red-900 text-xl leading-none"
+        type="button"
+        (click)="dismissError()"
+      >
+        <i class="fas fa-times"></i>
+      </button>
+      <p class="font-montserrat pr-6">{{ 'form.errorMessage' | transloco }}</p>
     </div>
   }
 

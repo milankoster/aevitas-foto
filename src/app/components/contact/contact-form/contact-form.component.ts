@@ -19,6 +19,7 @@ export class ContactFormComponent {
   readonly isSubmitting = signal(false);
   readonly submitSuccess = signal(false);
   readonly submitError = signal(false);
+  readonly formSubmitted = signal(false);
 
   contactForm: FormGroup;
 
@@ -27,15 +28,17 @@ export class ContactFormComponent {
 
   constructor() {
     this.contactForm = this.fb.group({
-      firstName: ['', [Validators.required, Validators.minLength(2)]],
-      lastName: ['', [Validators.required, Validators.minLength(2)]],
-      email: ['', [Validators.required, Validators.email]],
+      firstName: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(50)]],
+      lastName: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(50)]],
+      email: ['', [Validators.required, Validators.email, Validators.maxLength(100)]],
       phone: ['', [Validators.pattern(this.phonePattern), Validators.minLength(8), Validators.maxLength(20)]],
-      message: ['', [Validators.required, Validators.minLength(10)]],
+      message: ['', [Validators.required, Validators.minLength(10), Validators.maxLength(1000)]],
     });
   }
 
   onSubmit(): void {
+    this.formSubmitted.set(true);
+
     if (this.contactForm.invalid || this.isSubmitting()) {
       // Mark all fields as touched to show validation errors
       this.contactForm.markAllAsTouched();
@@ -52,29 +55,58 @@ export class ContactFormComponent {
       next: () => {
         this.isSubmitting.set(false);
         this.submitSuccess.set(true);
-
-        // Clear form after 2 seconds
-        setTimeout(() => {
-          this.contactForm.reset();
-          this.submitSuccess.set(false);
-        }, 2000);
+        this.contactForm.reset();
       },
       error: () => {
         this.isSubmitting.set(false);
         this.submitError.set(true);
-
-        // Hide error after 5 seconds
-        setTimeout(() => {
-          this.submitError.set(false);
-        }, 5000);
       },
     });
+  }
+
+  dismissSuccess(): void {
+    this.submitSuccess.set(false);
+    this.formSubmitted.set(false);
+    // Reset the form's touched state to prevent validation errors on cleared fields
+    Object.keys(this.contactForm.controls).forEach((key) => {
+      this.contactForm.get(key)?.markAsUntouched();
+    });
+  }
+
+  dismissError(): void {
+    this.submitError.set(false);
   }
 
   getFieldError(fieldName: string): string | null {
     const field = this.contactForm.get(fieldName);
 
-    if (!field || !field.touched || !field.errors) {
+    if (!field || !field.errors) {
+      return null;
+    }
+
+    // Don't show errors if the field is currently focused
+    const activeElement = document.activeElement;
+    const fieldElement = document.getElementById(fieldName);
+    if (activeElement === fieldElement) {
+      return null;
+    }
+
+    // For minlength/maxlength errors, only show after field is touched (blur)
+    // Never show these errors just because form was submitted
+    const isLengthError = field.errors['minlength'] || field.errors['maxlength'];
+    if (isLengthError && !field.touched) {
+      return null;
+    }
+
+    // For email validation errors, only show after field is touched (blur)
+    const isEmailError = field.errors['email'];
+    if (isEmailError && !field.touched) {
+      return null;
+    }
+
+    // For other errors (required, pattern), show if field is touched/dirty
+    // Don't show immediately after form submission
+    if (!field.touched && !field.dirty) {
       return null;
     }
 
@@ -87,10 +119,10 @@ export class ContactFormComponent {
     if (field.errors['pattern']) {
       return 'form.errors.invalidPhone';
     }
-    if (field.errors['minLength']) {
+    if (field.errors['minlength']) {
       return 'form.errors.tooShort';
     }
-    if (field.errors['maxLength']) {
+    if (field.errors['maxlength']) {
       return 'form.errors.tooLong';
     }
 
