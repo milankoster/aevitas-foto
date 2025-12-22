@@ -3,7 +3,7 @@
     <img
       alt="{{ 'banner.imageAlt' | transloco }}"
       aria-hidden="true"
-      class="hidden md:block absolute inset-0 w-full h-full object-cover object-[center_45%]"
+      class="absolute inset-0 w-full h-full object-cover object-[center_40%] md:object-[center_45%]"
       fill
       ngSrc="assets/home/banner/banner.jpg"
     />
@@ -11,14 +11,14 @@
     <!-- Dark overlay -->
     <div class="absolute inset-0 bg-black opacity-55 pointer-events-none"></div>
 
-    <div class="relative z-10 flex items-center justify-center text-center text-white px-6 h-full">
-      <div class="relative">
-        <p class="text-lg md:text-xl lg:text-2xl font-montserrat font-light drop-shadow-lg max-w-5xl">
+    <div class="relative z-10 flex flex-col md:flex-row items-center justify-center text-center text-white px-6 h-full">
+      <div class="md:relative">
+        <p class="text-md md:text-lg md:text-xl lg:text-2xl font-montserrat font-light md:drop-shadow-lg max-w-5xl">
           {{ 'banner.text' | transloco }}
         </p>
 
         <a
-          class="font-buttons absolute left-1/2 -translate-x-1/2 top-full mt-6 whitespace-nowrap"
+          class="font-buttons mt-4 md:absolute md:left-1/2 md:-translate-x-1/2 md:top-full md:mt-6 md:whitespace-nowrap"
           role="button"
           routerLink="/about"
           tabindex="0"
