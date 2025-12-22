@@ -1,6 +1,4 @@
-Home page
-  - Sizing on xl screens
-
+TODO: Test Banner Scaling on LG screen 1080p
 
 Features
   - About Page
