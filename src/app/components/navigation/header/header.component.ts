@@ -14,7 +14,7 @@ import { LanguageToggleComponent } from '../language-toggle/language-toggle.comp
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HeaderComponent {
-  readonly isDimmed = input(false);
+  readonly backgroundColor = input<string>('');
   mobileMenuOpen = false;
 
   toggleMobileMenu(): void {

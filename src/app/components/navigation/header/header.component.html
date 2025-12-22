@@ -1,8 +1,4 @@
-<nav class="relative w-full z-50">
-  <!-- Dimmed background layer -->
-  @if (isDimmed()) {
-    <div class="hidden lg:block absolute inset-0 bg-black opacity-60 z-0"></div>
-  }
+<nav class="relative w-full z-50" [class]="backgroundColor()">
 
   <div class="relative z-50 mx-auto flex items-center justify-between px-4 py-3">
     <!-- Mobile: Hamburger -->

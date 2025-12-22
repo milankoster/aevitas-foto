@@ -76,7 +76,7 @@ Aevitas Foto Angular Project Guidelines
 5. Navigation
 
 - Header (`app-header`):
-  - Uses dimmed background on home page, and transparent on other pages on large screens (`isDimmed` input).
+  - Accepts `backgroundColor` input for dynamic background styling (e.g., `"bg-black/60"` for dimmed overlay, `"bg-outer-space"` for solid background).
   - Embeds `app-language-toggle` in the right-hand social area.
 - Mobile menu (`app-mobile-menu`):
   - Full-screen overlay (`fixed inset-0`).
