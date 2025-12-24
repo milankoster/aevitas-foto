@@ -12,7 +12,6 @@ Features
       - add padding between elements
       - remove padding on small screens when elements dont fit in one row
     - FAQ section
-    - Secure env variables
 
 
   - About Page

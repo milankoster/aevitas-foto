@@ -21,7 +21,7 @@ export type FormspreeResponse = {
 })
 export class EmailService {
   private readonly http = inject(HttpClient);
-  private readonly formspreeUrl = `https://formspree.io/f/${environment.formspreeEndpoint}`;
+  private readonly formspreeUrl = `${environment.formspreeEndpoint}`;
 
   sendContactForm(data: ContactFormData): Observable<FormspreeResponse> {
     return this.http.post<FormspreeResponse>(this.formspreeUrl, data);
