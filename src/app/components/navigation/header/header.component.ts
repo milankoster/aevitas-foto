@@ -1,34 +1,26 @@
 import { ChangeDetectionStrategy, Component, input } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { MobileMenuComponent } from '../mobile-menu/mobile-menu.component';
 import { NgOptimizedImage } from '@angular/common';
 import { TranslocoModule } from '@jsverse/transloco';
 import { LanguageToggleComponent } from '../language-toggle/language-toggle.component';
+import { MobileNavComponent } from '../mobile-nav/mobile-nav.component';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [RouterLink, MobileMenuComponent, NgOptimizedImage, TranslocoModule, LanguageToggleComponent],
+  imports: [RouterLink, NgOptimizedImage, TranslocoModule, LanguageToggleComponent, MobileNavComponent],
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HeaderComponent {
-  readonly backgroundColor = input<string>('');
-  mobileMenuOpen = false;
+  readonly fixedNav = input<boolean>(false); // Single parameter: false = contact style, true = hero style
 
-  toggleMobileMenu(): void {
-    this.mobileMenuOpen = !this.mobileMenuOpen;
-
-    if (this.mobileMenuOpen) {
-      document.body.classList.add('overflow-hidden');
-    } else {
-      document.body.classList.remove('overflow-hidden');
-    }
+  get backgroundColor(): string {
+    return this.fixedNav() ? 'lg:bg-black/60' : 'bg-outer-space';
   }
 
-  closeMobileMenu(): void {
-    this.mobileMenuOpen = false;
-    document.body.classList.remove('overflow-hidden');
+  get isFixedMobileNav(): boolean {
+    return this.fixedNav();
   }
 }

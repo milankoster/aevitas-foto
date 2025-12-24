@@ -78,6 +78,8 @@ Aevitas Foto Angular Project Guidelines
 - Header (`app-header`):
   - Accepts `backgroundColor` input for dynamic background styling (e.g., `"bg-black/60"` for dimmed overlay, `"bg-outer-space"` for solid background).
   - Embeds `app-language-toggle` in the right-hand social area.
+  - Contains both mobile nav and desktop nav as siblings wrapped in a `<div>`
 - Mobile menu (`app-mobile-menu`):
   - Full-screen overlay (`fixed inset-0`).
   - Includes `app-language-toggle` below the nav links.
+

@@ -3,8 +3,9 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 120vmin; /* scales with screen size */
-  height: 120vmin;
+  max-width: 600px;
+  width: 100vmin;
+  height: 100vmin;
   background: url("/assets/icons/pawprint.png") no-repeat center/contain;
   opacity: 0.055;
   transform: translate(-50%, -50%) rotate(30deg);

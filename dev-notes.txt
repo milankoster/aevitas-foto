@@ -1,27 +1,17 @@
 TODO: Test Banner Scaling on LG screen 1080p
+TODO: Test Contact Page on LG screen 1080p
 
-
-BUG: Header is now dimmed on mobile and ipad after update to header styling
-BUG: Header does not maintain underline of active page
-
+- Contact Page
+  - Styling contact information
+    - add padding between elements
+    - remove padding at top for tablet/mobile
+    - remove padding on small screens when elements dont fit in one row
+  - FAQ section
 
 
 Features
-  - Contact Page
-    - Styling contact information
-      - add padding between elements
-      - remove padding on small screens when elements dont fit in one row
-    - FAQ section
-
-
   - About Page
     - Testimonials section -> About page
-
-
-
-Misc Features
   - Not found page
   - SEO
-
-
 
