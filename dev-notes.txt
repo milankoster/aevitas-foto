@@ -2,11 +2,11 @@ TODO: Test Banner Scaling on LG screen 1080p
 TODO: Test Contact Page on LG screen 1080p
 
 - Contact Page
-  - Styling contact information
-    - add padding between elements
-    - remove padding at top for tablet/mobile
-    - remove padding on small screens when elements dont fit in one row
+  - Form:
+    - Improve text placeholders of form and subtitle
+    - Formspree field names
   - FAQ section
+  - Update translations
 
 
 Features
