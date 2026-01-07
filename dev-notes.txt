@@ -3,7 +3,6 @@ TODO: Test Contact Page on LG screen 1080p
 
 - Contact Page
   - Form:
-    - Improve text placeholders of form and subtitle
     - Formspree field names
   - FAQ section
   - Update translations

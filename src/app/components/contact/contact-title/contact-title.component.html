@@ -3,9 +3,12 @@
     <h1 class="text-4xl md:text-5xl 2xl:text-4xl text-charcoal font-playfair">
       {{ 'contact.title' | transloco }}
     </h1>
-    <p class="mt-4 text-lg md:text-xl 2xl:text-2xl text-charcoal font-montserrat font-light">
-      {{ 'contact.subtitle' | transloco }}
-    </p>
+    <div class="grid grid-cols-1 lg:grid-cols-6">
+      <div class="lg:col-span-4">
+        <p class="mt-4 text-lg md:text-lg 2xl:text-xl text-charcoal font-montserrat font-light">
+          {{ 'contact.description' | transloco }}
+        </p>
+      </div>
+    </div>
   </div>
 </section>
-

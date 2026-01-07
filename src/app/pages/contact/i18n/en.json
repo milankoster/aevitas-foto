@@ -1,7 +1,7 @@
 {
   "contact": {
     "title": "Contact",
-    "subtitle": "Get in touch with us for your pet photography needs"
+    "description": "To ask a question, discuss an upcoming event, or brainstorm ideas, please contact me by filling out the form below. Alternatively, you can send me an e-mail or give me a call!"
   },
   "form": {
     "firstName": "First Name",
@@ -14,7 +14,7 @@
     "phonePlaceholder": "+46 70 123 4567",
     "optional": "optional",
     "message": "Message",
-    "messagePlaceholder": "Tell us about your pet photography needs...",
+    "messagePlaceholder": "Ask a question or let me know how I can help",
     "submit": "Submit",
     "sending": "Sending...",
     "successMessage": "Thank you! Your message has been sent successfully.",

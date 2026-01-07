@@ -1,7 +1,7 @@
 {
   "contact": {
     "title": "Kontakt",
-    "subtitle": "Kontakta oss för dina husdjursfotograferingsbehov"
+    "description": "Kontakta oss för dina husdjursfotograferingsbehov"
   },
   "form": {
     "firstName": "Förnamn",
