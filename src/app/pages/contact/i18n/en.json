@@ -17,7 +17,7 @@
     "messagePlaceholder": "Ask a question or let me know how I can help",
     "submit": "Submit",
     "sending": "Sending...",
-    "successMessage": "Thank you! Your message has been sent successfully.",
+    "successMessage": "Thank you! Your message has been successfully sent.",
     "errorMessage": "Something went wrong. Please try again later.",
     "errors": {
       "required": "This field is required",

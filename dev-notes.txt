@@ -2,8 +2,6 @@ TODO: Test Banner Scaling on LG screen 1080p
 TODO: Test Contact Page on LG screen 1080p
 
 - Contact Page
-  - Form:
-    - Formspree field names
   - FAQ section
   - Update translations
 

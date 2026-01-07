@@ -24,6 +24,13 @@ export class EmailService {
   private readonly formspreeUrl = `${environment.formspreeEndpoint}`;
 
   sendContactForm(data: ContactFormData): Observable<FormspreeResponse> {
-    return this.http.post<FormspreeResponse>(this.formspreeUrl, data);
+    const mappedData = {
+      'First Name': data.firstName,
+      'Last Name': data.lastName,
+      'E-mail': data.email,
+      Phone: data.phone,
+      Message: data.message,
+    };
+    return this.http.post<FormspreeResponse>(this.formspreeUrl, mappedData);
   }
 }
