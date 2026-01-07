@@ -7,7 +7,15 @@ TODO: Test Contact Page on LG screen 1080p
 
 Features
   - About Page
-    - Testimonials section -> About page
+    - About Me
+    - Testimonials section
+  - Gallery
+  - Sessions (Prices)
+  - Bookings?
+    - Book a session of home page should link here
+  - Blog?
+
+
   - Not found page
   - SEO
 
