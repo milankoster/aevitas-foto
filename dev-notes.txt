@@ -3,7 +3,6 @@ TODO: Test Contact Page on LG screen 1080p
 
 - Contact Page
   - FAQ section
-  - Update translations
 
 
 Features

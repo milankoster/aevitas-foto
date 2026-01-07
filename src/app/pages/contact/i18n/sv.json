@@ -1,7 +1,7 @@
 {
   "contact": {
     "title": "Kontakt",
-    "description": "Kontakta oss för dina husdjursfotograferingsbehov"
+    "description": "För att ställa en fråga, diskutera ett kommande evenemang eller brainstorma idéer, kontakta mig genom att fylla i formuläret nedan. Alternativt kan du skicka ett e-postmeddelande eller ringa!"
   },
   "form": {
     "firstName": "Förnamn",
@@ -14,7 +14,7 @@
     "phonePlaceholder": "+46 70 123 4567",
     "optional": "valfritt",
     "message": "Meddelande",
-    "messagePlaceholder": "Berätta om dina husdjursfotograferingsbehov...",
+    "messagePlaceholder": "Ställ en fråga eller berätta hur jag kan hjälpa till",
     "submit": "Skicka",
     "sending": "Skickar...",
     "successMessage": "Tack! Ditt meddelande har skickats.",
@@ -31,4 +31,3 @@
     "title": "Kontaktinformation"
   }
 }
-
