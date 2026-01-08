@@ -1,2 +1,12 @@
-// FAQ component styles
+// FAQ component custom effects only
 
+.rotate-180 {
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: rotate(180deg);
+}
+
+// Smooth transition for answer expansion
+[aria-hidden="false"],
+[aria-hidden="true"] {
+  transition: max-height 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s;
+}

@@ -29,5 +29,28 @@
   },
   "contactDetails": {
     "title": "Kontaktinformation"
-  }
+  },
+  "faq": [
+    {
+      "question": "Vilka tjänster erbjuder du?",
+      "answer": [
+        "Jag erbjuder ett brett utbud av fotografitjänster för privatpersoner, familjer och företag.",
+        "Se gärna <a href=\"/gallery\">mitt galleri</a> för exempel på mitt arbete."
+      ]
+    },
+    {
+      "question": "Hur bokar jag en session?",
+      "answer": [
+        "Att boka en session är enkelt! Fyll bara i kontaktformuläret eller skicka ett e-postmeddelande.",
+        "Jag återkommer så snart som möjligt för att bekräfta din bokning och diskutera detaljer."
+      ]
+    },
+    {
+      "question": "Vad ska jag ta med till min fotosession?",
+      "answer": [
+        "Här är några förslag:",
+        "<ul><li>Flera ombyten</li><li>Personliga rekvisita</li><li>Gott humör!</li></ul>"
+      ]
+    }
+  ]
 }

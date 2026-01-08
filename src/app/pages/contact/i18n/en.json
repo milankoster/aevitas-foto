@@ -29,6 +29,28 @@
   },
   "contactDetails": {
     "title": "Contact Information"
-  }
+  },
+  "faq": [
+    {
+      "question": "What services do you offer?",
+      "answer": [
+        "I offer a wide range of photography services for individuals, families, and businesses.",
+        "Please <a href=\"/gallery\">view my gallery</a> for examples of my work."
+      ]
+    },
+    {
+      "question": "How do I book a session?",
+      "answer": [
+        "Booking a session is easy! Simply fill out the contact form or send me an email.",
+        "I will get back to you as soon as possible to confirm your booking and discuss details."
+      ]
+    },
+    {
+      "question": "What should I bring to my photo session?",
+      "answer": [
+        "Here are some suggestions:",
+        "<ul><li>Multiple outfits</li><li>Personal props</li><li>Good mood!</li></ul>"
+      ]
+    }
+  ]
 }
-

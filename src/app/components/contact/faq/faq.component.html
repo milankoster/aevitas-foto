@@ -1,12 +1,40 @@
 <section class="w-full bg-isabelline pb-12">
-  <div class="max-w-8xl 2xl:max-w-9xl mx-auto px-6 md:px-8 py-12">
-    <h2 class="text-3xl md:text-4xl 2xl:text-5xl mb-6 text-charcoal font-playfair">
+  <div class="max-w-8xl 2xl:max-w-9xl mx-auto px-6 md:px-8 pt-6 md:pt-8 lg:pt-12 flex flex-col">
+    <h2 class="text-3xl md:text-4xl 2xl:text-5xl mb-4 text-charcoal font-playfair">
       Frequently Asked Questions
     </h2>
 
-    <!-- FAQ content will be added here -->
-    <div class="text-charcoal font-montserrat text-lg opacity-50">
-      Coming soon...
-    </div>
+    @for (item of faq; track faqTrackBy; let i = $index) {
+      <div class="w-full border-b border-charcoal/20 last:border-b-0">
+        <button
+          class="w-full flex items-center justify-between py-5 text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-bronze-dark group font-nunito text-charcoal border-0 cursor-pointer"
+          tabindex="0"
+          type="button"
+          [attr.aria-controls]="'faq-answer-' + i"
+          [attr.aria-expanded]="isOpen(i)"
+          (click)="toggle(i)"
+        >
+          <span class="text-xl md:text-2xl font-nunito text-charcoal">{{ item.question }}</span>
+          <i
+            aria-hidden="true"
+            class="fas fa-chevron-down transition-transform duration-300 ml-4 text-bronze"
+            [ngClass]="{ 'rotate-180': isOpen(i) }"
+          ></i>
+        </button>
+        <div
+          class="overflow-hidden transition-all duration-300"
+          [attr.aria-hidden]="!isOpen(i)"
+          [class]="isOpen(i) ? 'max-h-96 opacity-100 py-2 mb-6' : 'max-h-0 opacity-0'"
+          [id]="'faq-answer-' + i"
+        >
+          <div class="pl-1 md:pl-4 text-charcoal text-md 2xl:text-lg font-montserrat font-light space-y-4">
+            @for (paragraph of item.safeAnswer; track paragraphTrackBy) {
+              <div class="faq-answer-paragraph" [innerHTML]="paragraph"></div>
+            }
+          </div>
+        </div>
+      </div>
+    }
   </div>
 </section>
+
