@@ -4,10 +4,10 @@
     "description": "To ask a question, discuss an upcoming event, or brainstorm ideas, please contact me by filling out the form below. Alternatively, you can send me an e-mail or give me a call!"
   },
   "form": {
-    "firstName": "First Name",
-    "firstNamePlaceholder": "Enter your first name",
-    "lastName": "Last Name",
-    "lastNamePlaceholder": "Enter your last name",
+    "name": "Name",
+    "namePlaceholder": "Enter your full name",
+    "petNames": "Pet's Name(s)",
+    "petNamesPlaceholder": "Enter your pet's name(s)",
     "email": "Email",
     "emailPlaceholder": "your.email@example.com",
     "phone": "Phone",

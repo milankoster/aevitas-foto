@@ -4,10 +4,10 @@
     "description": "För att ställa en fråga, diskutera ett kommande evenemang eller brainstorma idéer, kontakta mig genom att fylla i formuläret nedan. Alternativt kan du skicka ett e-postmeddelande eller ringa!"
   },
   "form": {
-    "firstName": "Förnamn",
-    "firstNamePlaceholder": "Ange ditt förnamn",
-    "lastName": "Efternamn",
-    "lastNamePlaceholder": "Ange ditt efternamn",
+    "name": "Namn",
+    "namePlaceholder": "Ange ditt fullständiga namn",
+    "petNames": "Husdjurens namn",
+    "petNamesPlaceholder": "Ange ditt/dina husdjurs namn",
     "email": "E-post",
     "emailPlaceholder": "din.email@exempel.se",
     "phone": "Telefon",

@@ -4,8 +4,8 @@ import { Observable } from 'rxjs';
 import { environment } from '../../environments/environment';
 
 export type ContactFormData = {
-  firstName: string;
-  lastName: string;
+  name: string;
+  petNames: string;
   email: string;
   phone?: string;
   message: string;
@@ -25,8 +25,8 @@ export class EmailService {
 
   sendContactForm(data: ContactFormData): Observable<FormspreeResponse> {
     const mappedData = {
-      'First Name': data.firstName,
-      'Last Name': data.lastName,
+      Name: data.name,
+      "Pet's Name(s)": data.petNames,
       'E-mail': data.email,
       Phone: data.phone,
       Message: data.message,

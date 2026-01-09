@@ -28,8 +28,8 @@ export class ContactFormComponent {
 
   constructor() {
     this.contactForm = this.fb.group({
-      firstName: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(50)]],
-      lastName: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(50)]],
+      name: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(100)]],
+      petNames: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(100)]],
       email: ['', [Validators.required, Validators.email, Validators.maxLength(100)]],
       phone: ['', [Validators.pattern(this.phonePattern), Validators.minLength(8), Validators.maxLength(20)]],
       message: ['', [Validators.required, Validators.minLength(10), Validators.maxLength(1000)]],
@@ -111,19 +111,19 @@ export class ContactFormComponent {
     }
 
     if (field.errors['required']) {
-      return 'form.errors.required';
+      return `${fieldName}.errors.required`;
     }
     if (field.errors['email']) {
-      return 'form.errors.invalidEmail';
+      return `${fieldName}.errors.invalidEmail`;
     }
     if (field.errors['pattern']) {
-      return 'form.errors.invalidPhone';
+      return `${fieldName}.errors.invalidPhone`;
     }
     if (field.errors['minlength']) {
-      return 'form.errors.tooShort';
+      return `${fieldName}.errors.tooShort`;
     }
     if (field.errors['maxlength']) {
-      return 'form.errors.tooLong';
+      return `${fieldName}.errors.tooLong`;
     }
 
     return null;
