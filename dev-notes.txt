@@ -3,7 +3,6 @@ TODO: Test Contact Page on LG screen 1080p
 
 BUG: Language toggle gets bugged when resizing window (mobile to desktop) because it moves the toggle header/mobile menu
 BUG: (maybe) mobile menu scrolling
-Phone -> Facebook
 
 
 Features
