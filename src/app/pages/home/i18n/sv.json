@@ -15,13 +15,13 @@
     "imageAlt": "Höstporträtt av Caeli och hennes hund Aske i en skog täckt av orange löv"
   },
   "miniGallery": {
-    "image1Alt": "Två brunvita border collies som sitter på en stig i en höstig skog",
-    "image2Alt": "Grå maine coon-katt som kikar runt en mossig trädstam",
+    "image1Alt": "Två brunvita miniature american shepherds som sitter på en stig i en höstig skog",
+    "image2Alt": "Grå maine coon som kikar runt en mossig trädstam",
     "image3Alt": "Två beige labradoodlar som poserar i en hemmastudio framför en grå vägg med växter",
     "image4Alt": "En brun och svart pudel som springer längs en stig omgiven av natur",
-    "image5Alt": "Liten terrier framför ett ark med höstlöv",
+    "image5Alt": "Blandad terrier framför ett ark med höstlöv",
     "image6Alt": "Border collie i en åker med orange och bruna växter",
-    "image7Alt": "Svart vargliknande hund som gömmer sig bland löv och blommor"
+    "image7Alt": "Svart varghund som gömmer sig bland löv och blommor"
   },
   "banner": {
     "text": "Ett lyckat fotografi visar inte bara en bild – det låter dig återuppleva känslan. Ett minne bevarat för livet.",
@@ -29,4 +29,3 @@
     "imageAlt": "Fotografi av tre tjejer och deras hundar som sitter vid en sjö"
   }
 }
-
