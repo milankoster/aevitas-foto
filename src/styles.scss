@@ -52,6 +52,12 @@ body {
   background: var(--color-linen);
 }
 
+body.no-scroll {
+  overflow: hidden !important;
+  position: fixed;
+  width: 100vw;
+}
+
 .font-header-links {
   font-family: var(--font-nunito), serif;
   letter-spacing: 0.08rem !important;
