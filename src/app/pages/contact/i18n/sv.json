@@ -30,27 +30,78 @@
   "contactDetails": {
     "title": "Kontaktinformation"
   },
-  "faq": [
+  "faqKeys": [
     {
-      "question": "Vilka tjänster erbjuder du?",
+      "question": "faq.q1.question",
       "answer": [
-        "Jag erbjuder ett brett utbud av fotografitjänster för privatpersoner, familjer och företag.",
-        "Se gärna <a href=\"/gallery\">mitt galleri</a> för exempel på mitt arbete."
+        "faq.q1.answer.0",
+        "faq.q1.answer.1"
       ]
     },
     {
-      "question": "Hur bokar jag en session?",
+      "question": "faq.q2.question",
       "answer": [
-        "Att boka en session är enkelt! Fyll bara i kontaktformuläret eller skicka ett e-postmeddelande.",
-        "Jag återkommer så snart som möjligt för att bekräfta din bokning och diskutera detaljer."
+        "faq.q2.answer.0",
+        "faq.q2.answer.1"
       ]
     },
     {
-      "question": "Vad ska jag ta med till min fotosession?",
+      "question": "faq.q3.question",
       "answer": [
-        "Här är några förslag:",
-        "<ul><li>Flera ombyten</li><li>Personliga rekvisita</li><li>Gott humör!</li></ul>"
+        "faq.q3.answer.0",
+        "faq.q3.answer.1"
+      ]
+    },
+    {
+      "question": "faq.q4.question",
+      "answer": [
+        "faq.q4.answer.0",
+        "faq.q4.answer.1"
+      ]
+    },
+    {
+      "question": "faq.q5.question",
+      "answer": [
+        "faq.q5.answer.0",
+        "faq.q5.answer.1"
       ]
     }
-  ]
+  ],
+  "faq": {
+    "q1": {
+      "question": "Vilka tjänster erbjuder du?",
+      "answer": {
+        "0": "Jag erbjuder ett brett utbud av fotografitjänster för privatpersoner, familjer och företag.",
+        "1": "Se gärna <a href=\"/gallery\">mitt galleri</a> för exempel på mitt arbete."
+      }
+    },
+    "q2": {
+      "question": "Hur bokar jag en session?",
+      "answer": {
+        "0": "Att boka en session är enkelt! Fyll bara i kontaktformuläret eller skicka ett e-postmeddelande.",
+        "1": "Jag återkommer så snart som möjligt för att bekräfta din bokning och diskutera detaljer."
+      }
+    },
+    "q3": {
+      "question": "Vad ska jag ta med till min fotosession?",
+      "answer": {
+        "0": "Här är några förslag:",
+        "1": "<ul><li>Flera ombyten</li><li>Personliga rekvisita</li><li>Gott humör!</li></ul>"
+      }
+    },
+    "q4": {
+      "question": "Kan jag önska specifika redigeringsstilar?",
+      "answer": {
+        "0": "Absolut! Jag anpassar gärna redigeringen efter dina önskemål när det är möjligt.",
+        "1": "Berätta gärna om dina preferenser vid bokning eller under sessionen."
+      }
+    },
+    "q5": {
+      "question": "Reser du för fotosessioner?",
+      "answer": {
+        "0": "Ja, jag kan resa beroende på plats och schema.",
+        "1": "Reseavgifter kan tillkomma för sessioner utanför närområdet. Kontakta mig för mer information."
+      }
+    }
+  }
 }

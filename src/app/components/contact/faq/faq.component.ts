@@ -1,11 +1,10 @@
-import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject, OnDestroy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TranslocoModule, TranslocoService } from '@jsverse/transloco';
-import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 
-type FaqItem = {
-  readonly question: string;
-  readonly answer: readonly string[];
+type FaqKeyItem = {
+  question: string;
+  answer: string[];
 };
 
 @Component({
@@ -16,29 +15,23 @@ type FaqItem = {
   standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class FaqComponent {
-  faq: readonly (FaqItem & { safeAnswer: SafeHtml[] })[] = [];
+export class FaqComponent implements OnDestroy {
+  faqKeys: readonly FaqKeyItem[] = [];
   openIndexes = new Set<number>();
 
   private readonly transloco = inject(TranslocoService);
-  private readonly sanitizer = inject(DomSanitizer);
+  private langSub = this.transloco.selectTranslateObject('faqKeys').subscribe((faqArr: FaqKeyItem[]) => {
+    this.faqKeys = faqArr || [];
+  });
 
   constructor() {
-    this.loadFaq();
-  }
-
-  faqTrackBy = (index: number, item: FaqItem) => item.question;
-  paragraphTrackBy = (index: number, paragraph: SafeHtml) => index;
-
-  private loadFaq(): void {
-    const rawFaq = this.transloco.selectTranslateObject('faq');
-    rawFaq.subscribe((faqArr: FaqItem[]) => {
-      this.faq = (faqArr || []).map((item) => ({
-        ...item,
-        safeAnswer: item.answer.map((a) => this.sanitizer.bypassSecurityTrustHtml(a)),
-      }));
+    this.transloco.selectTranslateObject('faqKeys').subscribe((faqArr: FaqKeyItem[]) => {
+      this.faqKeys = faqArr || [];
     });
   }
+
+  faqTrackBy = (index: number, item: FaqKeyItem): string => item.question;
+  paragraphTrackBy = (index: number): number => index;
 
   toggle(index: number): void {
     if (this.openIndexes.has(index)) {
@@ -50,5 +43,9 @@ export class FaqComponent {
 
   isOpen(index: number): boolean {
     return this.openIndexes.has(index);
+  }
+
+  ngOnDestroy(): void {
+    this.langSub.unsubscribe();
   }
 }

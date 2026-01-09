@@ -30,27 +30,78 @@
   "contactDetails": {
     "title": "Contact Information"
   },
-  "faq": [
+  "faqKeys": [
     {
-      "question": "What services do you offer?",
+      "question": "faq.q1.question",
       "answer": [
-        "I offer a wide range of photography services for individuals, families, and businesses.",
-        "Please <a href=\"/gallery\">view my gallery</a> for examples of my work."
+        "faq.q1.answer.0",
+        "faq.q1.answer.1"
       ]
     },
     {
-      "question": "How do I book a session?",
+      "question": "faq.q2.question",
       "answer": [
-        "Booking a session is easy! Simply fill out the contact form or send me an email.",
-        "I will get back to you as soon as possible to confirm your booking and discuss details."
+        "faq.q2.answer.0",
+        "faq.q2.answer.1"
       ]
     },
     {
-      "question": "What should I bring to my photo session?",
+      "question": "faq.q3.question",
       "answer": [
-        "Here are some suggestions:",
-        "<ul><li>Multiple outfits</li><li>Personal props</li><li>Good mood!</li></ul>"
+        "faq.q3.answer.0",
+        "faq.q3.answer.1"
+      ]
+    },
+    {
+      "question": "faq.q4.question",
+      "answer": [
+        "faq.q4.answer.0",
+        "faq.q4.answer.1"
+      ]
+    },
+    {
+      "question": "faq.q5.question",
+      "answer": [
+        "faq.q5.answer.0",
+        "faq.q5.answer.1"
       ]
     }
-  ]
+  ],
+  "faq": {
+    "q1": {
+      "question": "What services do you offer?",
+      "answer": {
+        "0": "I offer a wide range of photography services for individuals, families, and businesses.",
+        "1": "Please <a href=\"/gallery\">view my gallery</a> for examples of my work."
+      }
+    },
+    "q2": {
+      "question": "How do I book a session?",
+      "answer": {
+        "0": "Booking a session is easy! Simply fill out the contact form or send me an email.",
+        "1": "I will get back to you as soon as possible to confirm your booking and discuss details."
+      }
+    },
+    "q3": {
+      "question": "What should I bring to my photo session?",
+      "answer": {
+        "0": "Here are some suggestions:",
+        "1": "<ul><li>Multiple outfits</li><li>Personal props</li><li>Good mood!</li></ul>"
+      }
+    },
+    "q4": {
+      "question": "Can I request specific editing styles?",
+      "answer": {
+        "0": "Absolutely! I am happy to accommodate specific editing requests whenever possible.",
+        "1": "Just let me know your preferences when booking or during the session."
+      }
+    },
+    "q5": {
+      "question": "Do you travel for photo sessions?",
+      "answer": {
+        "0": "Yes, I am available for travel depending on location and schedule.",
+        "1": "Travel fees may apply for sessions outside the local area. Please contact me for details."
+      }
+    }
+  }
 }

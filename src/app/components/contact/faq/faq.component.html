@@ -4,7 +4,7 @@
       Frequently Asked Questions
     </h2>
 
-    @for (item of faq; track faqTrackBy; let i = $index) {
+    @for (item of faqKeys; track faqTrackBy; let i = $index) {
       <div class="w-full border-b border-charcoal/20 last:border-b-0">
         <button
           class="w-full flex items-center justify-between py-5 text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-bronze-dark font-nunito text-charcoal border-0 cursor-pointer"
@@ -14,7 +14,7 @@
           (click)="toggle(i)"
         >
           <span class="text-xl md:text-2xl">
-            {{ item.question }}
+            {{ item.question | transloco }}
           </span>
 
           <i
@@ -37,8 +37,8 @@
           <!-- Inner content -->
           <div class="overflow-hidden">
             <div class="pl-1 md:pl-4 pb-6 text-charcoal text-md 2xl:text-lg font-montserrat font-light">
-              @for (paragraph of item.safeAnswer; track paragraphTrackBy) {
-                <div class="faq-answer-paragraph" [innerHTML]="paragraph"></div>
+              @for (paragraphKey of item.answer; track paragraphTrackBy) {
+                <div class="faq-answer-paragraph" [innerHTML]="paragraphKey | transloco"></div>
               }
             </div>
           </div>
