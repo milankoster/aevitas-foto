@@ -13,4 +13,8 @@ export const routes: Routes = [
     path: 'contact',
     loadComponent: () => import('./pages/contact/contact.component').then((m) => m.ContactComponent),
   },
+  {
+    path: 'gallery',
+    loadComponent: () => import('./pages/gallery/gallery.component').then((m) => m.GalleryComponent),
+  },
 ];
