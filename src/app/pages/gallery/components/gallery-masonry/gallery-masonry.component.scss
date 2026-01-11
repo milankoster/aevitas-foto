@@ -3,22 +3,22 @@
 }
 
 /*
-  Shuffle.js sizing:
-  Tailwind is great for layout, but Shuffle measures actual element widths.
-  We keep these few rules in SCSS to guarantee the masonry grid works.
+  Shuffle.js sizing
+  - Fixed column widths (1/2/3 columns)
+  - Variable heights driven by each image's intrinsic aspect ratio
+  - Gutters handled via padding on items
 */
 .gallery-grid {
   position: relative;
   width: 100%;
 }
 
-/* SHUFFLE COLUMN SIZING */
 .gallery-sizer,
 .gallery-item {
   width: 100%;
 }
 
-@media (min-width: 640px) {
+@media (min-width: 768px) {
   .gallery-sizer,
   .gallery-item {
     width: 50%;
@@ -28,10 +28,11 @@
 @media (min-width: 1024px) {
   .gallery-sizer,
   .gallery-item {
-    width: 25%;
+    width: 33.333%;
   }
 }
 
+/* Gutters */
 .gallery-item {
   padding: 0.3rem;
 }
@@ -47,4 +48,3 @@
   opacity: 1;
   transform: scale(1);
 }
-

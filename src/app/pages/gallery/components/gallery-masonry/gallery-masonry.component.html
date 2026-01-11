@@ -1,4 +1,4 @@
-<section aria-label="Gallery" class="w-full mx-auto px-6 md:px-8 pt-6 md:pt-12 lg:pt-16">
+<section aria-label="Gallery" class="w-full max-w-10xl mx-auto px-6 md:px-8 py-6 md:py-12 lg:py-16">
   <header class="text-center">
     <h1 class="font-playfair text-charcoal text-3xl md:text-4xl tracking-wide">
       Gallery
@@ -27,25 +27,23 @@
     <div aria-hidden="true" class="gallery-sizer"></div>
 
     @for (image of images; track image.id) {
-      <figure
-        class="gallery-item group"
-        [attr.data-groups]="image.tags | json"
-      >
+      <figure class="gallery-item group" [attr.data-groups]="image.tags | json">
         <button
           class="block w-full overflow-hidden shadow-lg bg-timberwolf"
           type="button"
           (click)="imageClick.emit(image.id)"
         >
-          <div class="relative w-full aspect-square" [class.is-loaded]="isLoaded(image.id)">
+          <div class="relative w-full" [class.is-loaded]="isLoaded(image.id)">
             <div
               class="absolute inset-0 bg-timberwolf transition-opacity duration-300"
               [class.opacity-0]="isLoaded(image.id)"
             ></div>
 
             <img
-              class="absolute inset-0 w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.03]"
-              fill
+              class="block w-full h-auto object-contain transition-transform duration-300 group-hover:scale-[1.03]"
+              height="800"
               loading="lazy"
+              width="1200"
               [alt]="image.alt"
               [ngSrc]="image.src"
               (load)="onImageLoad(image.id)"
