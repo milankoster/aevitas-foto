@@ -1,5 +1,14 @@
-<div class="page-root">
+<div class="page-root bg-isabelline">
   <app-header/>
+
+  <app-gallery-masonry
+    [activeTags]="activeTags"
+    [availableTags]="availableTags"
+    [images]="images"
+    [multiSelect]="multiSelect"
+    (activeTagsChange)="onActiveTagsChange($event)"
+    (imageClick)="onImageClick($event)"
+  />
 
   <app-footer/>
 </div>

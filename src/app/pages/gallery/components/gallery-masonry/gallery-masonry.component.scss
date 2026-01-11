@@ -1,0 +1,50 @@
+:host {
+  display: block;
+}
+
+/*
+  Shuffle.js sizing:
+  Tailwind is great for layout, but Shuffle measures actual element widths.
+  We keep these few rules in SCSS to guarantee the masonry grid works.
+*/
+.gallery-grid {
+  position: relative;
+  width: 100%;
+}
+
+/* SHUFFLE COLUMN SIZING */
+.gallery-sizer,
+.gallery-item {
+  width: 100%;
+}
+
+@media (min-width: 640px) {
+  .gallery-sizer,
+  .gallery-item {
+    width: 50%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .gallery-sizer,
+  .gallery-item {
+    width: 25%;
+  }
+}
+
+.gallery-item {
+  padding: 0.3rem;
+}
+
+/* Subtle fade/scale-in when image is loaded. */
+.gallery-item img {
+  opacity: 0;
+  transform: scale(0.98);
+  transition: opacity 300ms ease, transform 350ms ease;
+}
+
+.gallery-item .is-loaded img {
+  opacity: 1;
+  transform: scale(1);
+}
+
