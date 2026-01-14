@@ -2,7 +2,7 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { FooterComponent } from '../../components/navigation/footer/footer.component';
 import { HeaderComponent } from '../../components/navigation/header/header.component';
 import { GALLERY_IMAGES, GALLERY_TAGS, GalleryImage, GalleryTag } from './gallery-images';
-import { GalleryMasonryComponent } from './components/gallery-masonry/gallery-masonry.component';
+import { GalleryMasonryComponent } from '../../components/gallery/gallery-masonry/gallery-masonry.component';
 
 @Component({
   selector: 'app-gallery',

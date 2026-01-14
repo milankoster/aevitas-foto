@@ -11,9 +11,9 @@ import {
   SimpleChanges,
   ViewChild,
 } from '@angular/core';
-import { CommonModule, NgOptimizedImage } from '@angular/common';
+import { NgOptimizedImage } from '@angular/common';
 import type { ShuffleOptions } from 'shufflejs';
-import { GalleryImage, GalleryTag } from '../../gallery-images';
+import { GalleryImage, GalleryTag } from '../../../pages/gallery/gallery-images';
 
 type ImageId = GalleryImage['id'];
 
@@ -37,7 +37,7 @@ type ShuffleStatic = {
 @Component({
   selector: 'app-gallery-masonry',
   standalone: true,
-  imports: [CommonModule, NgOptimizedImage],
+  imports: [NgOptimizedImage],
   templateUrl: './gallery-masonry.component.html',
   styleUrl: './gallery-masonry.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -58,11 +58,13 @@ export class GalleryMasonryComponent implements AfterViewInit, OnChanges, OnDest
 
   private Shuffle?: ShuffleCtor & ShuffleStatic;
   private shuffle?: InstanceType<ShuffleCtor>;
-  private readonly loaded = new Set<ImageId>();
 
   async ngAfterViewInit(): Promise<void> {
     await this.initShuffle();
     this.applyFilter();
+
+    // First layout pass after initial render.
+    queueMicrotask(() => this.shuffle?.layout());
   }
 
   ngOnChanges(changes: SimpleChanges): void {
@@ -107,14 +109,9 @@ export class GalleryMasonryComponent implements AfterViewInit, OnChanges, OnDest
     this.activeTagsChange.emit([tag]);
   }
 
-  onImageLoad(id: ImageId): void {
-    this.loaded.add(id);
+  onImageLoad(): void {
     // Layout after images load to reduce overlap.
     this.shuffle?.layout();
-  }
-
-  isLoaded(id: ImageId): boolean {
-    return this.loaded.has(id);
   }
 
   private async initShuffle(): Promise<void> {
@@ -167,5 +164,9 @@ export class GalleryMasonryComponent implements AfterViewInit, OnChanges, OnDest
 
       return tags.some((t) => groups.includes(t));
     });
+  }
+
+  getAspectRatio(image: GalleryImage): string {
+    return `${image.width} / ${image.height}`;
   }
 }
