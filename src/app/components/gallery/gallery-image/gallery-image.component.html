@@ -1,0 +1,27 @@
+<figure class="group">
+    <button class="block w-full overflow-hidden text-left" type="button" (click)="onClick()">
+        <div
+                class="relative w-full overflow-hidden"
+                [style.aspect-ratio]="image().width + ' / ' + image().height"
+        >
+            @defer (on viewport; prefetch on idle) {
+                <img
+                        class="gallery-image absolute inset-0 w-full h-full object-cover origin-top transition-opacity duration-300"
+                        decoding="async"
+                        loading="lazy"
+                        [alt]="image().alt"
+                        [class.invisible]="!loaded"
+                        [class.visible]="loaded"
+                        [height]="image().height"
+                        [ngSrc]="image().src"
+                        [width]="image().width"
+                        (load)="onLoad()"
+                />
+            } @placeholder {
+                <div class="absolute inset-0"></div>
+            } @loading {
+                <div class="absolute inset-0"></div>
+            }
+        </div>
+    </button>
+</figure>

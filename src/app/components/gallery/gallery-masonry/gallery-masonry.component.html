@@ -4,60 +4,25 @@
       Gallery
     </h1>
 
-    <div class="mt-5 flex flex-wrap justify-center gap-2">
-      @for (tag of availableTags; track tag) {
-        <button
-          class="font-header-links text-xs md:text-sm px-4 py-2 rounded-full border transition-colors"
-          type="button"
-          [attr.aria-pressed]="activeTags.includes(tag)"
-          [class.bg-bronze]="activeTags.includes(tag)"
-          [class.bg-transparent]="!activeTags.includes(tag)"
-          [class.border-bronze]="activeTags.includes(tag)"
-          [class.border-charcoal]="!activeTags.includes(tag)"
-          [class.border-opacity-25]="!activeTags.includes(tag)"
-          [class.text-charcoal]="!activeTags.includes(tag)"
-          [class.text-whitesmoke]="activeTags.includes(tag)"
-          (click)="onTagToggle(tag)"
-        >
-          {{ tag }}
-        </button>
-      }
-    </div>
+    <app-gallery-tag-filter
+      [activeTags]="activeTags()"
+      [availableTags]="availableTags()"
+      [multiSelect]="multiSelect()"
+      (activeTagsChange)="activeTagsChange.emit($event)"
+    />
   </header>
 
   <div #grid class="mt-8 gallery-grid">
     <div aria-hidden="true" class="gallery-sizer"></div>
 
-    @for (image of images; track image.id) {
-      <figure class="gallery-item group" [attr.data-groups]="image.tags">
-        <button
-          class="block w-full overflow-hidden text-left"
-          type="button"
-          (click)="imageClick.emit(image.id)"
-        >
-          <div
-            class="relative w-full overflow-hidden"
-            [style.aspect-ratio]="image.width + ' / ' + image.height"
-          >
-            @defer (on viewport; prefetch on idle) {
-              <img
-                class="gallery-image absolute inset-0 w-full h-full object-cover origin-top"
-                decoding="async"
-                loading="lazy"
-                [alt]="image.alt"
-                [height]="image.height"
-                [ngSrc]="image.src"
-                [width]="image.width"
-                (load)="onImageLoad()"
-              />
-            } @placeholder {
-              <div class="absolute inset-0 bg-charcoal/5"></div>
-            } @loading {
-              <div class="absolute inset-0 bg-charcoal/5"></div>
-            }
-          </div>
-        </button>
-      </figure>
+    @for (image of images(); track image.id) {
+      <div class="gallery-item" [attr.data-groups]="image.tags | json">
+        <app-gallery-image
+          [image]="image"
+          (imageClick)="imageClick.emit($event)"
+          (imageLoad)="onImageLoad()"
+        />
+      </div>
     }
   </div>
 </section>

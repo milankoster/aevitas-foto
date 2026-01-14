@@ -1,0 +1,23 @@
+:host {
+  display: block;
+}
+
+@keyframes galleryImageIn {
+  from {
+    transform: scale(0.5);
+    opacity: 0.5;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.gallery-image {
+  will-change: transform, opacity;
+  transform-origin: top;
+
+  /* With @defer, the element first appears when it enters viewport, so this plays at the right moment. */
+  animation: galleryImageIn 750ms ease backwards;
+}
+

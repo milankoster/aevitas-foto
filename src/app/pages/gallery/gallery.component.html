@@ -1,12 +1,15 @@
-<app-header/>
+<div class="page-root">
+  <app-header/>
+  <app-gallery-masonry
+    [activeTags]="activeTags"
+    [availableTags]="availableTags"
+    [images]="images"
+    [multiSelect]="multiSelect"
+    (activeTagsChange)="onActiveTagsChange($event)"
+    (imageClick)="onImageClick($event)"
+  />
+  <app-footer/>
+</div>
 
-<app-gallery-masonry
-  [activeTags]="activeTags"
-  [availableTags]="availableTags"
-  [images]="images"
-  [multiSelect]="multiSelect"
-  (activeTagsChange)="onActiveTagsChange($event)"
-  (imageClick)="onImageClick($event)"
-/>
 
-<app-footer/>
+

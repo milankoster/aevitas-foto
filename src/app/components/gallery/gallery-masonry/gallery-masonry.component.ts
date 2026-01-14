@@ -2,18 +2,18 @@ import {
   AfterViewInit,
   ChangeDetectionStrategy,
   Component,
+  effect,
   ElementRef,
-  EventEmitter,
-  Input,
-  OnChanges,
+  input,
   OnDestroy,
-  Output,
-  SimpleChanges,
-  ViewChild,
+  output,
+  viewChild,
 } from '@angular/core';
-import { NgOptimizedImage } from '@angular/common';
+import { CommonModule } from '@angular/common';
 import type { ShuffleOptions } from 'shufflejs';
 import { GalleryImage, GalleryTag } from '../../../pages/gallery/gallery-images';
+import { GalleryTagFilterComponent } from '../gallery-tag-filter/gallery-tag-filter.component';
+import { GalleryImageComponent } from '../gallery-image/gallery-image.component';
 
 type ImageId = GalleryImage['id'];
 
@@ -37,27 +37,47 @@ type ShuffleStatic = {
 @Component({
   selector: 'app-gallery-masonry',
   standalone: true,
-  imports: [NgOptimizedImage],
+  imports: [CommonModule, GalleryTagFilterComponent, GalleryImageComponent],
   templateUrl: './gallery-masonry.component.html',
   styleUrl: './gallery-masonry.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class GalleryMasonryComponent implements AfterViewInit, OnChanges, OnDestroy {
-  @Input({ required: true }) images: readonly GalleryImage[] = [];
-  @Input() availableTags: readonly GalleryTag[] = [];
+export class GalleryMasonryComponent implements AfterViewInit, OnDestroy {
+  readonly images = input.required<readonly GalleryImage[]>();
+  readonly availableTags = input<readonly GalleryTag[]>([]);
 
   /** Default: single-select (per plan). */
-  @Input() multiSelect = false;
+  readonly multiSelect = input(false);
 
-  @Input() activeTags: readonly GalleryTag[] = [];
-  @Output() readonly activeTagsChange = new EventEmitter<readonly GalleryTag[]>();
+  readonly activeTags = input<readonly GalleryTag[]>([]);
+  readonly activeTagsChange = output<readonly GalleryTag[]>();
 
-  @Output() readonly imageClick = new EventEmitter<ImageId>();
+  readonly imageClick = output<ImageId>();
 
-  @ViewChild('grid', { static: true }) private readonly gridRef!: ElementRef<HTMLElement>;
+  private readonly gridRef = viewChild.required<ElementRef<HTMLElement>>('grid');
 
   private Shuffle?: ShuffleCtor & ShuffleStatic;
   private shuffle?: InstanceType<ShuffleCtor>;
+
+  constructor() {
+    effect(() => {
+      void this.activeTags();
+      if (this.shuffle) {
+        this.applyFilter();
+      }
+    });
+
+    effect(() => {
+      void this.images();
+      if (this.shuffle) {
+        queueMicrotask(() => {
+          this.shuffle?.resetItems();
+          this.shuffle?.layout();
+          this.applyFilter();
+        });
+      }
+    });
+  }
 
   async ngAfterViewInit(): Promise<void> {
     await this.initShuffle();
@@ -65,21 +85,10 @@ export class GalleryMasonryComponent implements AfterViewInit, OnChanges, OnDest
 
     // First layout pass after initial render.
     queueMicrotask(() => this.shuffle?.layout());
-  }
 
-  ngOnChanges(changes: SimpleChanges): void {
-    if (changes['activeTags'] && this.shuffle) {
-      this.applyFilter();
-    }
-
-    if (changes['images'] && !changes['images'].firstChange && this.shuffle) {
-      // Let Angular render new DOM then force Shuffle to re-measure.
-      queueMicrotask(() => {
-        this.shuffle?.resetItems();
-        this.shuffle?.layout();
-        this.applyFilter();
-      });
-    }
+    // Follow-up layouts for Safari/aspect-ratio + deferred image rendering.
+    requestAnimationFrame(() => this.shuffle?.layout());
+    setTimeout(() => this.shuffle?.layout(), 200);
   }
 
   ngOnDestroy(): void {
@@ -87,38 +96,12 @@ export class GalleryMasonryComponent implements AfterViewInit, OnChanges, OnDest
     this.shuffle = undefined;
   }
 
-  onTagToggle(tag: GalleryTag): void {
-    const currentlyActive = new Set(this.activeTags);
-
-    if (this.multiSelect) {
-      if (currentlyActive.has(tag)) {
-        currentlyActive.delete(tag);
-      } else {
-        currentlyActive.add(tag);
-      }
-      this.activeTagsChange.emit(Array.from(currentlyActive));
-      return;
-    }
-
-    // Single-select
-    if (this.activeTags.length === 1 && this.activeTags[0] === tag) {
-      this.activeTagsChange.emit([]);
-      return;
-    }
-
-    this.activeTagsChange.emit([tag]);
-  }
-
   onImageLoad(): void {
-    // Layout after images load to reduce overlap.
     this.shuffle?.layout();
   }
 
   private async initShuffle(): Promise<void> {
-    // If the template hasn't rendered the grid for some reason, bail safely.
-    if (!this.gridRef?.nativeElement) {
-      return;
-    }
+    const grid = this.gridRef().nativeElement;
 
     // Lazy-load to avoid any SSR/bundler/ESM interop issues.
     const mod = (await import('shufflejs')) as unknown as {
@@ -127,7 +110,7 @@ export class GalleryMasonryComponent implements AfterViewInit, OnChanges, OnDest
     const Shuffle = (mod.default ?? (mod as unknown)) as ShuffleCtor & ShuffleStatic;
     this.Shuffle = Shuffle;
 
-    this.shuffle = new Shuffle(this.gridRef.nativeElement, {
+    this.shuffle = new Shuffle(grid, {
       itemSelector: '.gallery-item',
       sizer: '.gallery-sizer',
       buffer: 1,
@@ -135,7 +118,7 @@ export class GalleryMasonryComponent implements AfterViewInit, OnChanges, OnDest
   }
 
   private applyFilter(): void {
-    const tags = this.activeTags;
+    const tags = this.activeTags();
     const shuffle = this.shuffle;
     const Shuffle = this.Shuffle;
 
@@ -148,7 +131,6 @@ export class GalleryMasonryComponent implements AfterViewInit, OnChanges, OnDest
       return;
     }
 
-    // Multi-select uses OR semantics by default.
     shuffle.filter((element: Element) => {
       const groupsRaw = element.getAttribute('data-groups');
       if (!groupsRaw) {
@@ -164,9 +146,5 @@ export class GalleryMasonryComponent implements AfterViewInit, OnChanges, OnDest
 
       return tags.some((t) => groups.includes(t));
     });
-  }
-
-  getAspectRatio(image: GalleryImage): string {
-    return `${image.width} / ${image.height}`;
   }
 }

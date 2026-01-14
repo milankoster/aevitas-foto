@@ -1,0 +1,20 @@
+<div class="mt-5 flex flex-wrap justify-center gap-2">
+  @for (tag of availableTags(); track tag) {
+    <button
+      class="font-header-links text-xs md:text-sm px-4 py-2 rounded-full border transition-colors"
+      type="button"
+      [attr.aria-pressed]="isActive(tag)"
+      [class.bg-bronze]="isActive(tag)"
+      [class.bg-transparent]="!isActive(tag)"
+      [class.border-bronze]="isActive(tag)"
+      [class.border-charcoal]="!isActive(tag)"
+      [class.border-opacity-25]="!isActive(tag)"
+      [class.text-charcoal]="!isActive(tag)"
+      [class.text-whitesmoke]="isActive(tag)"
+      (click)="toggle(tag)"
+    >
+      {{ tag }}
+    </button>
+  }
+</div>
+
