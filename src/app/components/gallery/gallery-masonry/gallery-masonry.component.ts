@@ -14,6 +14,7 @@ import type { ShuffleOptions } from 'shufflejs';
 import { GalleryImage, GalleryTag } from '../../../pages/gallery/gallery-images';
 import { GalleryTagFilterComponent } from '../gallery-tag-filter/gallery-tag-filter.component';
 import { GalleryImageComponent } from '../gallery-image/gallery-image.component';
+import { TranslocoModule } from '@jsverse/transloco';
 
 type ImageId = GalleryImage['id'];
 
@@ -37,7 +38,7 @@ type ShuffleStatic = {
 @Component({
   selector: 'app-gallery-masonry',
   standalone: true,
-  imports: [CommonModule, GalleryTagFilterComponent, GalleryImageComponent],
+  imports: [CommonModule, GalleryTagFilterComponent, GalleryImageComponent, TranslocoModule],
   templateUrl: './gallery-masonry.component.html',
   styleUrl: './gallery-masonry.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
