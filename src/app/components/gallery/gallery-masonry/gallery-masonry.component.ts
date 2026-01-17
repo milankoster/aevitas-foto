@@ -62,7 +62,7 @@ export class GalleryMasonryComponent implements AfterViewInit, OnDestroy {
 
   constructor() {
     effect(() => {
-      void this.activeTags();
+      void this.activeTags(); //TODO
       if (this.shuffle) {
         this.applyFilter();
       }
