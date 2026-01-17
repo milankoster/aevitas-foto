@@ -1,4 +1,4 @@
-export const GALLERY_TAGS = ['dogs', 'cats', 'horses', 'indoor', 'outdoor', 'portrait', 'other'] as const;
+export const GALLERY_TAGS = ['all', 'dogs', 'cats', 'horses', 'outdoor', 'indoor'] as const;
 
 export type GalleryTag = (typeof GALLERY_TAGS)[number];
 
@@ -24,7 +24,7 @@ export const GALLERY_IMAGES: readonly GalleryImage[] = [
     id: 2,
     src: 'assets/animals/mini-gallery-71.jpg',
     altKey: 'gallery.images.2.alt',
-    tags: ['dogs', 'portrait'],
+    tags: ['dogs', 'outdoor'],
     width: 1080,
     height: 1350,
   },
@@ -32,7 +32,7 @@ export const GALLERY_IMAGES: readonly GalleryImage[] = [
     id: 3,
     src: 'assets/animals/SaveClip.App_538778038_17936275377065050_5063425839452568790_n.jpg',
     altKey: 'gallery.images.3.alt',
-    tags: ['dogs', 'other'],
+    tags: ['dogs', 'outdoor'],
     width: 1080,
     height: 1439,
   },
@@ -48,7 +48,7 @@ export const GALLERY_IMAGES: readonly GalleryImage[] = [
     id: 5,
     src: 'assets/animals/SaveClip.App_540998416_17936685168065050_7948051025592041323_n.jpg',
     altKey: 'gallery.images.5.alt',
-    tags: ['dogs', 'outdoor'],
+    tags: ['dogs', 'indoor'],
     width: 1080,
     height: 1440,
   },
@@ -56,7 +56,7 @@ export const GALLERY_IMAGES: readonly GalleryImage[] = [
     id: 6,
     src: 'assets/animals/SaveClip.App_541015969_17936685156065050_3084831558247583813_n.jpg',
     altKey: 'gallery.images.6.alt',
-    tags: ['dogs', 'portrait'],
+    tags: ['dogs', 'indoor'],
     width: 1080,
     height: 1440,
   },
@@ -64,7 +64,7 @@ export const GALLERY_IMAGES: readonly GalleryImage[] = [
     id: 7,
     src: 'assets/animals/SaveClip.App_541176629_17936685138065050_8660245098547135924_n.jpg',
     altKey: 'gallery.images.7.alt',
-    tags: ['dogs', 'other'],
+    tags: ['dogs', 'indoor'],
     width: 1080,
     height: 1440,
   },
@@ -72,7 +72,7 @@ export const GALLERY_IMAGES: readonly GalleryImage[] = [
     id: 8,
     src: 'assets/animals/SaveClip.App_541209087_17936685234065050_7760499471505544681_n.jpg',
     altKey: 'gallery.images.8.alt',
-    tags: ['dogs', 'other'],
+    tags: ['dogs', 'indoor'],
     width: 1080,
     height: 1440,
   },

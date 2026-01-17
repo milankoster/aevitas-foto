@@ -13,8 +13,7 @@
       [class.text-whitesmoke]="isActive(tag)"
       (click)="toggle(tag)"
     >
-      {{ tag }}
+      {{ ('gallery.tags.' + tag) | transloco }}
     </button>
   }
 </div>
-

@@ -1,11 +1,12 @@
 import { ChangeDetectionStrategy, Component, input, output } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { GalleryTag } from '../../../pages/gallery/gallery-images';
+import { TranslocoModule } from '@jsverse/transloco';
 
 @Component({
   selector: 'app-gallery-tag-filter',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, TranslocoModule],
   templateUrl: './gallery-tag-filter.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })

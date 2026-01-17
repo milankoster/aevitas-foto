@@ -1,6 +1,14 @@
 {
   "gallery": {
     "title": "Galleri",
+    "tags": {
+      "all": "Alla",
+      "dogs": "Hundar",
+      "cats": "Katter",
+      "horses": "Hästar",
+      "indoor": "Inomhus",
+      "outdoor": "Utomhus"
+    },
     "images": {
       "1": {
         "alt": "Djurfoto 1"

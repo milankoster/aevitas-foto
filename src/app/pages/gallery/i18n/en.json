@@ -1,6 +1,14 @@
 {
   "gallery": {
     "title": "Gallery",
+    "tags": {
+      "all": "All",
+      "dogs": "Dogs",
+      "cats": "Cats",
+      "horses": "Horses",
+      "indoor": "Indoor",
+      "outdoor": "Outdoor"
+    },
     "images": {
       "1": {
         "alt": "Animal photo 1"

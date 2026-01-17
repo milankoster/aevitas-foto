@@ -18,7 +18,8 @@ export class GalleryComponent {
   readonly availableTags: readonly GalleryTag[] = GALLERY_TAGS;
 
   readonly multiSelect = false;
-  activeTags: readonly GalleryTag[] = [];
+
+  activeTags: readonly GalleryTag[] = ['all'];
 
   onActiveTagsChange(next: readonly GalleryTag[]): void {
     this.activeTags = next;

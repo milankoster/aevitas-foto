@@ -127,7 +127,8 @@ export class GalleryMasonryComponent implements AfterViewInit, OnDestroy {
       return;
     }
 
-    if (!tags || tags.length === 0) {
+    // Explicit "all" tag: always show everything.
+    if (!tags || tags.length === 0 || tags.includes('all')) {
       shuffle.filter(Shuffle.ALL_ITEMS);
       return;
     }
