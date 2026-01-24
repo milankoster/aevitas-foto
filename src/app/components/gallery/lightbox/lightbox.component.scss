@@ -1,0 +1,138 @@
+:host {
+  display: block;
+}
+
+.lightbox-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+}
+
+.lightbox-img {
+  width: 100%;
+  height: auto;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.swiper-slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+%lightbox-round-btn {
+  border-radius: 9999px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background-color: rgba(0, 0, 0, 0.4);
+  color: rgba(245, 245, 245, 0.9);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition: background-color 150ms ease-out,
+  border-color 150ms ease-out,
+  transform 80ms ease-out;
+
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+    border-color: rgba(255, 255, 255, 0.7);
+    color: rgba(245, 245, 245, 1);
+  }
+
+  &:active {
+    transform: scale(0.95);
+  }
+}
+
+.swiper-button-mobile {
+  @extend %lightbox-round-btn;
+  width: 2.5rem;
+  height: 2.5rem;
+  background-color: rgba(0, 0, 0, 0.7);
+
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.85);
+  }
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  @extend %lightbox-round-btn;
+  width: 3rem;
+  height: 3rem;
+}
+
+@media (min-width: 2xl) {
+  .swiper-button-prev,
+  .swiper-button-next {
+    width: 4rem;
+    height: 4rem;
+  }
+}
+
+
+/* Swiper inserts an empty SVG icon; we use our own fontawesome icons instead. */
+.swiper-button-prev svg,
+.swiper-button-next svg {
+  display: none !important;
+}
+
+/* Remove old circle wrapper styling (container itself is the circle now). */
+.swiper-button-circle {
+  display: contents;
+}
+
+.swiper-button-disabled {
+  display: none !important;
+}
+
+
+.lightbox-close-btn {
+  @extend %lightbox-round-btn;
+
+  width: 2.5rem;
+  height: 2.5rem;
+  top: 0;
+  position: absolute;
+  right: 0.5rem;
+  z-index: 60;
+}
+
+.lightbox-download-btn {
+  @extend %lightbox-round-btn;
+
+  width: 2.5rem;
+  height: 2.5rem;
+  top: 0;
+  position: absolute;
+  /* place to the left of close: (close right) + (button width) + (gap) */
+  right: calc(0.5rem + 2.5rem + 0.5rem);
+  z-index: 60;
+}
+
+@media (min-width: 2xl) {
+  .lightbox-close-btn {
+    width: 3rem;
+    height: 3rem;
+  }
+
+  .lightbox-download-btn {
+    width: 3rem;
+    height: 3rem;
+    right: calc(0.5rem + 3rem + 0.5rem);
+  }
+}
+
+@media (min-width: 1024px) {
+  .lightbox-close-btn {
+    top: 0.5rem;
+    right: 1rem;
+  }
+
+  .lightbox-download-btn {
+    top: 0.5rem;
+    right: calc(1rem + 2.5rem + 0.5rem);
+  }
+}

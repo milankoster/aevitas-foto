@@ -11,7 +11,7 @@
 
   <app-gallery-lightbox
     [activeId]="activeImageId"
-    [images]="filteredImages"
+    [images]="filteredImages()"
     [open]="lightboxOpen"
     (activeIdChange)="onLightboxActiveIdChange($event)"
     (closed)="closeLightbox()"

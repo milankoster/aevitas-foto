@@ -19,11 +19,10 @@ export class GalleryComponent {
   readonly multiSelect = false;
 
   activeTags: readonly GalleryTag[] = ['all'];
-
-  lightboxOpen = false;
   activeImageId: GalleryImage['id'] | null = null;
+  lightboxOpen = false;
 
-  get filteredImages(): readonly GalleryImage[] {
+  filteredImages(): readonly GalleryImage[] {
     const tags = this.activeTags;
 
     if (!tags || tags.length === 0 || tags.includes('all')) {
@@ -41,16 +40,7 @@ export class GalleryComponent {
       return;
     }
 
-    const list = this.filteredImages;
-    if (list.length === 0) {
-      this.closeLightbox();
-      return;
-    }
-
-    if (this.activeImageId !== null && list.some((i) => i.id === this.activeImageId)) {
-      return;
-    }
-
+    const list = this.filteredImages();
     this.activeImageId = list[0].id;
   }
 
