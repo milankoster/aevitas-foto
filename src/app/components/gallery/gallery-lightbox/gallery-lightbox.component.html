@@ -1,0 +1,74 @@
+@if (canRender()) {
+    <div
+            class="fixed inset-0 z-50 bg-black/80 flex items-center justify-center p-4"
+            role="presentation"
+            (mousedown)="onBackdropClick($event)"
+    >
+        <div
+            #dialog
+            aria-label="Gallery image viewer"
+            aria-modal="true"
+            class="relative w-full max-w-6xl"
+            role="dialog"
+        >
+            <h2 class="sr-only">{{ 'gallery.title' | transloco }}</h2>
+
+            <button
+                    aria-label="Close"
+                    class="absolute -top-2 -right-2 md:top-2 md:right-2 z-10 w-10 h-10 rounded-full bg-black/50 text-whitesmoke/90 flex items-center justify-center border border-white/30 transition hover:bg-black/70 hover:border-white/70 hover:text-whitesmoke active:scale-95 cursor-pointer"
+                    type="button"
+                    (click)="requestClose()"
+            >
+                <i class="fas fa-xmark text-xl"></i>
+            </button>
+
+            <!-- TODO: implement sharing/downloading -->
+            <button
+                    aria-label="Share or download (coming soon)"
+                    class="absolute -top-2 right-12 md:top-2 md:right-14 z-10 w-10 h-10 rounded-full bg-black/50 text-whitesmoke/90 flex items-center justify-center border border-white/30 transition hover:bg-black/70 hover:border-white/70 hover:text-whitesmoke active:scale-95 cursor-pointer"
+                    title="Coming soon"
+                    type="button"
+            >
+                <i class="fas fa-arrow-up-from-bracket"></i>
+            </button>
+
+            @if (images().length > 0) {
+                <div class="swiper gallery-lightbox-swiper overflow-hidden">
+                    <div class="swiper-wrapper">
+                        @for (image of images(); track image.id) {
+                            <div class="swiper-slide">
+                                <img
+                                        class="lightbox-img"
+                                        decoding="async"
+                                        loading="eager"
+                                        [alt]="translateAlt(image)"
+                                        [height]="image.height"
+                                        [ngSrc]="image.src"
+                                        [width]="image.width"
+                                />
+                            </div>
+                        }
+                    </div>
+
+                    <div class="swiper-button-prev">
+                        <svg aria-hidden="true" display="block"></svg>
+                        <span class="swiper-button-circle">
+                            <i class="fas fa-arrow-left text-whitesmoke text-xl 2xl:text-2xl"></i>
+                        </span>
+                    </div>
+
+                    <div class="swiper-button-next">
+                        <svg aria-hidden="true" display="block"></svg>
+                        <span class="swiper-button-circle">
+                            <i class="fas fa-arrow-right text-whitesmoke text-xl 2xl:text-2xl"></i>
+                        </span>
+                    </div>
+                </div>
+            } @else {
+                <div class="p-6 text-center text-whitesmoke">
+                    <p class="font-nunito">No images to show.</p>
+                </div>
+            }
+        </div>
+    </div>
+}

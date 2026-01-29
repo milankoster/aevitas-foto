@@ -7,7 +7,7 @@
     @for (item of faqKeys; track faqTrackBy; let i = $index) {
       <div class="w-full border-b border-charcoal/20">
         <button
-          class="w-full flex items-center justify-between py-5 text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-bronze-dark font-nunito text-charcoal border-0 cursor-pointer"
+          class="w-full flex items-center justify-between py-5 text-left font-nunito text-charcoal border-0 cursor-pointer"
           type="button"
           [attr.aria-controls]="'faq-answer-' + i"
           [attr.aria-expanded]="isOpen(i)"

@@ -76,4 +76,12 @@ export const GALLERY_IMAGES: readonly GalleryImage[] = [
     width: 1080,
     height: 1440,
   },
+  {
+    id: 9,
+    src: 'assets/animals/Puppies-4-b.jpg',
+    altKey: 'gallery.images.9.alt',
+    tags: ['cats', 'indoor'],
+    width: 1920,
+    height: 1080,
+  },
 ] as const;
