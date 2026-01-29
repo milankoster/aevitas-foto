@@ -9,13 +9,5 @@
     (imageClick)="onImageClick($event)"
   />
 
-  <app-gallery-lightbox
-    [activeId]="activeImageId"
-    [images]="filteredImages()"
-    [open]="lightboxOpen"
-    (activeIdChange)="onLightboxActiveIdChange($event)"
-    (closed)="closeLightbox()"
-  />
-
   <app-footer/>
 </div>

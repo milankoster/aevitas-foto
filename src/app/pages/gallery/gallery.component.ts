@@ -1,8 +1,8 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { FooterComponent } from '../../components/navigation/footer/footer.component';
 import { HeaderComponent } from '../../components/navigation/header/header.component';
-import { GalleryLightboxComponent } from '../../components/gallery/gallery-lightbox/gallery-lightbox.component';
 import { GalleryMasonryComponent } from '../../components/gallery/gallery-masonry/gallery-masonry.component';
+import { LightboxService } from '../../components/gallery/lightbox/lightbox.service';
 import { GALLERY_IMAGES, GALLERY_TAGS, GalleryImage, GalleryTag } from './gallery-images';
 
 @Component({
@@ -11,16 +11,16 @@ import { GALLERY_IMAGES, GALLERY_TAGS, GalleryImage, GalleryTag } from './galler
   templateUrl: './gallery.component.html',
   styleUrl: './gallery.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [FooterComponent, HeaderComponent, GalleryLightboxComponent, GalleryMasonryComponent],
+  imports: [FooterComponent, HeaderComponent, GalleryMasonryComponent],
 })
 export class GalleryComponent {
+  private readonly lightbox = inject(LightboxService);
+
   readonly images: readonly GalleryImage[] = GALLERY_IMAGES;
   readonly availableTags: readonly GalleryTag[] = GALLERY_TAGS;
   readonly multiSelect = false;
 
   activeTags: readonly GalleryTag[] = ['all'];
-  activeImageId: GalleryImage['id'] | null = null;
-  lightboxOpen = false;
 
   filteredImages(): readonly GalleryImage[] {
     const tags = this.activeTags;
@@ -34,31 +34,10 @@ export class GalleryComponent {
 
   onActiveTagsChange(next: readonly GalleryTag[]): void {
     this.activeTags = next;
-
-    // Keep lightbox consistent with the active filters.
-    if (!this.lightboxOpen) {
-      return;
-    }
-
-    const list = this.filteredImages();
-    this.activeImageId = list[0].id;
   }
 
   onImageClick(id: GalleryImage['id']): void {
-    this.activeImageId = id;
-    this.lightboxOpen = true;
-  }
-
-  onLightboxActiveIdChange(id: GalleryImage['id']): void {
-    if (this.activeImageId === id) {
-      return;
-    }
-
-    this.activeImageId = id;
-  }
-
-  closeLightbox(): void {
-    this.lightboxOpen = false;
-    this.activeImageId = null;
+    const list = this.filteredImages();
+    this.lightbox.open(list, id);
   }
 }
