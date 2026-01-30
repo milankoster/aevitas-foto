@@ -46,6 +46,11 @@ export class LightboxService {
 
     overlayRef.attach(new ComponentPortal(LightboxComponent, undefined, childInjector));
 
+    this.overlayRef.outsidePointerEvents().subscribe(() => {
+      //maybe some actions that you could take
+      this.overlayRef?.dispose();
+    });
+
     overlayRef.detachments().subscribe(() => {
       this.overlayRef = undefined;
       this.isOpen.set(false);

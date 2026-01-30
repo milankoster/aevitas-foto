@@ -117,6 +117,20 @@ export class LightboxComponent {
     }
   }
 
+  onBackgroundClick(event: MouseEvent): void {
+    const target = event.target as HTMLElement | null;
+    if (!target) {
+      return;
+    }
+
+    const tag = target.tagName;
+    if (tag === 'BUTTON' || tag === 'IMG' || tag === 'I') {
+      return;
+    }
+
+    this.close();
+  }
+
   private initSwiper(initialIndex: number): void {
     if (this.swiper) {
       if (this.swiper.realIndex !== initialIndex) {

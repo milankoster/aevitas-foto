@@ -1,103 +1,111 @@
-<div #dialog class="lightbox-overlay pt-20 pb-20 md:pt-24 md:pb-24 lg:pt-24 lg:pb-24">
-  <div
-    class="w-full h-full relative grid grid-cols-1 md:grid-cols-[minmax(5rem,1fr)_auto_minmax(5rem,1fr)] grid-rows-1">
-    <!-- DOWNLOAD BUTTON -->
-    <button
-      aria-label="Download"
-      class="lightbox-download-btn"
-      type="button"
-      (click)="downloadActive()"
+<div #dialog class="lightbox-overlay pt-20 pb-20 md:pt-24 md:pb-24 lg:pt-24 lg:pb-24"
+     tabindex="0"
+     (click)="onBackgroundClick($event)"
+     (keyup.enter)="close()"
+     (keyup.space)="close()"
+>
+    <div
+            class="w-full h-full relative grid grid-cols-1 md:grid-cols-[minmax(5rem,1fr)_auto_minmax(5rem,1fr)] grid-rows-1"
     >
-      <i class="fas fa-download text-whitesmoke text-xl 2xl:text-2xl"></i>
-    </button>
+        <!-- DOWNLOAD BUTTON -->
+        <button
+                aria-label="Download"
+                class="lightbox-download-btn"
+                type="button"
+                (click)="downloadActive()"
+        >
+            <i class="fas fa-download text-whitesmoke text-xl 2xl:text-2xl"></i>
+        </button>
 
-    <!-- CLOSE BUTTON -->
-    <button
-      aria-label="Close lightbox"
-      class="lightbox-close-btn"
-      type="button"
-      (click)="close()"
-    >
-      <i class="fas fa-times text-whitesmoke text-xl 2xl:text-2xl"></i>
-    </button>
+        <!-- CLOSE BUTTON -->
+        <button
+                aria-label="Close lightbox"
+                class="lightbox-close-btn"
+                type="button"
+                (click)="close()"
+        >
+            <i class="fas fa-times text-whitesmoke text-xl 2xl:text-2xl"></i>
+        </button>
 
-    <!-- LEFT NAV -->
-    <div class="relative hidden md:flex justify-center items-center">
-      <button
-        aria-label="Previous image"
-        class="swiper-button-prev"
-        type="button"
-        (click)="prev()"
-      >
-        <svg aria-hidden="true" display="block"></svg>
-        <span class="swiper-button-circle">
+        <!-- LEFT NAV -->
+        <div class="relative hidden md:flex justify-center items-center">
+            <button
+                    aria-label="Previous image"
+                    class="swiper-button-prev"
+                    type="button"
+                    (click)="prev()"
+            >
+                <svg aria-hidden="true" display="block"></svg>
+                <span class="swiper-button-circle">
           <i class="fas fa-arrow-left text-whitesmoke text-xl 2xl:text-2xl"></i>
         </span>
-      </button>
-    </div>
+            </button>
+        </div>
 
-    <!-- IMAGE COLUMN -->
-    <div class="relative flex items-center justify-center min-w-0 h-full">
-      <!--      might adjust max-w later-->
-      <div class="w-full max-w-6xl h-full">
-        <div class="relative swiper lightbox-swiper h-full min-h-0">
-          <div class="swiper-wrapper h-full">
-            @for (image of images; track image.id) {
-              <div class="swiper-slide flex items-center justify-center h-full">
-                <img
-                  class="lightbox-img"
-                  decoding="async"
-                  loading="eager"
-                  [alt]="translateAlt(image)"
-                  [height]="image.height"
-                  [ngSrc]="image.src"
-                  [width]="image.width"
-                />
-              </div>
-            }
-          </div>
+        <!-- IMAGE COLUMN -->
+        <div
+                class="relative flex items-center justify-center min-w-0 h-full"
+        >
+            <!--      might adjust max-w later-->
+            <div class="w-full max-w-6xl h-full">
+                <div class="relative swiper lightbox-swiper h-full min-h-0">
+                    <div class="swiper-wrapper h-full">
+                        @for (image of images; track image.id) {
+                            <div class="swiper-slide flex items-center justify-center h-full">
+                                <img
+                                        class="lightbox-img"
+                                        decoding="async"
+                                        loading="eager"
+                                        [alt]="translateAlt(image)"
+                                        [height]="image.height"
+                                        [ngSrc]="image.src"
+                                        [width]="image.width"
+                                />
+                            </div>
+                        }
+                    </div>
 
-          <!-- MOBILE NAV (overlay) -->
-          <button
-            aria-label="Previous image"
-            class="swiper-button-prev swiper-button-mobile absolute md:hidden! top-1/2 -translate-y-1/2 left-2"
-            type="button"
-            (click)="prev()"
-          >
-            <svg aria-hidden="true" display="block"></svg>
-            <span class="swiper-button-circle">
+                    <!-- MOBILE NAV (overlay) -->
+                    <button
+                            aria-label="Previous image"
+                            class="swiper-button-prev swiper-button-mobile absolute md:hidden! top-1/2 -translate-y-1/2 left-2"
+                            type="button"
+                            (click)="prev()"
+                    >
+                        <svg aria-hidden="true" display="block"></svg>
+                        <span class="swiper-button-circle">
               <i class="fas fa-arrow-left text-whitesmoke text-xl"></i>
             </span>
-          </button>
+                    </button>
 
-          <button
-            aria-label="Next image"
-            class="swiper-button-next swiper-button-mobile absolute md:hidden! top-1/2 -translate-y-1/2 right-2"
-            type="button"
-            (click)="next()"
-          >
-            <svg aria-hidden="true" display="block"></svg>
-            <span class="swiper-button-circle">
+                    <button
+                            aria-label="Next image"
+                            class="swiper-button-next swiper-button-mobile absolute md:hidden! top-1/2 -translate-y-1/2 right-2"
+                            type="button"
+                            (click)="next()"
+                    >
+                        <svg aria-hidden="true" display="block"></svg>
+                        <span class="swiper-button-circle">
               <i class="fas fa-arrow-right text-whitesmoke text-xl"></i>
             </span>
-          </button>
+                    </button>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
 
-    <!-- RIGHT NAV -->
-    <div class="relative hidden md:flex justify-center items-center">
-      <button
-        aria-label="Next image"
-        class="swiper-button-next"
-        type="button"
-        (click)="next()"
-      >
-        <svg aria-hidden="true" display="block"></svg>
-        <span class="swiper-button-circle">
+        <!-- RIGHT NAV -->
+        <div class="relative hidden md:flex justify-center items-center">
+            <button
+                    aria-label="Next image"
+                    class="swiper-button-next"
+                    type="button"
+                    (click)="next()"
+            >
+                <svg aria-hidden="true" display="block"></svg>
+                <span class="swiper-button-circle">
           <i class="fas fa-arrow-right text-whitesmoke text-xl 2xl:text-2xl"></i>
         </span>
-      </button>
+            </button>
+        </div>
     </div>
-  </div>
 </div>
