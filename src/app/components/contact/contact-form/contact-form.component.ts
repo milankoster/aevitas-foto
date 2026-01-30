@@ -111,19 +111,19 @@ export class ContactFormComponent {
     }
 
     if (field.errors['required']) {
-      return `${fieldName}.errors.required`;
+      return 'form.errors.required';
     }
     if (field.errors['email']) {
-      return `${fieldName}.errors.invalidEmail`;
+      return 'form.errors.invalidEmail';
     }
     if (field.errors['pattern']) {
-      return `${fieldName}.errors.invalidPhone`;
+      return 'form.errors.invalidPhone';
     }
     if (field.errors['minlength']) {
-      return `${fieldName}.errors.tooShort`;
+      return 'form.errors.tooShort';
     }
     if (field.errors['maxlength']) {
-      return `${fieldName}.errors.tooLong`;
+      return 'form.errors.tooLong';
     }
 
     return null;
