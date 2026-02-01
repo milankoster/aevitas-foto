@@ -107,28 +107,10 @@
   z-index: 60;
 }
 
-.lightbox-download-btn {
-  @extend %lightbox-round-btn;
-
-  width: 2.5rem;
-  height: 2.5rem;
-  top: 0;
-  position: absolute;
-  /* place to the left of close: (close right) + (button width) + (gap) */
-  right: calc(0.5rem + 2.5rem + 0.5rem);
-  z-index: 60;
-}
-
 @media (min-width: 2xl) {
   .lightbox-close-btn {
     width: 3rem;
     height: 3rem;
-  }
-
-  .lightbox-download-btn {
-    width: 3rem;
-    height: 3rem;
-    right: calc(0.5rem + 3rem + 0.5rem);
   }
 }
 
@@ -136,10 +118,5 @@
   .lightbox-close-btn {
     top: 0.5rem;
     right: 1rem;
-  }
-
-  .lightbox-download-btn {
-    top: 0.5rem;
-    right: calc(1rem + 2.5rem + 0.5rem);
   }
 }

@@ -67,35 +67,7 @@ export class LightboxComponent {
   prev(): void {
     this.swiper?.slidePrev();
   }
-
-  async downloadActive(): Promise<void> {
-    const image = this.images[this.swiper?.realIndex ?? this.initialIndex()];
-    if (!image) {
-      return;
-    }
-
-    try {
-      const response = await fetch(image.src);
-      if (!response.ok) {
-        return;
-      }
-      const blob = await response.blob();
-
-      const url = URL.createObjectURL(blob);
-      try {
-        const a = document.createElement('a');
-        a.href = url;
-        a.download = image.src.split('/').pop() ?? `image-${image.id}.jpg`;
-        a.rel = 'noopener';
-        a.click();
-      } finally {
-        URL.revokeObjectURL(url);
-      }
-    } catch {
-      // ignore download errors
-    }
-  }
-
+  
   translateAlt(image: GalleryImage): string {
     const key = image.altKey;
     const value = this.transloco.translate(key);
