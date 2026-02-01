@@ -23,34 +23,50 @@
 
 .swiper-button-prev,
 .swiper-button-next {
-  width: 4rem !important;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 9999px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background-color: rgba(0, 0, 0, 0.7);
+  color: rgba(245, 245, 245, 0.9);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition: background-color 150ms ease-out,
+  border-color 150ms ease-out,
+  transform 80ms ease-out;
 }
 
+.swiper-button-prev:hover,
+.swiper-button-next:hover {
+  background-color: rgba(0, 0, 0, 0.85);
+  border-color: rgba(255, 255, 255, 0.7);
+  color: rgba(245, 245, 245, 1);
+}
+
+.swiper-button-prev:active,
+.swiper-button-next:active {
+  transform: scale(0.95);
+}
+
+@media (min-width: 2xl) {
+  .swiper-button-prev,
+  .swiper-button-next {
+    width: 4rem;
+    height: 4rem;
+  }
+}
+
+/* Hide default Swiper arrow SVGs; use FontAwesome icons instead. */
 .swiper-button-prev svg,
 .swiper-button-next svg {
   display: none !important;
 }
 
 .swiper-button-circle {
-  width: 3rem;
-  height: 3rem;
-  border-radius: 9999px;
-  border: 2px solid whitesmoke;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: transparent;
-  transition: all 0.2s;
-
-  @media (min-width: 2xl) {
-    width: 4rem;
-    height: 4rem;
-  }
-}
-
-.swiper-button-circle:hover {
-  background-color: rgba(255, 255, 255, 0.2);
-  border: 2px solid white;
+  display: contents;
 }
 
 .swiper-button-disabled {
