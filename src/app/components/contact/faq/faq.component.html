@@ -4,7 +4,7 @@
       Frequently Asked Questions
     </h2>
 
-    @for (item of faqKeys; track faqTrackBy; let i = $index) {
+    @for (item of faqKeys; track $index; let i = $index) {
       <div class="w-full border-b border-charcoal/20">
         <button
           class="w-full flex items-center justify-between py-5 text-left font-nunito text-charcoal border-0 cursor-pointer"
@@ -37,7 +37,7 @@
           <!-- Inner content -->
           <div class="overflow-hidden">
             <div class="pl-1 md:pl-4 pb-6 text-charcoal text-md 2xl:text-lg font-montserrat font-light">
-              @for (paragraphKey of item.answer; track paragraphTrackBy) {
+              @for (paragraphKey of item.answer; track $index) {
                 <div class="faq-answer-paragraph" [innerHTML]="paragraphKey | transloco"></div>
               }
             </div>
