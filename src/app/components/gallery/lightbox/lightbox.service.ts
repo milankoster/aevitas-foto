@@ -2,7 +2,7 @@ import { inject, Injectable, Injector, signal } from '@angular/core';
 import { Overlay, OverlayRef } from '@angular/cdk/overlay';
 import { ComponentPortal } from '@angular/cdk/portal';
 
-import { GalleryImage } from '../../../pages/gallery/gallery-images';
+import { GalleryImage } from '../../../pages/gallery/images/gallery-images';
 import { LightboxComponent } from './lightbox.component';
 import { LIGHTBOX_DATA } from './lightbox.tokens';
 

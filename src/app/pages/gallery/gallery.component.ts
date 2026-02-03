@@ -3,7 +3,7 @@ import { FooterComponent } from '../../components/navigation/footer/footer.compo
 import { HeaderComponent } from '../../components/navigation/header/header.component';
 import { GalleryMasonryComponent } from '../../components/gallery/gallery-masonry/gallery-masonry.component';
 import { LightboxService } from '../../components/gallery/lightbox/lightbox.service';
-import { GALLERY_IMAGES, GALLERY_TAGS, GalleryImage, GalleryTag } from './gallery-images';
+import { GALLERY_IMAGES_MIXED, GALLERY_TAGS, GalleryImage, GalleryTag } from './images/gallery-images';
 
 @Component({
   selector: 'app-gallery',
@@ -16,7 +16,7 @@ import { GALLERY_IMAGES, GALLERY_TAGS, GalleryImage, GalleryTag } from './galler
 export class GalleryComponent {
   private readonly lightbox = inject(LightboxService);
 
-  readonly images: readonly GalleryImage[] = GALLERY_IMAGES;
+  readonly images: readonly GalleryImage[] = GALLERY_IMAGES_MIXED;
   readonly availableTags: readonly GalleryTag[] = GALLERY_TAGS;
   readonly multiSelect = false;
 

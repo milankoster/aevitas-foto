@@ -13,7 +13,8 @@
           [class.invisible]="!loaded"
           [class.visible]="loaded"
           [height]="image().height"
-          [ngSrc]="image().src"
+          [ngSrc]="placeholderSrc()"
+          [srcset]="srcset()"
           [width]="image().width"
           (load)="onLoad()"
         />

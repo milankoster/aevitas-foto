@@ -11,7 +11,7 @@ import {
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import type { ShuffleOptions } from 'shufflejs';
-import { GalleryImage, GalleryTag } from '../../../pages/gallery/gallery-images';
+import { GalleryImage, GalleryTag } from '../../../pages/gallery/images/gallery-images';
 import { GalleryTagFilterComponent } from '../gallery-tag-filter/gallery-tag-filter.component';
 import { GalleryImageComponent } from '../gallery-image/gallery-image.component';
 import { TranslocoModule } from '@jsverse/transloco';
@@ -62,7 +62,7 @@ export class GalleryMasonryComponent implements AfterViewInit, OnDestroy {
 
   constructor() {
     effect(() => {
-      void this.activeTags(); //TODO
+      void this.activeTags();
       if (this.shuffle) {
         this.applyFilter();
       }

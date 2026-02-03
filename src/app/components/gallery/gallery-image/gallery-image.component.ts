@@ -1,7 +1,7 @@
 import { CommonModule, NgOptimizedImage } from '@angular/common';
 import { ChangeDetectionStrategy, Component, computed, inject, input, output } from '@angular/core';
 import { TranslocoModule, TranslocoService } from '@jsverse/transloco';
-import { GalleryImage } from '../../../pages/gallery/gallery-images';
+import { buildGallerySrc, GALLERY_WIDTHS, GalleryImage } from '../../../pages/gallery/images/gallery-images';
 
 type ImageId = GalleryImage['id'];
 
@@ -31,6 +31,19 @@ export class GalleryImageComponent {
     const key = this.image().altKey;
     const value = this.transloco.translate(key);
     return value && value !== key ? value : 'Gallery image';
+  });
+
+  /** Smallest variant is used as the placeholder src for NgOptimizedImage. */
+  readonly placeholderSrc = computed(() => {
+    const img = this.image();
+    const smallest = GALLERY_WIDTHS[0];
+    return buildGallerySrc(img, smallest);
+  });
+
+  /** srcset covering all configured widths. */
+  readonly srcset = computed(() => {
+    const img = this.image();
+    return GALLERY_WIDTHS.map((w) => `${buildGallerySrc(img, w)} ${w}w`).join(', ');
   });
 
   onClick(): void {

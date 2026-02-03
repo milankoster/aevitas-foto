@@ -14,7 +14,7 @@ import { TranslocoModule, TranslocoService } from '@jsverse/transloco';
 import Swiper, { type Swiper as SwiperInstance } from 'swiper';
 import { Keyboard, Navigation } from 'swiper/modules';
 
-import { GalleryImage } from '../../../pages/gallery/gallery-images';
+import { buildGallerySrc, GALLERY_WIDTHS, GalleryImage } from '../../../pages/gallery/images/gallery-images';
 import { LightboxService } from './lightbox.service';
 import { LIGHTBOX_DATA } from './lightbox.tokens';
 
@@ -37,6 +37,14 @@ export class LightboxComponent {
   private readonly dialogRef = viewChild.required<ElementRef<HTMLElement>>('dialog');
 
   readonly images = this.data.images;
+
+  // Build src for a given image at a specific width.
+  readonly srcFor = (image: GalleryImage, width: number): string =>
+    buildGallerySrc(image, width as (typeof GALLERY_WIDTHS)[number]);
+
+  // Build srcset string for a given image using all configured widths.
+  readonly srcsetFor = (image: GalleryImage): string =>
+    GALLERY_WIDTHS.map((w) => `${buildGallerySrc(image, w)} ${w}w`).join(', ');
 
   readonly initialIndex = computed(() => {
     const idx = this.images.findIndex((i) => i.id === this.data.initialActiveId);
@@ -67,7 +75,7 @@ export class LightboxComponent {
   prev(): void {
     this.swiper?.slidePrev();
   }
-  
+
   translateAlt(image: GalleryImage): string {
     const key = image.altKey;
     const value = this.transloco.translate(key);
