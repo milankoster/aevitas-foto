@@ -1,5 +1,4 @@
 import { GENERATED_GALLERY_IMAGES } from './generated-images';
-import { type GalleryImageKey, makeImageKey, PRIORITY_IMAGE_KEYS } from './gallery-priority';
 
 export const GALLERY_TAGS = ['all', 'dogs', 'cats', 'horses', 'outdoor', 'indoor'] as const;
 export const GALLERY_WIDTHS = [600, 1100, 2200] as const;
@@ -35,35 +34,20 @@ const hashKey = (key: string): number => {
 
 /**
  * Mixed ordering for the gallery:
- * - Priority images (from PRIORITY_IMAGE_KEYS) appear first in the configured order.
- * - All remaining images are sorted by a deterministic hash of the path to get a
+ * - Images with an explicit numeric `order` appear first, sorted by that number (ascending).
+ * - All remaining images are sorted by a deterministic hash of the `path` to get a
  *   stable but "random-ish" mix across categories.
  */
 export const GALLERY_IMAGES_MIXED: readonly GalleryImage[] = ((): readonly GalleryImage[] => {
-  const byKey = new Map<GalleryImageKey, GalleryImage>(GALLERY_IMAGES.map((img) => [makeImageKey(img), img]));
-
-  // Priority by explicit order (lower first), then by PRIORITY_IMAGE_KEYS fallback, then hash-mixed.
   const withOrder = GALLERY_IMAGES.filter((img) => typeof img.order === 'number')
     .slice()
-    .sort((a, b) => {
-      return (a.order as number) - (b.order as number);
-    });
+    .sort((a, b) => (a.order as number) - (b.order as number));
 
-  const explicitlyPrioritized = new Set(withOrder.map((img) => makeImageKey(img)));
+  const orderedIds = new Set(withOrder.map((img) => img.id));
 
-  const priorityImages: GalleryImage[] = PRIORITY_IMAGE_KEYS.map((key) => byKey.get(key)).filter(
-    (img): img is GalleryImage => !!img && !explicitlyPrioritized.has(makeImageKey(img)),
-  );
+  const nonPriorityImages = GALLERY_IMAGES.filter((img) => !orderedIds.has(img.id));
 
-  const prioritySet = new Set([...explicitlyPrioritized, ...priorityImages.map((img) => makeImageKey(img))]);
+  const shuffledNonPriority = [...nonPriorityImages].sort((a, b) => hashKey(a.path) - hashKey(b.path));
 
-  const nonPriorityImages = GALLERY_IMAGES.filter((img) => !prioritySet.has(makeImageKey(img)));
-
-  const shuffledNonPriority = [...nonPriorityImages].sort((a, b) => {
-    const ak = makeImageKey(a);
-    const bk = makeImageKey(b);
-    return hashKey(ak) - hashKey(bk);
-  });
-
-  return [...withOrder, ...priorityImages, ...shuffledNonPriority] as readonly GalleryImage[];
+  return [...withOrder, ...shuffledNonPriority] as readonly GalleryImage[];
 })();
