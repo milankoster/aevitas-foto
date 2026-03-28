@@ -17,4 +17,5 @@ Features
 
   - Not found page
 
-- Center the mobile header hamburger menu
+- Vertically Center the mobile header hamburger menu
+- Cursor visible anywhere
