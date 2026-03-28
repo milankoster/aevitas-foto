@@ -1,6 +1,6 @@
 import { GENERATED_GALLERY_IMAGES } from './generated-images';
 
-export const GALLERY_TAGS = ['all', 'dogs', 'cats', 'horses', 'outdoor', 'indoor'] as const;
+export const GALLERY_TAGS = ['all', 'dogs', 'cats', 'farm animals', 'portraits', 'details'] as const;
 export const GALLERY_WIDTHS = [600, 1100, 2200] as const;
 
 export type GalleryTag = (typeof GALLERY_TAGS)[number];

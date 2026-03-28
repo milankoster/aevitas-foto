@@ -5,9 +5,9 @@
       "all": "Alla",
       "dogs": "Hundar",
       "cats": "Katter",
-      "horses": "Hästar",
-      "indoor": "Inomhus",
-      "outdoor": "Utomhus"
+      "farm animals": "Bondgårdsdjur",
+      "portraits": "Porträtt",
+      "details": "Detaljer"
     },
     "images": {
       "1": {

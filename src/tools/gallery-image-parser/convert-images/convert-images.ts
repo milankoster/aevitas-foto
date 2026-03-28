@@ -1,7 +1,8 @@
 import fs from 'fs';
 import path from 'path';
 import sharp from 'sharp';
-import { GALLERY_WIDTHS, IMAGE_EXTENSIONS, IMAGE_INPUT_ROOT, IMAGE_OUTPUT_ROOT } from '../config';
+import { IMAGE_EXTENSIONS, IMAGE_INPUT_ROOT, IMAGE_OUTPUT_ROOT } from '../config';
+import { GALLERY_WIDTHS } from '../../../app/pages/gallery/images/gallery-images';
 
 fs.mkdirSync(IMAGE_OUTPUT_ROOT, { recursive: true });
 

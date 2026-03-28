@@ -5,9 +5,9 @@
       "all": "All",
       "dogs": "Dogs",
       "cats": "Cats",
-      "horses": "Horses",
-      "indoor": "Indoor",
-      "outdoor": "Outdoor"
+      "farm animals": "Farm Animals",
+      "portraits": "Portraits",
+      "details": "Details"
     },
     "images": {
       "1": {

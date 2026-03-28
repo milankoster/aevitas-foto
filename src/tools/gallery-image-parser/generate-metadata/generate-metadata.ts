@@ -1,14 +1,9 @@
 import fs from 'fs';
 import path from 'path';
 import sharp, { Metadata } from 'sharp';
-import {
-  IMAGE_INPUT_ROOT,
-  IMAGE_OUTPUT_ROOT,
-  LARGEST_GALLERY_WIDTH,
-  METADATA_INPUT_FILE,
-  METADATA_OUTPUT_FILE,
-} from '../config';
+import { IMAGE_INPUT_ROOT, IMAGE_OUTPUT_ROOT, METADATA_INPUT_FILE, METADATA_OUTPUT_FILE } from '../config';
 import { ImageMetadata, parseCsv, readRawCsv } from './parse-csv';
+import { GALLERY_WIDTHS } from '../../../app/pages/gallery/images/gallery-images';
 
 function getFolderNames(): string[] {
   return fs
@@ -18,7 +13,8 @@ function getFolderNames(): string[] {
 }
 
 async function getAvifImageMetadata(image: ImageMetadata): Promise<Metadata> {
-  const avifPath = path.join(IMAGE_OUTPUT_ROOT, image.folder, `${image.name}-${LARGEST_GALLERY_WIDTH}.avif`);
+  const largestWidth = GALLERY_WIDTHS[GALLERY_WIDTHS.length - 1];
+  const avifPath = path.join(IMAGE_OUTPUT_ROOT, image.folder, `${image.name}-${largestWidth}.avif`);
 
   try {
     return await sharp(avifPath).metadata();
@@ -41,7 +37,6 @@ async function writeTsFile(images: ImageMetadata[]): Promise<void> {
   for (const img of images) {
     const pathKey = `${img.folder}/${img.name}`;
     const tagsArray = img.tags.map((t) => `'${t}'`).join(', ');
-    const orderField = img.order !== undefined ? `, order: ${img.order}` : '';
 
     const meta = await getAvifImageMetadata(img);
 
@@ -49,9 +44,12 @@ async function writeTsFile(images: ImageMetadata[]): Promise<void> {
     lines.push(`    id: ${id},`);
     lines.push(`    path: '${pathKey}',`);
     lines.push("    altKey: '', // TODO: fill i18n key");
-    lines.push(`    tags: [${tagsArray}]${orderField},`);
+    lines.push(`    tags: [${tagsArray}],`);
     lines.push(`    width: ${meta.width},`);
     lines.push(`    height: ${meta.height},`);
+    if (img.order !== undefined) {
+      lines.push(`    order: ${img.order},`);
+    }
     lines.push('  },');
 
     id += 1;
@@ -68,7 +66,6 @@ async function writeTsFile(images: ImageMetadata[]): Promise<void> {
 
 async function main(): Promise<void> {
   const folders = getFolderNames();
-
   const rawCsv = readRawCsv(METADATA_INPUT_FILE);
   const imageMetadata = parseCsv(new Set(folders), rawCsv);
 

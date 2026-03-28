@@ -1,7 +1,17 @@
 import { parse } from 'csv-parse/sync';
 import fs from 'fs';
-import { IMAGE_INPUT_ROOT } from '../config';
 import path from 'path';
+
+// Mapping from folder names (and CSV tags) to app-specific tags.
+const FOLDER_TO_APP_TAG: Record<string, 'dogs' | 'cats' | 'farm animals' | 'portraits' | 'details'> = {
+  Dogs: 'dogs',
+  Cats: 'cats',
+  'Farm Animals': 'farm animals',
+  Portraits: 'portraits',
+  Details: 'details',
+} as const;
+
+export type AppTag = (typeof FOLDER_TO_APP_TAG)[keyof typeof FOLDER_TO_APP_TAG];
 
 export type CsvRow = {
   'Image Name': string;
@@ -27,7 +37,18 @@ export function readRawCsv(filePath: string): CsvRow[] {
   }) as CsvRow[];
 }
 
-function parseTags(rawTags: string | undefined, folders: Set<string>, imagePath: string): string[] {
+export function mapToAppTag(raw: string, imagePath: string): AppTag {
+  const mapped = FOLDER_TO_APP_TAG[raw];
+  if (!mapped) {
+    throw new Error(
+      `CSV tag or folder '${raw}' on '${imagePath}' is not a supported app tag. ` +
+        `Allowed values are: ${Object.keys(FOLDER_TO_APP_TAG).join(', ')}`,
+    );
+  }
+  return mapped;
+}
+
+function parseAdditionalTags(rawTags: string | undefined, imagePath: string): AppTag[] {
   const tags: string[] = rawTags
     ? rawTags
         .split(',')
@@ -35,13 +56,7 @@ function parseTags(rawTags: string | undefined, folders: Set<string>, imagePath:
         .filter(Boolean)
     : [];
 
-  for (const tag of tags) {
-    if (!folders.has(tag)) {
-      throw new Error(`CSV tag '${tag}' on '${imagePath}' does not match any folder under '${IMAGE_INPUT_ROOT}'`);
-    }
-  }
-
-  return tags;
+  return tags.map((t) => mapToAppTag(t, imagePath));
 }
 
 function parseOrder(rawOrder: string | undefined, imagePath: string): number | undefined {
@@ -58,16 +73,16 @@ function parseOrder(rawOrder: string | undefined, imagePath: string): number | u
 }
 
 export type ImageMetadata = {
-  folder: string;
-  name: string;
-  tags: string[];
+  folder: string; // raw folder name like 'Dogs'
+  name: string; // base filename without extension
+  tags: AppTag[]; // final app-level tags (folder + additional, deduped)
   order?: number;
   swedishDescription?: string;
   englishDescription?: string;
 };
 
 export function parseCsv(folders: Set<string>, csvRows: CsvRow[]): ImageMetadata[] {
-  const imageMetadata = [];
+  const imageMetadata: ImageMetadata[] = [];
 
   for (const row of csvRows) {
     const folder = row.Folder?.trim();
@@ -81,12 +96,29 @@ export function parseCsv(folders: Set<string>, csvRows: CsvRow[]): ImageMetadata
       throw new Error(`CSV row must have Image Name and Folder: ${JSON.stringify(row)}`);
     }
 
+    if (!folders.has(folder)) {
+      throw new Error(`CSV folder does not exist in input-images: '${folder}'`);
+    }
+
     if (!swedishDesc || !englishDesc) {
       console.warn(`Warning: Missing description for image '${folder}/${fileName}'`);
     }
 
     const imagePath = `${folder}/${fileName}`;
-    const tags = parseTags(row['Additional Tags'], folders, imagePath);
+
+    // Map folder name to app tag; throws if folder isn’t supported.
+    const folderTag = mapToAppTag(folder, imagePath);
+
+    const additional = parseAdditionalTags(row['Additional Tags'], imagePath);
+
+    // Build final tags list: folder tag + additional tags, deduped.
+    const tags: AppTag[] = [folderTag];
+    for (const t of additional) {
+      if (!tags.includes(t)) {
+        tags.push(t);
+      }
+    }
+
     const order = parseOrder(row.Order, imagePath);
 
     imageMetadata.push({
@@ -94,8 +126,8 @@ export function parseCsv(folders: Set<string>, csvRows: CsvRow[]): ImageMetadata
       name: baseName,
       tags,
       order,
-      swedishDesc,
-      englishDesc,
+      swedishDescription: swedishDesc,
+      englishDescription: englishDesc,
     });
   }
 
