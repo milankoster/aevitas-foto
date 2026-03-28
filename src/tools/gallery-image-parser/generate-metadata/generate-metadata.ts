@@ -12,6 +12,10 @@ function getFolderNames(): string[] {
     .map((d) => d.name);
 }
 
+function buildImageKey(image: ImageMetadata): string {
+  return `${image.folder}/${image.name}`;
+}
+
 async function getAvifImageMetadata(image: ImageMetadata): Promise<Metadata> {
   const largestWidth = GALLERY_WIDTHS[GALLERY_WIDTHS.length - 1];
   const avifPath = path.join(IMAGE_OUTPUT_ROOT, image.folder, `${image.name}-${largestWidth}.avif`);
@@ -35,7 +39,7 @@ async function writeTsFile(images: ImageMetadata[]): Promise<void> {
 
   let id = 1;
   for (const img of images) {
-    const pathKey = `${img.folder}/${img.name}`;
+    const pathKey = buildImageKey(img);
     const tagsArray = img.tags.map((t) => `'${t}'`).join(', ');
 
     const meta = await getAvifImageMetadata(img);
@@ -43,7 +47,6 @@ async function writeTsFile(images: ImageMetadata[]): Promise<void> {
     lines.push('  {');
     lines.push(`    id: ${id},`);
     lines.push(`    path: '${pathKey}',`);
-    lines.push("    altKey: '', // TODO: fill i18n key");
     lines.push(`    tags: [${tagsArray}],`);
     lines.push(`    width: ${meta.width},`);
     lines.push(`    height: ${meta.height},`);
@@ -64,6 +67,59 @@ async function writeTsFile(images: ImageMetadata[]): Promise<void> {
   console.log(`Wrote metadata to ${METADATA_OUTPUT_FILE}`);
 }
 
+function updateI18nFiles(images: ImageMetadata[]): void {
+  const languages: {
+    lang: 'en' | 'sv';
+    file: string;
+    pick: (img: ImageMetadata) => string | undefined;
+  }[] = [
+    {
+      lang: 'en',
+      file: path.resolve(__dirname, '../../../app/pages/gallery/i18n/en-image-descriptions.json'),
+      pick: (img) => img.englishDescription,
+    },
+    {
+      lang: 'sv',
+      file: path.resolve(__dirname, '../../../app/pages/gallery/i18n/sv-image-descriptions.json'),
+      pick: (img) => img.swedishDescription,
+    },
+  ];
+
+  for (const { lang, file, pick } of languages) {
+    const imagesNode: Record<string, { alt: string }> = {};
+
+    const missing: string[] = [];
+
+    for (const img of images) {
+      const imageKey = buildImageKey(img);
+      const descRaw = pick(img);
+      const desc = descRaw?.trim();
+
+      if (!desc) {
+        missing.push(imageKey);
+        continue;
+      }
+
+      imagesNode[imageKey] = { alt: desc };
+    }
+
+    if (missing.length > 0) {
+      console.warn(`[i18n] Missing descriptions for ${missing.length} images in ${lang}: ${missing.join(', ')}`);
+    }
+
+    const root = {
+      galleryDescriptions: {
+        images: imagesNode,
+      },
+    };
+
+    const pretty = JSON.stringify(root, null, 2);
+    fs.mkdirSync(path.dirname(file), { recursive: true });
+    fs.writeFileSync(file, pretty + '\n', 'utf8');
+    console.log(`Updated gallery image-descriptions i18n file: ${file}`);
+  }
+}
+
 async function main(): Promise<void> {
   const folders = getFolderNames();
   const rawCsv = readRawCsv(METADATA_INPUT_FILE);
@@ -71,6 +127,7 @@ async function main(): Promise<void> {
 
   console.log(`Generating metadata for ${imageMetadata.length} images...`);
   await writeTsFile(imageMetadata);
+  updateI18nFiles(imageMetadata);
 }
 
 void main().catch((err) => {

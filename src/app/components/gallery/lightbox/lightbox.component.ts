@@ -77,9 +77,15 @@ export class LightboxComponent {
   }
 
   translateAlt(image: GalleryImage): string {
-    const key = image.altKey;
+    const keyPart = image.path;
+    const key = `galleryDescriptions.images.${keyPart}.alt`;
     const value = this.transloco.translate(key);
-    return value && value !== key ? value : 'Gallery image';
+    if (value) {
+      return value;
+    }
+
+    const defaultKey = 'gallery.defaultImageDescription';
+    return this.transloco.translate(defaultKey);
   }
 
   @HostListener('document:keydown', ['$event'])

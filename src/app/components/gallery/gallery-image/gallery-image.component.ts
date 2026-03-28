@@ -28,9 +28,15 @@ export class GalleryImageComponent {
   private readonly transloco = inject(TranslocoService);
 
   readonly altText = computed(() => {
-    const key = this.image().altKey;
-    const value = this.transloco.translate(key);
-    return value && value !== key ? value : 'Gallery image';
+    const keyPart = this.image().path;
+    const fullKey = `galleryDescriptions.images.${keyPart}.alt`;
+    const value = this.transloco.translate(fullKey);
+    if (value) {
+      return value;
+    }
+
+    const defaultKey = 'gallery.defaultImageDescription';
+    return this.transloco.translate(defaultKey);
   });
 
   /** Smallest variant is used as the placeholder src for NgOptimizedImage. */

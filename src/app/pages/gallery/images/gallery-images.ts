@@ -9,7 +9,6 @@ export type GalleryWidth = (typeof GALLERY_WIDTHS)[number];
 export type GalleryImage = {
   readonly id: number;
   readonly path: string;
-  readonly altKey: string;
   readonly tags: readonly GalleryTag[];
   readonly width: number;
   readonly height: number;

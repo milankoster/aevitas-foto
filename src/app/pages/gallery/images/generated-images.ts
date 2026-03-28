@@ -5,7 +5,6 @@ export const GENERATED_GALLERY_IMAGES: readonly GalleryImage[] = [
   {
     id: 1,
     path: 'Dogs/DSC_0107',
-    altKey: '', // TODO: fill i18n key
     tags: ['dogs'],
     width: 2200,
     height: 1467,
@@ -14,7 +13,6 @@ export const GENERATED_GALLERY_IMAGES: readonly GalleryImage[] = [
   {
     id: 2,
     path: 'Dogs/DSC_0187',
-    altKey: '', // TODO: fill i18n key
     tags: ['dogs'],
     width: 2200,
     height: 1467,
@@ -22,7 +20,6 @@ export const GENERATED_GALLERY_IMAGES: readonly GalleryImage[] = [
   {
     id: 3,
     path: 'Dogs/DSC_0528',
-    altKey: '', // TODO: fill i18n key
     tags: ['dogs'],
     width: 2200,
     height: 3300,
@@ -30,7 +27,6 @@ export const GENERATED_GALLERY_IMAGES: readonly GalleryImage[] = [
   {
     id: 4,
     path: 'Dogs/DSC_0901',
-    altKey: '', // TODO: fill i18n key
     tags: ['dogs'],
     width: 2200,
     height: 3300,
@@ -38,7 +34,6 @@ export const GENERATED_GALLERY_IMAGES: readonly GalleryImage[] = [
   {
     id: 5,
     path: 'Dogs/DSC_0909',
-    altKey: '', // TODO: fill i18n key
     tags: ['dogs'],
     width: 2200,
     height: 1467,
@@ -46,7 +41,6 @@ export const GENERATED_GALLERY_IMAGES: readonly GalleryImage[] = [
   {
     id: 6,
     path: 'Dogs/DSC_1195',
-    altKey: '', // TODO: fill i18n key
     tags: ['dogs'],
     width: 2200,
     height: 3300,
@@ -55,7 +49,6 @@ export const GENERATED_GALLERY_IMAGES: readonly GalleryImage[] = [
   {
     id: 7,
     path: 'Dogs/DSC_3299',
-    altKey: '', // TODO: fill i18n key
     tags: ['dogs'],
     width: 2200,
     height: 1467,
@@ -63,7 +56,6 @@ export const GENERATED_GALLERY_IMAGES: readonly GalleryImage[] = [
   {
     id: 8,
     path: 'Dogs/DSC_3315',
-    altKey: '', // TODO: fill i18n key
     tags: ['dogs'],
     width: 2200,
     height: 3300,
@@ -71,7 +63,6 @@ export const GENERATED_GALLERY_IMAGES: readonly GalleryImage[] = [
   {
     id: 9,
     path: 'Dogs/DSC_6319.sv',
-    altKey: '', // TODO: fill i18n key
     tags: ['dogs'],
     width: 2200,
     height: 3093,
@@ -79,7 +70,6 @@ export const GENERATED_GALLERY_IMAGES: readonly GalleryImage[] = [
   {
     id: 10,
     path: 'Dogs/DSC_6367',
-    altKey: '', // TODO: fill i18n key
     tags: ['dogs'],
     width: 2200,
     height: 3093,
@@ -87,7 +77,6 @@ export const GENERATED_GALLERY_IMAGES: readonly GalleryImage[] = [
   {
     id: 11,
     path: 'Dogs/DSC_6447',
-    altKey: '', // TODO: fill i18n key
     tags: ['dogs'],
     width: 2200,
     height: 1467,
@@ -96,7 +85,6 @@ export const GENERATED_GALLERY_IMAGES: readonly GalleryImage[] = [
   {
     id: 12,
     path: 'Dogs/DSC_6972',
-    altKey: '', // TODO: fill i18n key
     tags: ['dogs'],
     width: 2200,
     height: 3093,
@@ -104,7 +92,6 @@ export const GENERATED_GALLERY_IMAGES: readonly GalleryImage[] = [
   {
     id: 13,
     path: 'Dogs/DSC_7640',
-    altKey: '', // TODO: fill i18n key
     tags: ['dogs'],
     width: 2200,
     height: 3300,
@@ -112,7 +99,6 @@ export const GENERATED_GALLERY_IMAGES: readonly GalleryImage[] = [
   {
     id: 14,
     path: 'Dogs/DSC_8189',
-    altKey: '', // TODO: fill i18n key
     tags: ['dogs'],
     width: 2200,
     height: 3300,
@@ -120,7 +106,6 @@ export const GENERATED_GALLERY_IMAGES: readonly GalleryImage[] = [
   {
     id: 15,
     path: 'Dogs/DSC_9156',
-    altKey: '', // TODO: fill i18n key
     tags: ['dogs'],
     width: 2200,
     height: 1467,
@@ -128,7 +113,6 @@ export const GENERATED_GALLERY_IMAGES: readonly GalleryImage[] = [
   {
     id: 16,
     path: 'Dogs/DSC_9573',
-    altKey: '', // TODO: fill i18n key
     tags: ['dogs'],
     width: 2200,
     height: 3300,
@@ -136,7 +120,6 @@ export const GENERATED_GALLERY_IMAGES: readonly GalleryImage[] = [
   {
     id: 17,
     path: 'Dogs/IMG_0129.extra',
-    altKey: '', // TODO: fill i18n key
     tags: ['dogs'],
     width: 2200,
     height: 3300,
@@ -144,7 +127,6 @@ export const GENERATED_GALLERY_IMAGES: readonly GalleryImage[] = [
   {
     id: 18,
     path: 'Dogs/IMG_0367',
-    altKey: '', // TODO: fill i18n key
     tags: ['dogs'],
     width: 1181,
     height: 1772,
@@ -152,7 +134,6 @@ export const GENERATED_GALLERY_IMAGES: readonly GalleryImage[] = [
   {
     id: 19,
     path: 'Dogs/IMG_0615',
-    altKey: '', // TODO: fill i18n key
     tags: ['dogs'],
     width: 2200,
     height: 1467,
@@ -160,7 +141,6 @@ export const GENERATED_GALLERY_IMAGES: readonly GalleryImage[] = [
   {
     id: 20,
     path: 'Dogs/IMG_3344',
-    altKey: '', // TODO: fill i18n key
     tags: ['dogs'],
     width: 2200,
     height: 3300,
@@ -168,7 +148,6 @@ export const GENERATED_GALLERY_IMAGES: readonly GalleryImage[] = [
   {
     id: 21,
     path: 'Dogs/IMG_3725',
-    altKey: '', // TODO: fill i18n key
     tags: ['dogs'],
     width: 2200,
     height: 3300,
@@ -176,7 +155,6 @@ export const GENERATED_GALLERY_IMAGES: readonly GalleryImage[] = [
   {
     id: 22,
     path: 'Dogs/IMG_4629',
-    altKey: '', // TODO: fill i18n key
     tags: ['dogs'],
     width: 2200,
     height: 3300,
@@ -184,7 +162,6 @@ export const GENERATED_GALLERY_IMAGES: readonly GalleryImage[] = [
   {
     id: 23,
     path: 'Dogs/IMG_5351sv',
-    altKey: '', // TODO: fill i18n key
     tags: ['dogs'],
     width: 1772,
     height: 1181,
@@ -192,7 +169,6 @@ export const GENERATED_GALLERY_IMAGES: readonly GalleryImage[] = [
   {
     id: 24,
     path: 'Dogs/IMG_5553sv',
-    altKey: '', // TODO: fill i18n key
     tags: ['dogs'],
     width: 1181,
     height: 1772,
@@ -200,7 +176,6 @@ export const GENERATED_GALLERY_IMAGES: readonly GalleryImage[] = [
   {
     id: 25,
     path: 'Dogs/IMG_5811',
-    altKey: '', // TODO: fill i18n key
     tags: ['dogs'],
     width: 1181,
     height: 1772,
@@ -208,7 +183,6 @@ export const GENERATED_GALLERY_IMAGES: readonly GalleryImage[] = [
   {
     id: 26,
     path: 'Dogs/IMG_5866',
-    altKey: '', // TODO: fill i18n key
     tags: ['dogs'],
     width: 2200,
     height: 3300,
@@ -216,7 +190,6 @@ export const GENERATED_GALLERY_IMAGES: readonly GalleryImage[] = [
   {
     id: 27,
     path: 'Dogs/IMG_7050sv',
-    altKey: '', // TODO: fill i18n key
     tags: ['dogs'],
     width: 1181,
     height: 1772,
@@ -224,7 +197,6 @@ export const GENERATED_GALLERY_IMAGES: readonly GalleryImage[] = [
   {
     id: 28,
     path: 'Dogs/IMG_8277',
-    altKey: '', // TODO: fill i18n key
     tags: ['dogs'],
     width: 1181,
     height: 1772,
@@ -232,7 +204,6 @@ export const GENERATED_GALLERY_IMAGES: readonly GalleryImage[] = [
   {
     id: 29,
     path: 'Dogs/IMG_8315',
-    altKey: '', // TODO: fill i18n key
     tags: ['dogs'],
     width: 2200,
     height: 3300,
@@ -240,7 +211,6 @@ export const GENERATED_GALLERY_IMAGES: readonly GalleryImage[] = [
   {
     id: 30,
     path: 'Dogs/IMG_8888',
-    altKey: '', // TODO: fill i18n key
     tags: ['dogs'],
     width: 1772,
     height: 1181,
@@ -248,7 +218,6 @@ export const GENERATED_GALLERY_IMAGES: readonly GalleryImage[] = [
   {
     id: 31,
     path: 'Dogs/IMG_9954',
-    altKey: '', // TODO: fill i18n key
     tags: ['dogs'],
     width: 1772,
     height: 1181,
@@ -256,7 +225,6 @@ export const GENERATED_GALLERY_IMAGES: readonly GalleryImage[] = [
   {
     id: 32,
     path: 'Cats/DSC_3150',
-    altKey: '', // TODO: fill i18n key
     tags: ['cats'],
     width: 2200,
     height: 3300,
@@ -265,7 +233,6 @@ export const GENERATED_GALLERY_IMAGES: readonly GalleryImage[] = [
   {
     id: 33,
     path: 'Cats/DSC_3193',
-    altKey: '', // TODO: fill i18n key
     tags: ['cats'],
     width: 2200,
     height: 3300,
@@ -273,7 +240,6 @@ export const GENERATED_GALLERY_IMAGES: readonly GalleryImage[] = [
   {
     id: 34,
     path: 'Cats/DSC_3369',
-    altKey: '', // TODO: fill i18n key
     tags: ['cats'],
     width: 2200,
     height: 3300,
@@ -281,7 +247,6 @@ export const GENERATED_GALLERY_IMAGES: readonly GalleryImage[] = [
   {
     id: 35,
     path: 'Cats/IMG_7486',
-    altKey: '', // TODO: fill i18n key
     tags: ['cats'],
     width: 1181,
     height: 1772,
@@ -290,7 +255,6 @@ export const GENERATED_GALLERY_IMAGES: readonly GalleryImage[] = [
   {
     id: 36,
     path: 'Cats/IMG_7545',
-    altKey: '', // TODO: fill i18n key
     tags: ['cats'],
     width: 1181,
     height: 1772,
@@ -298,7 +262,6 @@ export const GENERATED_GALLERY_IMAGES: readonly GalleryImage[] = [
   {
     id: 37,
     path: 'Farm Animals/IMG_6840',
-    altKey: '', // TODO: fill i18n key
     tags: ['farm animals'],
     width: 1772,
     height: 1181,
@@ -307,7 +270,6 @@ export const GENERATED_GALLERY_IMAGES: readonly GalleryImage[] = [
   {
     id: 38,
     path: 'Farm Animals/IMG_6928',
-    altKey: '', // TODO: fill i18n key
     tags: ['farm animals'],
     width: 1181,
     height: 1772,
@@ -315,7 +277,6 @@ export const GENERATED_GALLERY_IMAGES: readonly GalleryImage[] = [
   {
     id: 39,
     path: 'Farm Animals/IMG_7038',
-    altKey: '', // TODO: fill i18n key
     tags: ['farm animals'],
     width: 1181,
     height: 1772,
@@ -323,7 +284,6 @@ export const GENERATED_GALLERY_IMAGES: readonly GalleryImage[] = [
   {
     id: 40,
     path: 'Farm Animals/IMG_7043',
-    altKey: '', // TODO: fill i18n key
     tags: ['farm animals'],
     width: 1181,
     height: 1772,
@@ -331,7 +291,6 @@ export const GENERATED_GALLERY_IMAGES: readonly GalleryImage[] = [
   {
     id: 41,
     path: 'Farm Animals/IMG_7079',
-    altKey: '', // TODO: fill i18n key
     tags: ['farm animals'],
     width: 1181,
     height: 1772,
@@ -340,7 +299,6 @@ export const GENERATED_GALLERY_IMAGES: readonly GalleryImage[] = [
   {
     id: 42,
     path: 'Farm Animals/IMG_7087',
-    altKey: '', // TODO: fill i18n key
     tags: ['farm animals'],
     width: 1181,
     height: 1772,
@@ -348,7 +306,6 @@ export const GENERATED_GALLERY_IMAGES: readonly GalleryImage[] = [
   {
     id: 43,
     path: 'Farm Animals/IMG_7098',
-    altKey: '', // TODO: fill i18n key
     tags: ['farm animals'],
     width: 1181,
     height: 1772,
@@ -356,7 +313,6 @@ export const GENERATED_GALLERY_IMAGES: readonly GalleryImage[] = [
   {
     id: 44,
     path: 'Farm Animals/IMG_7135',
-    altKey: '', // TODO: fill i18n key
     tags: ['farm animals'],
     width: 1181,
     height: 1772,
@@ -364,7 +320,6 @@ export const GENERATED_GALLERY_IMAGES: readonly GalleryImage[] = [
   {
     id: 45,
     path: 'Farm Animals/IMG_7202',
-    altKey: '', // TODO: fill i18n key
     tags: ['farm animals'],
     width: 1181,
     height: 1772,
@@ -372,7 +327,6 @@ export const GENERATED_GALLERY_IMAGES: readonly GalleryImage[] = [
   {
     id: 46,
     path: 'Portraits/DSC_4716',
-    altKey: '', // TODO: fill i18n key
     tags: ['portraits'],
     width: 2200,
     height: 3093,
@@ -380,7 +334,6 @@ export const GENERATED_GALLERY_IMAGES: readonly GalleryImage[] = [
   {
     id: 47,
     path: 'Portraits/DSC_4751',
-    altKey: '', // TODO: fill i18n key
     tags: ['portraits'],
     width: 2200,
     height: 3093,
@@ -388,7 +341,6 @@ export const GENERATED_GALLERY_IMAGES: readonly GalleryImage[] = [
   {
     id: 48,
     path: 'Portraits/DSC_8059',
-    altKey: '', // TODO: fill i18n key
     tags: ['portraits'],
     width: 2200,
     height: 3300,
@@ -396,7 +348,6 @@ export const GENERATED_GALLERY_IMAGES: readonly GalleryImage[] = [
   {
     id: 49,
     path: 'Portraits/DSC_8351',
-    altKey: '', // TODO: fill i18n key
     tags: ['portraits'],
     width: 2200,
     height: 1467,
@@ -404,7 +355,6 @@ export const GENERATED_GALLERY_IMAGES: readonly GalleryImage[] = [
   {
     id: 50,
     path: 'Portraits/DSC_8625',
-    altKey: '', // TODO: fill i18n key
     tags: ['portraits'],
     width: 2200,
     height: 3300,
@@ -412,7 +362,6 @@ export const GENERATED_GALLERY_IMAGES: readonly GalleryImage[] = [
   {
     id: 51,
     path: 'Portraits/DSC_8672',
-    altKey: '', // TODO: fill i18n key
     tags: ['portraits'],
     width: 2200,
     height: 1467,
@@ -420,7 +369,6 @@ export const GENERATED_GALLERY_IMAGES: readonly GalleryImage[] = [
   {
     id: 52,
     path: 'Portraits/DSC_8822sv',
-    altKey: '', // TODO: fill i18n key
     tags: ['portraits'],
     width: 2200,
     height: 1467,
@@ -428,7 +376,6 @@ export const GENERATED_GALLERY_IMAGES: readonly GalleryImage[] = [
   {
     id: 53,
     path: 'Portraits/DSC_8872',
-    altKey: '', // TODO: fill i18n key
     tags: ['portraits'],
     width: 2200,
     height: 1467,
@@ -436,7 +383,6 @@ export const GENERATED_GALLERY_IMAGES: readonly GalleryImage[] = [
   {
     id: 54,
     path: 'Portraits/IMG_1746',
-    altKey: '', // TODO: fill i18n key
     tags: ['portraits'],
     width: 2200,
     height: 3300,
@@ -444,7 +390,6 @@ export const GENERATED_GALLERY_IMAGES: readonly GalleryImage[] = [
   {
     id: 55,
     path: 'Portraits/IMG_1890',
-    altKey: '', // TODO: fill i18n key
     tags: ['portraits'],
     width: 2200,
     height: 3300,
@@ -452,7 +397,6 @@ export const GENERATED_GALLERY_IMAGES: readonly GalleryImage[] = [
   {
     id: 56,
     path: 'Portraits/IMG_1958',
-    altKey: '', // TODO: fill i18n key
     tags: ['portraits'],
     width: 2200,
     height: 3300,
@@ -460,7 +404,6 @@ export const GENERATED_GALLERY_IMAGES: readonly GalleryImage[] = [
   {
     id: 57,
     path: 'Details/DSC_6633',
-    altKey: '', // TODO: fill i18n key
     tags: ['details'],
     width: 2200,
     height: 1467,
@@ -468,7 +411,6 @@ export const GENERATED_GALLERY_IMAGES: readonly GalleryImage[] = [
   {
     id: 58,
     path: 'Details/DSC_6838',
-    altKey: '', // TODO: fill i18n key
     tags: ['details'],
     width: 2200,
     height: 1467,
@@ -476,7 +418,6 @@ export const GENERATED_GALLERY_IMAGES: readonly GalleryImage[] = [
   {
     id: 59,
     path: 'Details/DSC_6939',
-    altKey: '', // TODO: fill i18n key
     tags: ['details'],
     width: 2200,
     height: 1467,
