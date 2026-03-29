@@ -2,9 +2,8 @@ TODO: Test Banner Scaling on LG screen 1080p
 TODO: Test Contact Page on LG screen 1080p
 TODO: Test Gallery Page on LG screen 1080p
 
-TODO: Image Format/Size Optimization across the site
 TODO: Image Loading Hide Alt Text until loaded
-
+- Vertically Center the mobile header hamburger menu
 
 
 Features
@@ -14,8 +13,5 @@ Features
   - Sessions (Prices)
     - Bookings?
     - Book a session of home page should link here
-
   - Not found page
 
-- Vertically Center the mobile header hamburger menu
-- Cursor visible anywhere

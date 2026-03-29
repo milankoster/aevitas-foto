@@ -1,19 +1,19 @@
 <nav class="lg:hidden w-full px-4 py-3 relative top-0 left-0" [class]="backgroundColor" [style.z-index]="100">
-    <div class="flex items-center justify-between">
-        <!-- Mobile: Hamburger (left) -->
-        <button class="hamburger relative w-8 h-8" type="button" (click)="toggleMobileMenu()">
-            <span class="bar top" [class.open]="mobileMenuOpen"></span>
-            <span class="bar middle" [class.open]="mobileMenuOpen"></span>
-            <span class="bar bottom" [class.open]="mobileMenuOpen"></span>
-        </button>
+  <div class="flex items-center justify-between">
+    <!-- Mobile: Hamburger (left) -->
+    <button class="hamburger relative w-8 h-8" type="button" (click)="toggleMobileMenu()">
+      <span class="bar top" [class.open]="mobileMenuOpen"></span>
+      <span class="bar middle" [class.open]="mobileMenuOpen"></span>
+      <span class="bar bottom" [class.open]="mobileMenuOpen"></span>
+    </button>
 
-        <!-- Mobile Logo (right) -->
-        <a class="flex items-center ml-auto" routerLink="/">
-            <img alt="{{ 'header.logoAlt' | transloco }}" class="h-12 md:h-16 w-auto"
-                 height="828" ngSrc="assets/logo/aevitas-logo-mobile.png" width="1440"
-            />
-        </a>
-    </div>
+    <!-- Mobile Logo (right) -->
+    <a class="flex items-center ml-auto" routerLink="/">
+      <img alt="{{ 'header.logoAlt' | transloco }}" class="h-12 md:h-16 w-auto"
+           height="97" ngSrc="assets/logo/aevitas-logo-mobile.png" width="168"
+      />
+    </a>
+  </div>
 </nav>
 
 <!-- Mobile Menu Component (outside nav to avoid z-index stacking context issues) -->
