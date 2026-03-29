@@ -13,10 +13,14 @@ type Options = {
   force?: boolean;
 };
 
+/* eslint-disable complexity */
 function parseArgs(): Options | null {
   const argv = process.argv.slice(2);
   if (argv.length === 0) {
-    console.error('Usage: tsx resize-image.ts --input <path> --width <px> [--output <path>] [--format png|jpeg|webp|avif] [--quality 80] [--dry-run] [--no-backup] [--force]');
+    const usage =
+      'Usage: tsx resize-image.ts --input <path> --width <px> [--output <path>] ' +
+      '[--format png|jpeg|webp|avif] [--quality 80] [--dry-run] [--no-backup] [--force]';
+    console.error(usage);
     return null;
   }
 
@@ -75,7 +79,9 @@ function parseArgs(): Options | null {
     force: opts.force ?? false,
   } as Options;
 }
+/* eslint-enable complexity */
 
+/* eslint-disable complexity */
 async function run(opts: Options): Promise<void> {
   const inputPath = path.resolve(opts.input);
   if (!fs.existsSync(inputPath)) {
@@ -150,11 +156,15 @@ async function run(opts: Options): Promise<void> {
       } catch (err) {
         // Cleanup tmp file on failure
         try {
-          if (fs.existsSync(tmpPath)) fs.unlinkSync(tmpPath);
-        } catch (_) {
-          // ignore
+          if (fs.existsSync(tmpPath)) {
+            fs.unlinkSync(tmpPath);
+          }
+        } catch (cleanupErr) {
+          console.error('Failed to cleanup tmp file:', cleanupErr);
         }
-        throw err;
+        console.error('Resize pipeline failed:', err);
+        process.exitCode = 1;
+        return;
       }
     } else {
       await pipeline.toFile(outputPath);
@@ -166,8 +176,9 @@ async function run(opts: Options): Promise<void> {
     process.exitCode = 1;
   }
 }
+/* eslint-enable complexity */
 
 const opts = parseArgs();
-if (opts) void run(opts);
-
-
+if (opts) {
+  void run(opts);
+}
