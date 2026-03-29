@@ -3,7 +3,6 @@ TODO: Test Contact Page on LG screen 1080p
 TODO: Test Gallery Page on LG screen 1080p
 
 TODO: Image Loading Hide Alt Text until loaded
-- Vertically Center the mobile header hamburger menu
 
 
 Features
