@@ -1,5 +1,5 @@
 import { InjectionToken } from '@angular/core';
-import { GalleryImage } from '../../../pages/gallery/gallery-images';
+import { GalleryImage } from '../../../pages/gallery/images/gallery-images';
 
 export type LightboxData = {
   readonly images: readonly GalleryImage[];

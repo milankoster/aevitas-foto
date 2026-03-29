@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, computed, input, output } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { GalleryTag } from '../../../pages/gallery/gallery-images';
+import { GalleryTag } from '../../../pages/gallery/images/gallery-images';
 import { TranslocoModule } from '@jsverse/transloco';
 
 @Component({
