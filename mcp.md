@@ -31,9 +31,9 @@ Aevitas Foto Angular Project Guidelines
 - Typography: Use imported Google Fonts. Font families should be set via CSS variables and Tailwind config.
 - Consistent Spacing: Use consistent padding, margin, and max-width classes (max-w-8xl, px-6, etc.) for containers.
 - **Fonts:**
-  - Baloo 2 for logo and main headings (`font-logo`, `font-header-links`)
-  - Playfair Display for section headings (`font-playfair`)
-  - Nunito for body text and buttons (`font-nunito`, `font-buttons`)
+  - Baloo 2 for logo
+  - Nunito for section headings (`font-nunito`)
+  - Montserrat for body text and buttons (`font-montserrat`, `font-buttons`)
 - **Colors:**
   Some colours are defined separately in styles.scss:
   - Main text: `whitesmoke`, `charcoal`

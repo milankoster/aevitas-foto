@@ -2,17 +2,15 @@
 @use '@fortawesome/fontawesome-free/css/all.min.css';
 
 :root {
-  --font-baloo: "Baloo 2"; // Buttons, Logo, Links
-  --font-playfair: "Playfair Display", serif; // Section Headings
-  --font-nunito: "Nunito", sans-serif; // Body Text, Nav Links, Language Codes
+  --font-baloo: "Baloo 2"; // Logo
+  --font-nunito: "Nunito", sans-serif; // Headings
   --font-montserrat: "Montserrat", sans-serif; // Body Text
 }
 
 // Fonts
 @theme {
-  --font-baloo: "Baloo 2";                        // Buttons, Logo, Links
-  --font-playfair: "Playfair Display", serif;     // Section Headings
-  --font-nunito: "Nunito", sans-serif;            // Body Text, Nav Links, Language Codes
+  --font-baloo: "Baloo 2";                        // Logo
+  --font-nunito: "Nunito", sans-serif;            // Headings, Language Codes
   --font-montserrat: "Montserrat", sans-serif;    // Body Text
 }
 
