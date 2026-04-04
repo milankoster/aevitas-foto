@@ -5,6 +5,7 @@ TODO: Test Gallery Page on LG screen 1080p
 Gallery Tags dont show clickable cursor
 Contact Form submit button doesnt show clickable cursor
 Home page Learn more button is too dark
+Hamburger open/close animation is broken since we moved it
 
 Features
   - About Page
