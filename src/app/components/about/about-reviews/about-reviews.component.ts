@@ -1,16 +1,16 @@
-import { AfterViewInit, ChangeDetectionStrategy, Component, computed } from '@angular/core';
+import { AfterViewInit, ChangeDetectionStrategy, Component, inject, OnDestroy, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Navigation, Pagination } from 'swiper/modules';
 import Swiper from 'swiper';
 import { TranslocoModule, TranslocoService } from '@jsverse/transloco';
-import { inject } from '@angular/core';
+import { Subscription } from 'rxjs';
 
 Swiper.use([Navigation, Pagination]);
 
-interface Review {
+type Review = {
   name: string;
   quote: string;
-}
+};
 
 @Component({
   selector: 'app-about-reviews',
@@ -20,16 +20,43 @@ interface Review {
   standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class AboutReviewsComponent implements AfterViewInit {
+export class AboutReviewsComponent implements AfterViewInit, OnDestroy {
   private translocoService = inject(TranslocoService);
 
-  reviews = computed(() => {
-    const reviewsData = this.translocoService.translate('reviews');
-    return Array.isArray(reviewsData) ? reviewsData as Review[] : [];
-  });
+  // Using a signal so the template can react when translations are loaded/updated
+  readonly reviews = signal<Review[]>([]);
+  private reviewsSub?: Subscription;
+  private swiperInstance?: Swiper;
+  private viewInitialized = false;
+
+  constructor() {
+    this.reviewsSub = this.translocoService.selectTranslateObject('reviews').subscribe((arr: unknown) => {
+      const list = Array.isArray(arr) ? (arr as Review[]) : [];
+      this.reviews.set(list);
+      if (this.viewInitialized) {
+        if (this.swiperInstance) {
+          // schedule in next tick to let DOM update
+          setTimeout(() => this.swiperInstance?.update(), 0);
+        } else if (list.length > 0) {
+          // create swiper after DOM updates
+          setTimeout(() => this.createSwiper(), 0);
+        }
+      }
+    });
+  }
 
   ngAfterViewInit(): void {
-    new Swiper('.reviews-swiper', {
+    this.viewInitialized = true;
+    if (this.reviews().length > 0) {
+      this.createSwiper();
+    }
+  }
+
+  private createSwiper(): void {
+    if (this.swiperInstance) {
+      return;
+    }
+    this.swiperInstance = new Swiper('.reviews-swiper', {
       spaceBetween: 24,
       centeredSlides: false,
       loop: false,
@@ -52,6 +79,9 @@ export class AboutReviewsComponent implements AfterViewInit {
       },
     });
   }
+
+  ngOnDestroy(): void {
+    this.reviewsSub?.unsubscribe();
+    this.swiperInstance?.destroy(true, true);
+  }
 }
-
-
