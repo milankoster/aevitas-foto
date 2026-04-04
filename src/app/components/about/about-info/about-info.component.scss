@@ -1,0 +1,34 @@
+.tab-header {
+  position: relative;
+  font-size: 0.95rem;
+
+  @media (min-width: 768px) {
+    font-size: 1rem;
+  }
+
+  @media (min-width: 2560px) {
+    font-size: 1.125rem;
+  }
+
+  &.active {
+    color: var(--color-bronze);
+    font-weight: 600;
+    border-bottom: 2px solid var(--color-bronze);
+  }
+}
+
+.tab-content {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+

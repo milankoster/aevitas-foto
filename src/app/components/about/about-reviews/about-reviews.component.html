@@ -1,0 +1,46 @@
+<section class="bg-linen py-8 md:py-12 lg:py-16">
+  <div class="max-w-8xl 2xl:max-w-9xl mx-auto px-6 md:px-8">
+    <!-- Section Title -->
+    <h2 class="text-3xl md:text-4xl 2xl:text-5xl mb-8 text-charcoal font-nunito text-left">
+      {{ 'reviewsTitle' | transloco }}
+    </h2>
+
+    <!-- Swiper Container -->
+    <div class="swiper reviews-swiper w-full">
+      <div class="swiper-wrapper">
+        @for (review of reviews(); track $index) {
+          <div class="swiper-slide">
+            <div class="review-card bg-white shadow-lg p-6 h-full flex flex-col justify-between min-h-[20rem] lg:min-h-[18rem]">
+              <div class="overflow-hidden">
+                <p class="text-sm md:text-base 2xl:text-lg text-charcoal font-montserrat font-light italic mb-4">
+                  "{{ review.quote }}"
+                </p>
+              </div>
+              <p class="text-md md:text-lg 2xl:text-xl text-bronze font-nunito font-semibold text-right">
+                — {{ review.name }}
+              </p>
+            </div>
+          </div>
+        }
+      </div>
+
+      <!-- Navigation -->
+      <div class="swiper-button-prev">
+        <svg aria-hidden="true" display="block"></svg>
+        <span class="swiper-button-circle">
+          <i class="fas fa-arrow-left text-whitesmoke text-xl 2xl:text-2xl"></i>
+        </span>
+      </div>
+      <div class="swiper-button-next">
+        <svg aria-hidden="true" display="block"></svg>
+        <span class="swiper-button-circle">
+          <i class="fas fa-arrow-right text-whitesmoke text-xl 2xl:text-2xl"></i>
+        </span>
+      </div>
+
+      <!-- Pagination -->
+      <div class="swiper-pagination"></div>
+    </div>
+  </div>
+</section>
+

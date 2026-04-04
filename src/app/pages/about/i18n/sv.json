@@ -1,0 +1,67 @@
+{
+  "photographer": {
+    "name": "Caeli Aevitas",
+    "title": "Djurfotograf",
+    "imageAlt": "Porträtt av Caeli Aevitas, djurfotograf, med sin hund i skogen"
+  },
+  "tabs": {
+    "about": "Om mig",
+    "approach": "Tillvägagångssätt",
+    "equipment": "Utrustning",
+    "location": "Plats"
+  },
+  "content": {
+    "about": {
+      "p1": "Jag heter Caeli och är en passionerad djurfotograf baserad i Falkenberg, Sverige. Min resa in i fotografering började med mina egna älskade husdjur, och jag upptäckte snabbt att att fånga deras unika personligheter gav mig enorm glädje.",
+      "p2": "Varje husdjur har en historia att berätta, och jag älskar att hjälpa ägare att bevara dessa speciella stunder. Oavsett om det är en lekfull valp, en majestätisk katt eller ett kärleksfullt lantbruksdjur, strävar jag efter att fånga essensen av varje djurs karaktär.",
+      "p3": "När jag inte är bakom kameran hittar du mig utforska naturen med mina hundar, experimentera med nya fotograferingstekniker eller planera nästa kreativa fotografering. Jag tror att de bästa fotografierna kommer från genuina kontakter och autentiska ögonblick."
+    },
+    "approach": {
+      "p1": "Min fotograferingsmetod är inriktad på att skapa en bekväm, stressfri miljö för dina husdjur. Jag tar mig tid att lära känna varje djur individuellt, vilket låter dem slappna av och visa sin sanna personlighet.",
+      "p2": "Jag föredrar naturligt ljus och utomhusmiljöer där husdjur kan vara sig själva. Skogen, stranden eller din egen trädgård blir duken för vackra, autentiska bilder. För dem som föredrar inomhussessioner tar jag med en bärbar studioutrustning som skapar professionella resultat i bekvämligheten av ditt hem.",
+      "p3": "Varje session är skräddarsydd efter ditt husdjurs energinivå och temperament. Vi arbetar i deras takt, tar pauser när det behövs och ser till att upplevelsen är positiv och njutbar för alla inblandade. Resultatet? Genuina uttryck och naturliga poser som verkligen fångar ditt husdjurs anda."
+    },
+    "equipment": {
+      "p1": "Jag använder professionell Nikon-kamerautrustning, inklusive fullformatskroppar och ett sortiment av prime- och zoomobjektiv. Detta gör att jag kan anpassa mig till vilken fotograferingsmiljö som helst och fånga skarpa, högkvalitativa bilder i olika ljusförhållanden.",
+      "p2": "För utomhussessioner förlitar jag mig på naturligt ljus och reflektorer för att skapa mjuk, smickrande belysning. När jag fotograferar inomhus eller i utmanande ljusförhållanden använder jag professionella blixtljus och modifierare för att uppnå studiokvalitet.",
+      "p3": "Alla bilder tas i RAW-format och redigeras noggrant i Adobe Lightroom och Photoshop. Jag levererar högupplösta filer lämpliga för stora utskrifter, vilket säkerställer att dina dyrbara minnen kan visas och njutas av i många år framöver."
+    },
+    "location": {
+      "p1": "Jag är baserad i Falkenberg, en vacker kuststad i Halland, Sverige. Området erbjuder fantastiska naturlandskap—från sandstränder till frodiga skogar—vilket ger perfekta bakgrunder för djurfotografering.",
+      "p2": "Jag reser regelbundet genom Halland och Västra Götaland för sessioner. Några av mina favoritplatser inkluderar skogsstigar nära Falkenberg, stränder längs kusten och natursköna landsbygdsområden. Jag föreslår gärna platser som fungerar bäst för ditt husdjur.",
+      "p3": "För kunder utanför mitt vanliga serviceområde är jag tillgänglig för resesessioner. Vänligen kontakta mig för att diskutera din plats så kan vi skapa ett anpassat paket som fungerar för dig."
+    }
+  },
+  "reviewsTitle": "Vad kunderna säger",
+  "reviews": [
+    {
+      "name": "Emma Andersson",
+      "quote": "Caeli fångade vår hunds personlighet perfekt! Bilderna är helt underbara och vi kommer att värdesätta dem för evigt."
+    },
+    {
+      "name": "Lars Bengtsson",
+      "quote": "Professionell, tålmodig och otroligt talangfull. Våra katter är vanligtvis kamerablyga men Caeli fick dem att känna sig bekväma. Rekommenderar starkt!"
+    },
+    {
+      "name": "Sofia Karlsson",
+      "quote": "Utomhussessionen var så rolig! Caeli visste exakt hur man skulle få vår energiska valp att posera. Resultaten överträffade våra förväntningar."
+    },
+    {
+      "name": "Jonas Eriksson",
+      "quote": "Vi anlitade Caeli för foton av våra lantbruksdjur och kunde inte vara lyckligare. Hon har ett speciellt sätt med alla djur."
+    },
+    {
+      "name": "Maria Lindström",
+      "quote": "Fantastiska foton och underbar upplevelse. Caelis passion för djur lyser igenom i varje bild."
+    },
+    {
+      "name": "Anders Nilsson",
+      "quote": "Kvaliteten på fotona är enastående. Varje detalj är kristallklar och färgerna är livfulla. Värt varje krona!"
+    },
+    {
+      "name": "Karin Johansson",
+      "quote": "Caeli fick vår äldre hund att se ut som en valp igen! Hon fångade hans milda själ vackert. Tack!"
+    }
+  ]
+}
+
