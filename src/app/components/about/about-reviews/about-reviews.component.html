@@ -10,14 +10,16 @@
       <div class="swiper-wrapper">
         @for (review of reviews(); track $index) {
           <div class="swiper-slide">
-            <div class="review-card bg-white shadow-lg p-6 h-full flex flex-col justify-between min-h-[20rem] lg:min-h-[18rem]">
+            <div
+              class="review-card bg-white shadow-lg px-4 pt-6 pb-2 h-full flex flex-col justify-between min-h-[16rem] lg:min-h-[14rem]">
               <div class="overflow-hidden">
-                <p class="text-sm md:text-base 2xl:text-lg text-charcoal font-montserrat font-light italic mb-4">
+                <p
+                  class="text-base lg:text-md 2xl:text-xl text-charcoal font-montserrat font-light italic px-2 mb-4 leading-relaxed">
                   "{{ review.quote }}"
                 </p>
               </div>
-              <p class="text-md md:text-lg 2xl:text-xl text-bronze font-nunito font-semibold text-right">
-                — {{ review.name }}
+              <p class="text-sm md:text-sm 2xl:text-base text-bronze font-nunito font-medium text-right">
+                {{ review.name }}
               </p>
             </div>
           </div>
