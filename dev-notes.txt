@@ -2,15 +2,17 @@ TODO: Test Banner Scaling on LG screen 1080p
 TODO: Test Contact Page on LG screen 1080p
 TODO: Test Gallery Page on LG screen 1080p
 
+Home page Learn more button is too dark
+Submit form in contact page is too dark
+
+
+
 Gallery Tags dont show clickable cursor
 Contact Form submit button doesnt show clickable cursor
-Home page Learn more button is too dark
+
 Hamburger open/close animation is broken since we moved it
 
 Features
-  - About Page
-    - 4 sections: About, Approach, Equipment, Location
-    - Testimonials section
   - Sessions (Prices) (Probably split into 2 pages and extend header)
     - Bookings?
     - Book a session of home page should link here
