@@ -1,6 +1,6 @@
 import { AfterViewInit, ChangeDetectionStrategy, Component, inject, OnDestroy, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Pagination, Autoplay } from 'swiper/modules';
+import { Autoplay, Pagination } from 'swiper/modules';
 import Swiper from 'swiper';
 import { TranslocoModule, TranslocoService } from '@jsverse/transloco';
 import { Subscription } from 'rxjs';
@@ -60,6 +60,7 @@ export class AboutReviewsComponent implements AfterViewInit, OnDestroy {
       spaceBetween: 24,
       centeredSlides: false,
       loop: true,
+      speed: 800,
       autoplay: {
         delay: 4000,
         disableOnInteraction: false,
