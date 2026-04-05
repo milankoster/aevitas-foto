@@ -31,11 +31,19 @@ export class GalleryTagFilterComponent {
       return;
     }
 
-    // If this tag is already the sole active tag, do nothing (keep it active).
+    // If the clicked tag is already active, toggle it off. When toggling
+    // off a non-`all` tag we want to fall back to the `all` tag (if present),
+    // otherwise emit an empty array.
     if (activeTags.length === 1 && activeTags[0] === tag) {
+      if (allTag) {
+        this.activeTagsChange.emit([allTag]);
+      } else {
+        this.activeTagsChange.emit([]);
+      }
       return;
     }
 
+    // Otherwise select the clicked tag as the sole active tag.
     this.activeTagsChange.emit([tag]);
   }
 
