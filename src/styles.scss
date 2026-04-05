@@ -86,6 +86,11 @@ body.no-scroll {
   }
 }
 
+.gallery-tag:not(.bg-bronze):hover {
+  color: var(--color-bronze) !important;
+  border-color: var(--color-bronze) !important;
+}
+
 .swiper-pagination-bullet {
   border: 1px solid var(--color-charcoal);
   box-sizing: content-box;
