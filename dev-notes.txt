@@ -5,8 +5,6 @@ TODO: Test Gallery Page on LG screen 1080p
 Home page Learn more button is too dark
 Submit form in contact page is too dark
 
-Hamburger open/close animation is broken since we moved it
-
 Features
   - Sessions (Prices) (Probably split into 2 pages and extend header)
     - Bookings?

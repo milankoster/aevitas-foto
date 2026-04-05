@@ -16,7 +16,9 @@
     position: absolute;
     left: 0;
     transform-origin: center;
-    transition: transform 0.15s ease-out 0.05s, opacity 0.1s ease, width 0.15s ease;
+    transition: top 0.15s ease 0.15s,
+    transform 0.15s ease-out 0.05s,
+    opacity 0.1s ease;
   }
 
   /* Position bars relative to the vertical center so the icon stays visually centered
@@ -38,8 +40,8 @@
 
   .bar.open.top {
     top: 50%;
-    transform: translateY(-50%) rotate(45deg);
-    transition: transform 0.15s ease-out 0.05s;
+    transform: rotate(45deg);
+    transition: top 0.15s ease 0.05s, transform 0.15s ease-out 0.15s;
     width: 110%;
     left: -5%;
   }
@@ -51,8 +53,8 @@
 
   .bar.open.bottom {
     top: 50%;
-    transform: translateY(-50%) rotate(135deg);
-    transition: transform 0.15s ease-out 0.05s;
+    transform: rotate(135deg);
+    transition: top 0.15s ease 0.05s, transform 0.15s ease-out 0.15s;
     width: 110%;
     left: -5%;
   }
