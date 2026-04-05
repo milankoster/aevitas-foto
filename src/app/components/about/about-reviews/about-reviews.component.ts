@@ -1,11 +1,11 @@
 import { AfterViewInit, ChangeDetectionStrategy, Component, inject, OnDestroy, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Navigation, Pagination } from 'swiper/modules';
+import { Pagination, Autoplay } from 'swiper/modules';
 import Swiper from 'swiper';
 import { TranslocoModule, TranslocoService } from '@jsverse/transloco';
 import { Subscription } from 'rxjs';
 
-Swiper.use([Navigation, Pagination]);
+Swiper.use([Pagination, Autoplay]);
 
 type Review = {
   name: string;
@@ -59,11 +59,11 @@ export class AboutReviewsComponent implements AfterViewInit, OnDestroy {
     this.swiperInstance = new Swiper('.reviews-swiper', {
       spaceBetween: 24,
       centeredSlides: false,
-      loop: false,
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-        disabledClass: 'swiper-button-disabled',
+      loop: true,
+      autoplay: {
+        delay: 4000,
+        disableOnInteraction: false,
+        pauseOnMouseEnter: true,
       },
       pagination: {
         el: '.swiper-pagination',
