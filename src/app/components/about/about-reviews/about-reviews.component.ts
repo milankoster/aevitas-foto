@@ -66,10 +66,6 @@ export class AboutReviewsComponent implements AfterViewInit, OnDestroy {
         disableOnInteraction: false,
         pauseOnMouseEnter: true,
       },
-      pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
-      },
       observer: true,
       observeParents: true,
       watchOverflow: true,

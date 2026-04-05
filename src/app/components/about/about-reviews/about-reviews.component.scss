@@ -15,33 +15,18 @@
   height: auto;
 }
 
+.reviews-swiper {
+  padding-top: 1rem;
+  padding-bottom: 3rem;
+  overflow: visible;
+}
+
 .review-card {
   border-radius: 0.5rem;
   transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 
   &:hover {
     transform: translateY(-4px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 10px 15px 0 rgba(0, 0, 0, 0.20);
   }
 }
-
-.swiper-button-circle {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.swiper-button-disabled {
-  opacity: 0.35;
-  cursor: not-allowed;
-  pointer-events: none;
-}
-
-.swiper-pagination {
-  bottom: -2.5rem !important;
-
-  @media (min-width: 768px) {
-    bottom: -3rem !important;
-  }
-}
-
