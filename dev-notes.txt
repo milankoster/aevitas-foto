@@ -1,3 +1,5 @@
+- Make buttons more clearly interactive on hover (maybe add a little animation or shadow)
+
 Features
   - Sessions (Prices) (Probably split into 2 pages and extend header)
     - Bookings?
