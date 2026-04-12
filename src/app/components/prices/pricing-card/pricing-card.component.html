@@ -4,15 +4,16 @@
        Image is rendered as a CSS background; text is overlaid on top.
        This block is hidden from screen readers on desktop via display:none.  -->
   <div
+    aria-hidden="false"
     class="pricing-card--mobile md:hidden relative overflow-hidden rounded-lg shadow-xl min-h-96"
     [style.backgroundImage]="'url(' + imageSrc() + ')'"
-    aria-hidden="false"
   >
     <!-- Dark overlay -->
-    <div class="absolute inset-0 bg-black/55" aria-hidden="true"></div>
+    <div aria-hidden="true" class="absolute inset-0 bg-black/55"></div>
 
     <!-- Text centred over the image -->
-    <div class="relative z-10 flex flex-col items-center justify-center min-h-96 px-6 py-12 text-whitesmoke text-center">
+    <div
+      class="relative z-10 flex flex-col items-center justify-center min-h-96 px-6 py-12 text-whitesmoke text-center">
       <h2 class="text-2xl font-nunito font-bold">
         {{ titleKey() | transloco }}
       </h2>
@@ -22,6 +23,10 @@
       <p class="mt-4 font-montserrat font-light text-lg max-w-md">
         {{ descriptionKey() | transloco }}
       </p>
+      <!-- Mobile CTA -->
+      <a class="font-buttons text-sm mt-6 inline-block" routerLink="/contact">
+        {{ 'prices.cta.button' | transloco }}
+      </a>
     </div>
   </div>
 
@@ -29,23 +34,23 @@
        Flex card: image half + text half, reversible.
        Hidden from screen readers on mobile via display:none.              -->
   <div
-    class="hidden md:flex overflow-hidden rounded-lg shadow-xl bg-timberwolf"
-    [class.flex-row-reverse]="reversed()"
     aria-hidden="false"
+    class="hidden md:flex overflow-hidden rounded-xl shadow-xl bg-whitesmoke min-h-80"
+    [class.flex-row-reverse]="reversed()"
   >
-    <!-- Image half — no padding so it sits flush against the card edge -->
-    <div class="pricing-card__img relative w-1/2 min-h-80">
+    <!-- Image half — around 45% width so text area is slightly larger -->
+    <div class="pricing-card__img relative w-[45%]">
       <img
         class="absolute inset-0 w-full h-full object-cover"
         fill
-        [ngSrc]="imageSrc()"
-        [alt]="imageAltKey() | transloco"
         priority
+        [alt]="imageAltKey() | transloco"
+        [ngSrc]="imageSrc()"
       />
     </div>
 
     <!-- Text half -->
-    <div class="w-1/2 flex flex-col justify-center p-8 2xl:p-12">
+    <div class="w-[55%] flex flex-col justify-center p-8 2xl:p-12">
       <h2 class="text-2xl 2xl:text-3xl font-nunito font-bold text-charcoal">
         {{ titleKey() | transloco }}
       </h2>
@@ -55,6 +60,9 @@
       <p class="mt-4 font-montserrat font-light text-charcoal text-lg 2xl:text-xl">
         {{ descriptionKey() | transloco }}
       </p>
+      <div class="mt-6">
+        <a class="font-buttons text-sm" routerLink="/contact">{{ 'prices.cta.button' | transloco }}</a>
+      </div>
     </div>
   </div>
 

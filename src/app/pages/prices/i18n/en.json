@@ -4,25 +4,30 @@
     "description": "Choose the package that best fits you and your pet. Every session is personal, unhurried, and tailored to bring out the best in your animal.",
     "cta": {
       "text": "Not sure what package fits you? Let's talk",
-      "button": "Contact"
+      "button": "Book now!"
     },
     "tiers": {
       "mini": {
         "title": "Mini",
         "description": "A focused 30-minute outdoor session at one location. Perfect for a single pet portrait or a quick spontaneous shoot.",
+        "price": 1500,
+        "currency": "EUR",
         "imageAlt": "Dog running through a sunlit field during a mini photography session"
       },
       "standard": {
         "title": "Standard",
         "description": "A relaxed 1-hour session at up to two locations. Ideal for capturing multiple moods and moments with your pet.",
+        "price": 2500,
+        "currency": "EUR",
         "imageAlt": "Dog posing in an autumn forest during a standard photography session"
       },
       "premium": {
         "title": "Premium",
         "description": "A full 2-hour session across multiple locations, including a home studio option. The complete experience for pet owners who want it all.",
+        "price": 3900,
+        "currency": "EUR",
         "imageAlt": "Dogs playing together in a field during a premium photography session"
       }
     }
   }
 }
-

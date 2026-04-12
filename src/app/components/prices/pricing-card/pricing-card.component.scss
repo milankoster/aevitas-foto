@@ -9,5 +9,9 @@
   // min-h set via Tailwind (min-h-80), position set via Tailwind (relative)
   // The NgOptimizedImage fill directive sets: position:absolute; inset:0; width:100%; height:100%
   overflow: hidden;
+  // Ensure image covers and is clipped to the rounded card corners
+  img {
+    object-fit: cover;
+  }
 }
 

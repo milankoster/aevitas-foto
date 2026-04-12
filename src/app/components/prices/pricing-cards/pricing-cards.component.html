@@ -1,14 +1,14 @@
-<section class="w-full bg-linen py-6 md:py-12 lg:py-16">
+<section class="w-full bg-linen pt-2 md:py-4">
   @for (tier of tiers; track tier.titleKey; let i = $index) {
-    <div class="py-3">
+    <div class="md:py-3">
       <app-pricing-card
-        [titleKey]="tier.titleKey"
-        [price]="tier.price"
-        [currency]="tier.currency"
+        [currencyKey]="tier.currencyKey"
         [descriptionKey]="tier.descriptionKey"
-        [imageSrc]="tier.imageSrc"
         [imageAltKey]="tier.imageAltKey"
+        [imageSrc]="tier.imageSrc"
+        [priceKey]="tier.priceKey"
         [reversed]="i % 2 !== 0"
+        [titleKey]="tier.titleKey"
       />
     </div>
   }

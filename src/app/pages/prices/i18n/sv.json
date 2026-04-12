@@ -4,25 +4,30 @@
     "description": "Välj det paket som passar dig och ditt husdjur bäst. Varje session är personlig, avslappnad och skräddarsydd för att visa ditt djur på bästa sätt.",
     "cta": {
       "text": "Osäker på vilket paket som passar dig? Låt oss prata",
-      "button": "Kontakt"
+      "button": "Boka nu!"
     },
     "tiers": {
       "mini": {
         "title": "Mini",
         "description": "En fokuserad utomhussession på 30 minuter på en plats. Perfekt för ett enkelt porträtt eller en spontan fotografering.",
+        "price": 1500,
+        "currency": "SEK",
         "imageAlt": "Hund som springer i ett solljust fält under en mini-fotosession"
       },
       "standard": {
         "title": "Standard",
         "description": "En avslappnad session på 1 timme på upp till två platser. Idealisk för att fånga flera stämningar och ögonblick med ditt husdjur.",
+        "price": 2500,
+        "currency": "SEK",
         "imageAlt": "Hund poserar i en höstskog under en standard-fotosession"
       },
       "premium": {
         "title": "Premium",
         "description": "En hel 2-timmars session på flera platser, inklusive ett hemstudioalternativ. Den kompletta upplevelsen för husdjursägare som vill ha allt.",
+        "price": 3900,
+        "currency": "SEK",
         "imageAlt": "Hundar leker tillsammans i ett fält under en premium-fotosession"
       }
     }
   }
 }
-
