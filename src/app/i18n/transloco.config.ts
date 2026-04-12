@@ -12,6 +12,8 @@ import aboutSv from '../pages/about/i18n/sv.json';
 import contactSv from '../pages/contact/i18n/sv.json';
 import gallerySv from '../pages/gallery/i18n/sv.json';
 import gallerySvImageDescriptions from '../pages/gallery/i18n/sv-image-descriptions.json';
+import pricesEn from '../pages/prices/i18n/en.json';
+import pricesSv from '../pages/prices/i18n/sv.json';
 
 class AppTranslocoLoader implements TranslocoLoader {
   getTranslation(lang: string): Promise<Record<string, unknown>> {
@@ -23,6 +25,7 @@ class AppTranslocoLoader implements TranslocoLoader {
         ...(contactEn as Record<string, unknown>),
         ...(galleryEn as Record<string, unknown>),
         ...(galleryEnImageDescriptions as Record<string, unknown>),
+        ...(pricesEn as Record<string, unknown>),
       });
     }
 
@@ -34,6 +37,7 @@ class AppTranslocoLoader implements TranslocoLoader {
         ...(contactSv as Record<string, unknown>),
         ...(gallerySv as Record<string, unknown>),
         ...(gallerySvImageDescriptions as Record<string, unknown>),
+        ...(pricesSv as Record<string, unknown>),
       });
     }
 

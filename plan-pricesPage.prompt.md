@@ -25,27 +25,27 @@ A new `/prices` page with a solid `outer-space` header, a title section, alterna
 - [ ] **Desktop (`md+`):** `flex-row` card, image takes ~50% width (`object-cover`, `rounded-lg`, `shadow-xl`); text side holds title (`font-nunito`), price (`text-bronze`, `font-nunito`), description (`font-montserrat font-light`); apply `flex-row-reverse` when `reversed` is true
 - [ ] **Mobile:** single stacked block — image fills the full card height as a CSS `background-image` with a `bg-black/50` overlay; title, price, and description are centred on top in `text-whitesmoke`. The text that is next to the card on desktop should be on top of the image, not a duplicate.
 - [ ] Use `NgOptimizedImage` with the `-1100.avif` placeholder files from `assets/gallery/Dogs/`
-- [ ] Cards should be a single visual unit: wrap image+text in a `.pricing-card` element with `overflow-hidden`, `rounded-lg`, `bg-white` (or `bg-timberwolf` / subtle linen tint), consistent `p-6` padding on the text side (desktop), and `shadow-xl` so the image and text read as one component rather than two unrelated columns.
+- [ ] Cards should be a single visual unit: wrap image+text in a `.pricing-card` element with `overflow-hidden`, `rounded-lg`, `bg-timberwolf` consistent `p-6` padding on the text side (desktop), and `shadow-xl` so the image and text read as one component rather than two unrelated columns.
 - [ ] On desktop the image should be clipped to the card's border-radius so the card looks unified (image and text share the same rounded corners where they meet). Use `object-cover` and `overflow-hidden` on the image container.
 - [ ] Keep text and image aligned to the same centered max-width: each card's inner container should be constrained to `max-w-8xl mx-auto px-6 md:px-8` so cards align with other page content.
 - [ ] Add a small vertical rhythm: consistent `gap-6` between cards, and equal horizontal gutters inside each card so title/price/description align with other section text.
- - [ ] Ensure images sit flush against the card edge with no visible gap on desktop:
-   - [ ] Wrap the image and text in a single `.pricing-card__inner` container constrained to the page grid (`max-w-8xl 2xl:max-w-9xl mx-auto px-6 md:px-8`).
-   - [ ] On desktop (`md+`) use a two-column layout with no gutter between columns (e.g. `grid grid-cols-1 md:grid-cols-2` or `flex` with `gap-0 md:gap-0`) so the image and text meet edge-to-edge.
-   - [ ] Apply `overflow-hidden` and the same `rounded-lg` to the overall card and to the image wrapper so the image is clipped to the card border-radius (this prevents visual gap and keeps the image and text as one unit).
-   - [ ] Ensure the text side uses internal padding (e.g. `p-6`) but that padding is not applied to the image column so there is no outer gap between image and card edge.
+- [ ] Ensure images sit flush against the card edge with no visible gap on desktop:
+  - [ ] Wrap the image and text in a single `.pricing-card__inner` container constrained to the page grid (`max-w-8xl 2xl:max-w-9xl mx-auto px-6 md:px-8`).
+  - [ ] On desktop (`md+`) use a two-column layout with no gutter between columns (e.g. `grid grid-cols-1 md:grid-cols-2` or `flex` with `gap-0 md:gap-0`) so the image and text meet edge-to-edge.
+  - [ ] Apply `overflow-hidden` and the same `rounded-lg` to the overall card and to the image wrapper so the image is clipped to the card border-radius (this prevents visual gap and keeps the image and text as one unit).
+  - [ ] Ensure the text side uses internal padding (e.g. `p-6`) but that padding is not applied to the image column so there is no outer gap between image and card edge.
 
- - [ ] Make currency amounts locale-aware instead of hardcoded strings:
-   - [ ] Move from translating full price strings to translating numeric prices and (optionally) currency code/symbol.
-     - e.g. `tiers[].price = 450` and `tiers[].currency = 'SEK'` or `tiers[].currencyKey = 'currency.SEK'`.
-   - [ ] Format the displayed price in the `pricing-card` using Angular's `CurrencyPipe` or `Intl.NumberFormat` with the current Transloco language/locale so `sv` uses Swedish formatting and `en` uses English formatting (currency symbol or code may differ per locale).
-   - [ ] Update `src/app/pages/prices/i18n/en.json` and `sv.json` to remove full-price strings and instead include any currency-labels or localized suffixes if needed (keep `imageAlt` and descriptions as-is).
-   - [ ] Ensure the `pricing-cards` static `tiers` array contains numeric price values (not pre-formatted strings) so formatting is runtime-driven by locale.
+- [ ] Make currency amounts locale-aware instead of hardcoded strings:
+  - [ ] Move from translating full price strings to translating numeric prices and (optionally) currency code/symbol.
+    - e.g. `tiers[].price = 450` and `tiers[].currency = 'SEK'` or `tiers[].currencyKey = 'currency.SEK'`.
+  - [ ] Format the displayed price in the `pricing-card` using Angular's `CurrencyPipe` or `Intl.NumberFormat` with the current Transloco language/locale so `sv` uses Swedish formatting and `en` uses English formatting (currency symbol or code may differ per locale).
+  - [ ] Update `src/app/pages/prices/i18n/en.json` and `sv.json` to remove full-price strings and instead include any currency-labels or localized suffixes if needed (keep `imageAlt` and descriptions as-is).
+  - [ ] Ensure the `pricing-cards` static `tiers` array contains numeric price values (not pre-formatted strings) so formatting is runtime-driven by locale.
 
- - [ ] Ensure mobile (sm) shows the mobile-specific layout only (image-as-background with overlay) and does NOT render the desktop image+text side:
-   - [ ] On small screens hide the desktop image element and hide the separate text column; show only the mobile overlay block that uses `background-image` and centers the text on top (`md:hidden` for overlay visibility and `hidden md:block` for desktop-only pieces).
-   - [ ] Ensure there is a single source-of-truth for the card text (do not duplicate the text in both desktop text column and mobile overlay). Prefer rendering the textual content once and use CSS/positioning to move it on top of the mobile background — or render text twice but keep one of the renders visually hidden purely via responsive classes (avoid duplicate ARIA/SEO issues by keeping accessible text available to screen readers using `sr-only` when necessary).
-   - [ ] Verify touch/keyboard accessibility on mobile overlay (button/tab order, contrast of overlay text, tappable CTA if applicable).
+- [ ] Ensure mobile (sm) shows the mobile-specific layout only (image-as-background with overlay) and does NOT render the desktop image+text side:
+  - [ ] On small screens hide the desktop image element and hide the separate text column; show only the mobile overlay block that uses `background-image` and centers the text on top (`md:hidden` for overlay visibility and `hidden md:block` for desktop-only pieces).
+  - [ ] Ensure there is a single source-of-truth for the card text (do not duplicate the text in both desktop text column and mobile overlay). Prefer rendering the textual content once and use CSS/positioning to move it on top of the mobile background — or render text twice but keep one of the renders visually hidden purely via responsive classes (avoid duplicate ARIA/SEO issues by keeping accessible text available to screen readers using `sr-only` when necessary).
+  - [ ] Verify touch/keyboard accessibility on mobile overlay (button/tab order, contrast of overlay text, tappable CTA if applicable).
 
 **5. Build `pricing-cards` Component**
 
