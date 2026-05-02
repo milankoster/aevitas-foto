@@ -23,7 +23,7 @@ export class PricingCardsComponent {
       titleKey: 'prices.tiers.mini.title',
       price: 1500,
       descriptionKey: 'prices.tiers.mini.description',
-      imageSrc: 'assets/gallery/Dogs/DSC_0107-1100.avif',
+      imageSrc: 'assets/gallery/Dogs/IMG_9954-1100.avif',
       imageAltKey: 'prices.tiers.mini.imageAlt',
     },
     {

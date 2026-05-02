@@ -5,7 +5,7 @@
        This block is hidden from screen readers on desktop via display:none.  -->
   <div
     aria-hidden="false"
-    class="pricing-card--mobile md:hidden relative overflow-hidden rounded-lg shadow-xl min-h-96"
+    class="pricing-card--mobile md:hidden relative overflow-hidden rounded-lg shadow-md min-h-96"
     [style.backgroundImage]="'url(' + imageSrc() + ')'"
   >
     <!-- Dark overlay -->
@@ -13,7 +13,7 @@
 
     <!-- Text centred over the image -->
     <div
-      class="relative z-10 flex flex-col items-center justify-center min-h-96 px-6 py-12 text-whitesmoke text-center">
+      class="relative z-10 flex flex-col items-center justify-start min-h-96 px-6 pt-12 pb-6 text-whitesmoke text-center">
       <h2 class="text-2xl font-nunito font-bold">
         {{ titleKey() | transloco }}
       </h2>
@@ -35,7 +35,7 @@
        Hidden from screen readers on mobile via display:none.              -->
   <div
     aria-hidden="false"
-    class="hidden md:flex overflow-hidden rounded-xl shadow-xl bg-whitesmoke min-h-80"
+    class="hidden md:flex items-stretch overflow-hidden rounded-xl shadow-md bg-white min-h-80"
     [class.flex-row-reverse]="reversed()"
   >
     <!-- Image half — around 45% width so text area is slightly larger -->
@@ -50,18 +50,22 @@
     </div>
 
     <!-- Text half -->
-    <div class="w-[55%] flex flex-col justify-center p-8 2xl:p-12">
-      <h2 class="text-2xl 2xl:text-3xl font-nunito font-bold text-charcoal">
-        {{ titleKey() | transloco }}
-      </h2>
-      <p class="text-3xl 2xl:text-4xl font-nunito font-bold text-bronze mt-2">
-        {{ formattedPrice() }}
-      </p>
+    <div class="flex w-[55%] min-h-full flex-col px-8 py-8 2xl:px-12 2xl:py-12">
+      <div class="flex items-baseline justify-between w-full">
+        <h2 class="flex-1 text-3xl 2xl:text-4xl font-nunito font-bold text-charcoal mr-4">
+          {{ titleKey() | transloco }}
+        </h2>
+        <p class="flex-none text-right text-2xl 2xl:text-3xl font-nunito font-semibold text-bronze">
+          {{ formattedPrice() }}
+        </p>
+      </div>
       <p class="mt-4 font-montserrat font-light text-charcoal text-lg 2xl:text-xl">
         {{ descriptionKey() | transloco }}
       </p>
-      <div class="mt-6">
-        <a class="font-buttons text-sm" routerLink="/contact">{{ 'prices.cta.button' | transloco }}</a>
+      <div class="mt-auto">
+        <div class="mt-6">
+          <a class="font-buttons text-sm" routerLink="/contact">{{ 'prices.cta.button' | transloco }}</a>
+        </div>
       </div>
     </div>
   </div>
