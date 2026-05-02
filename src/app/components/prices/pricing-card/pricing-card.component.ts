@@ -1,10 +1,4 @@
-import {
-  ChangeDetectionStrategy,
-  Component,
-  computed,
-  inject,
-  input,
-} from '@angular/core';
+import { ChangeDetectionStrategy, Component, computed, inject, input } from '@angular/core';
 import { NgOptimizedImage } from '@angular/common';
 import { TranslocoModule, TranslocoService } from '@jsverse/transloco';
 import { toSignal } from '@angular/core/rxjs-interop';
@@ -33,17 +27,12 @@ export class PricingCardComponent {
   private readonly activeLang = toSignal(this.transloco.langChanges$, {
     initialValue: this.transloco.getActiveLang(),
   });
-  // React to transloco events (for example when translations are loaded)
-  // so that the computed price re-evaluates even when the language hasn't changed.
   private readonly translocoEvents = toSignal(this.transloco.events$, { initialValue: null });
 
   readonly formattedPrice = computed(() => {
-    // Ensure we re-evaluate when translations load or transloco emits events.
     this.translocoEvents();
 
     const lang = this.activeLang();
-    // Use Swedish locale for 'sv', otherwise use an English (EU) locale.
-    // When the active language is English we show values in EUR (per request).
     const locale = lang === 'sv' ? 'sv-SE' : 'en-IE';
     // Read price and currency from translations using provided keys.
     // No fallback: if translations are missing, the raw translated value is used.
@@ -75,4 +64,3 @@ export class PricingCardComponent {
     return String(priceRaw);
   });
 }
-

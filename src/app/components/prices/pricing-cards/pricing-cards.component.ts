@@ -3,13 +3,12 @@ import { PricingCardComponent } from '../pricing-card/pricing-card.component';
 
 type PricingTier = {
   readonly titleKey: string;
-  // price and currency are now stored in translation files; pass keys instead
   readonly priceKey: string;
   readonly currencyKey: string;
   readonly descriptionKey: string;
   readonly imageSrc: string;
   readonly imageAltKey: string;
-}
+};
 
 @Component({
   selector: 'app-pricing-cards',
@@ -47,5 +46,3 @@ export class PricingCardsComponent {
     },
   ];
 }
-
-
