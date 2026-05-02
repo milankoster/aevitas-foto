@@ -1,7 +1,6 @@
-import { ChangeDetectionStrategy, Component, computed, inject, input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, computed, input } from '@angular/core';
 import { NgOptimizedImage } from '@angular/common';
-import { TranslocoModule, TranslocoService } from '@jsverse/transloco';
-import { toSignal } from '@angular/core/rxjs-interop';
+import { TranslocoModule } from '@jsverse/transloco';
 import { RouterLink } from '@angular/router';
 
 @Component({
@@ -14,53 +13,31 @@ import { RouterLink } from '@angular/router';
 })
 export class PricingCardComponent {
   readonly titleKey = input.required<string>();
-  // Price and currency are now stored in translations. We accept keys
-  // that point to the translated values (no fallbacks).
-  readonly priceKey = input.required<string>();
-  readonly currencyKey = input.required<string>();
+  readonly price = input.required<number>();
   readonly descriptionKey = input.required<string>();
   readonly imageSrc = input.required<string>();
   readonly imageAltKey = input.required<string>();
   readonly reversed = input<boolean>(false);
 
-  private readonly transloco = inject(TranslocoService);
-  private readonly activeLang = toSignal(this.transloco.langChanges$, {
-    initialValue: this.transloco.getActiveLang(),
-  });
-  private readonly translocoEvents = toSignal(this.transloco.events$, { initialValue: null });
-
   readonly formattedPrice = computed(() => {
-    this.translocoEvents();
+    const priceNumber = this.price();
+    const hasFraction = Math.abs(priceNumber % 1) > 1e-9;
 
-    const lang = this.activeLang();
-    const locale = lang === 'sv' ? 'sv-SE' : 'en-IE';
-    // Read price and currency from translations using provided keys.
-    // No fallback: if translations are missing, the raw translated value is used.
-    const priceRaw = this.transloco.translate(this.priceKey());
-    const currencyCode = this.transloco.translate(this.currencyKey());
-
-    // Try to parse price as number. If parsing fails, return the raw value.
-    const priceNumber = Number(priceRaw);
-    if (Number.isFinite(priceNumber)) {
-      // Only use currency formatting when the translated currency looks like a 3-letter code.
-      const currencyIsCode = typeof currencyCode === 'string' && /^[A-Za-z]{3}$/.test(currencyCode);
-      if (currencyIsCode) {
-        return new Intl.NumberFormat(locale, {
-          style: 'currency',
-          currency: currencyCode.toUpperCase(),
-          maximumFractionDigits: 0,
-        }).format(priceNumber);
-      }
-
-      // If currency is not a valid 3-letter code, format as a plain number
-      // and append the raw currency string if present (this avoids Intl RangeError
-      // while still using translator-provided currency values — no automatic fallback).
-      const formattedNumber = new Intl.NumberFormat(locale, { maximumFractionDigits: 0 }).format(priceNumber);
-      return currencyCode ? `${formattedNumber} ${currencyCode}` : formattedNumber;
+    // Use comma as thousands separator (en-US grouping), then convert decimal dot to comma
+    // and append ':-' as requested. For whole amounts we omit decimals.
+    if (!hasFraction) {
+      const formatted = new Intl.NumberFormat('en-US', {
+        minimumFractionDigits: 0,
+        maximumFractionDigits: 0,
+      }).format(priceNumber);
+      return `${formatted}:-`;
     }
 
-    // If price is not a number (e.g. the translator provided a pre-formatted string),
-    // return it as-is (no additional formatting / no fallback).
-    return String(priceRaw);
+    const formattedWithDecimals = new Intl.NumberFormat('en-US', {
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2,
+    }).format(priceNumber);
+    // Replace decimal dot with comma to keep comma as decimal separator
+    return `${formattedWithDecimals.replace('.', ',')}:-`;
   });
 }

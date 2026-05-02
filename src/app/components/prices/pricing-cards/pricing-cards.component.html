@@ -2,11 +2,10 @@
   @for (tier of tiers; track tier.titleKey; let i = $index) {
     <div class="md:py-3">
       <app-pricing-card
-        [currencyKey]="tier.currencyKey"
         [descriptionKey]="tier.descriptionKey"
         [imageAltKey]="tier.imageAltKey"
         [imageSrc]="tier.imageSrc"
-        [priceKey]="tier.priceKey"
+        [price]="tier.price"
         [reversed]="i % 2 !== 0"
         [titleKey]="tier.titleKey"
       />
