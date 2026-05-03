@@ -4,8 +4,9 @@
     "description": "Choose the package that best fits you and your pet. Every session is personal, unhurried, and tailored to bring out the best in your animal.",
     "cta": {
       "text": "Not sure what package fits you? Let's talk",
-      "button": "Book now!"
+      "button": "Contact me"
     },
+    "cardButton": "Book now!",
     "tiers": {
       "mini": {
         "title": "Mini",

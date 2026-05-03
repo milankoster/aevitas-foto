@@ -4,8 +4,9 @@
     "description": "Välj det paket som passar dig och ditt husdjur bäst. Varje session är personlig, avslappnad och skräddarsydd för att visa ditt djur på bästa sätt.",
     "cta": {
       "text": "Osäker på vilket paket som passar dig? Låt oss prata",
-      "button": "Boka nu!"
+      "button": "Kontakta mig"
     },
+    "cardButton": "Boka nu!",
     "tiers": {
       "mini": {
         "title": "Mini",
