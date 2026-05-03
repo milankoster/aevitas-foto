@@ -6,27 +6,35 @@
   <div
     aria-hidden="false"
     class="pricing-card--mobile md:hidden relative overflow-hidden rounded-lg shadow-md min-h-96"
-    [style.backgroundImage]="'url(' + imageSrc() + ')'"
+    [ngStyle]="{ 'background-image': 'url(' + imageSrc() + ')' }"
   >
     <!-- Dark overlay -->
     <div aria-hidden="true" class="absolute inset-0 bg-black/55"></div>
 
-    <!-- Text centred over the image -->
+    <!-- Text overlay: title and price on one row, description middle — vertically centred -->
     <div
-      class="relative z-10 flex flex-col items-center justify-start min-h-96 px-6 pt-12 pb-6 text-whitesmoke text-center">
-      <h2 class="text-2xl font-nunito font-bold">
-        {{ titleKey() | transloco }}
-      </h2>
-      <p class="text-3xl font-nunito font-bold text-bronze mt-2">
-        {{ formattedPrice() }}
-      </p>
-      <p class="mt-4 font-montserrat font-light text-lg max-w-md">
-        {{ descriptionKey() | transloco }}
-      </p>
-      <!-- Mobile CTA -->
-      <a class="font-buttons text-sm mt-6 inline-block" routerLink="/contact">
-        {{ 'prices.cta.button' | transloco }}
-      </a>
+      class="relative z-10 flex flex-col items-center justify-center min-h-96 px-6 py-8 text-whitesmoke text-center gap-4">
+      <div class="w-full">
+        <div class="flex items-baseline justify-center gap-4 w-full">
+          <h2 class="text-4xl font-nunito font-bold">
+            {{ titleKey() | transloco }}
+          </h2>
+          <p class="text-3xl font-nunito font-bold">
+            –
+          </p>
+          <p class="text-4xl font-nunito font-semibold">
+            {{ formattedPrice() }}
+          </p>
+        </div>
+        <p class="mt-4 font-montserrat font-light text-lg max-w-md mx-auto">
+          {{ descriptionKey() | transloco }}
+        </p>
+      </div>
+
+      <!-- Mobile CTA below content -->
+      <div class="w-full mt-6 flex justify-center">
+        <a class="font-buttons text-sm inline-block" routerLink="/contact">{{ 'prices.cta.button' | transloco }}</a>
+      </div>
     </div>
   </div>
 

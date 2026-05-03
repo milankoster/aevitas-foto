@@ -1,12 +1,12 @@
 import { ChangeDetectionStrategy, Component, computed, input } from '@angular/core';
-import { NgOptimizedImage } from '@angular/common';
+import { NgOptimizedImage, NgStyle } from '@angular/common';
 import { TranslocoModule } from '@jsverse/transloco';
 import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-pricing-card',
   standalone: true,
-  imports: [NgOptimizedImage, TranslocoModule, RouterLink],
+  imports: [NgOptimizedImage, NgStyle, TranslocoModule, RouterLink],
   templateUrl: './pricing-card.component.html',
   styleUrl: './pricing-card.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -30,7 +30,8 @@ export class PricingCardComponent {
         minimumFractionDigits: 0,
         maximumFractionDigits: 0,
       }).format(priceNumber);
-      return `${formatted}:-`;
+      // Append '\u00A0kr' so the currency is visible (e.g. "1,500\u00A0kr").
+      return `${formatted}\u00A0kr`;
     }
 
     const formattedWithDecimals = new Intl.NumberFormat('en-US', {
@@ -38,6 +39,7 @@ export class PricingCardComponent {
       maximumFractionDigits: 2,
     }).format(priceNumber);
     // Replace decimal dot with comma to keep comma as decimal separator
-    return `${formattedWithDecimals.replace('.', ',')}:-`;
+    // Replace decimal dot with comma and append 'kr' with a non-breaking space.
+    return `${formattedWithDecimals.replace('.', ',')}\u00A0kr`;
   });
 }
